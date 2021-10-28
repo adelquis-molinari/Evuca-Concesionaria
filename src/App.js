@@ -3,6 +3,7 @@ import Nav from './conponents/NavBar/Navbar'
 import './App.css';
 
 function App() {
+  
   return (
     <div className="App">
       <Nav />
