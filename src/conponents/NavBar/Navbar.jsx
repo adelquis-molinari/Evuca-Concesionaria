@@ -1,10 +1,9 @@
-import React, {useState} from 'react'
-import {Nav, LogoName, NavItems, NavItem, NavLink, ButtonLogin, Dropdown } from './NavStyled'
-
+import React, {useState} from 'react';
+import {Nav, NavItems, NavItem, NavLink, ButtonLogin, Dropdown, ButtonLink } from './NavStyled';
+import logoName from '../../img/logoAzul.png';
+import {Link} from 'react-router-dom';
 
 const NavBar = () => {
-
-
     // desplega Dropdown al hacer click en el boton
     const [dropdown, setDropdown] = useState(false)
     const handleDisplay = () => {
@@ -13,10 +12,12 @@ const NavBar = () => {
     
     return ( 
         <Nav>
-            <LogoName>EvuCar</LogoName>
+            <Link to="/">
+                <img src={logoName} alt="consecionario automotor" width={150} />
+            </Link>
             <NavItems>
                 <NavItem>
-                    <NavLink onClick={handleDisplay}>Categorias
+                    <ButtonLink onClick={handleDisplay}>Categorias
                     {dropdown ? 
                         <Dropdown>
                             <NavLink>Automoviles</NavLink>
@@ -25,22 +26,14 @@ const NavBar = () => {
                             <NavLink>Camiones</NavLink>
                             <NavLink>Otros</NavLink>
                         </Dropdown> : null}
-                    </NavLink>
+                    </ButtonLink>
                 </NavItem>
                 <NavItem >
-                    <NavLink>Agencias</NavLink>
-                </NavItem>
-                <NavItem >
-                    <NavLink>Pricing</NavLink>
-                </NavItem>
-                <NavItem >
-                    <NavLink>Disabled</NavLink>
+                    <NavLink to="/agencias">Agencias</NavLink>
                 </NavItem>
             </NavItems>
             <NavItems>
-                <NavItem>
-                    <ButtonLogin>LogIn</ButtonLogin>
-                </NavItem>
+                <ButtonLogin to='/logins' >LogIn</ButtonLogin>
             </NavItems>
      </Nav>
      );
