@@ -9,7 +9,7 @@ const NavBar = () => {
     const handleDisplay = () => {
         setDropdown(!dropdown)
     }
-    
+
     return ( 
         <Nav>
             <Link to="/">
@@ -20,11 +20,9 @@ const NavBar = () => {
                     <ButtonLink onClick={handleDisplay}>Categorias
                     {dropdown ? 
                         <Dropdown>
-                            <NavLink>Automoviles</NavLink>
-                            <NavLink>Motocicletas</NavLink>
-                            <NavLink>Camionetas</NavLink>
-                            <NavLink>Camiones</NavLink>
-                            <NavLink>Otros</NavLink>
+                            <NavLink to="/automoviles">Automoviles</NavLink>
+                            <NavLink to="/motocicletas" >Motocicletas</NavLink>
+                            <NavLink to="/tractores" >Tractores</NavLink>
                         </Dropdown> : null}
                     </ButtonLink>
                 </NavItem>
