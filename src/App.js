@@ -4,19 +4,15 @@ import Home from "./conponents/Home/Home.js"
 import { Route } from "react-router-dom";
 import './App.css';
 import Footer from './conponents/Footer/Footer'
-// import {Route} from 'react-router-dom';
-// import Home from './conponents/Home/Home';
-// import Agencias from './conponents/Agencias/Agencias';
-// import Logins from './conponents/Logins/Logins';
+import Logins from './conponents/Logins/Logins';
 
 
 export function App() {
   return (
     <Fragment>
       <Nav />
-      {/* <Route exact path="/" render={() => <Home />}/> 
-      <Route path="/agencias" render={() => <Agencias />}/>
-      <Route path="/logins" render={() => <Logins />}/> */}
+      <Route exact path="/" render={() => <Home />}/> 
+      <Route path="/logins" render={() => <Logins />}/>
       <Footer />
     </Fragment>
   );
