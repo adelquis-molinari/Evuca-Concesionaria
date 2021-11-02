@@ -1,0 +1,55 @@
+.containerHome {
+    padding-top: 110px;
+    padding-bottom: 110px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content:flex-start
+}
+
+.homeImg{
+    margin-top: 80px;
+    background: url("https://es-mb.theepochtimes.com/assets/uploads/2019/04/26c01f3789d0436e8702340cb0a43076.jpg");   
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    box-shadow: 0px 1px 5px 1px rgba(0, 0, 0, 0.171);
+}
+
+.containerHome h1{
+    color: #ffffff;
+    font-size: 75px;
+    max-width: 100%;
+    margin:0;
+    margin-left: 20px;
+}
+
+.containerHome p{
+    margin: 0;
+    margin-left: 20px;
+    color: #ffffff;
+    font-size: 30px;
+    max-width: 100%;
+    font-weight: bold;
+}
+
+.seccionBuscar{
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+    margin-right: 20px;
+    /* color: #287094; */
+    color: #023246
+}
+
+.seccionBuscar h1{
+    /* color: #023246; */
+    color: #287094;
+}
+
+.seccionTipos{
+    display: flex;
+    justify-content: space-between;
+    color: black;
+}
