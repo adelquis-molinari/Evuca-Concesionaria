@@ -32,11 +32,11 @@ export const Dropdown = styled.div`
     display: flex;
     flex-direction: column;
     width: 100%;
-    height: 200px;
+    height: auto;
     text-align: left;
     left: 0;
     top: 100%;
-    background-color: ${colorSecondary};
+    background-color: #d4d4cee8;
     border-bottom: 1px solid ${colorSecondary};
     box-shadow: -3px 25px 45px -10px rgba(0,0,0,0.75);
     -webkit-box-shadow: -3px 25px 45px -10px rgba(0,0,0,0.75);
