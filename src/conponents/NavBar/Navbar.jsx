@@ -11,6 +11,7 @@ const NavBar = () => {
     }
 
     return ( 
+        
         <Nav>
             <Link to="/">
                 <img src={logoName} alt="consecionario automotor" width={150} />
