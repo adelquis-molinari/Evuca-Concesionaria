@@ -1,6 +1,5 @@
 import React from 'react'
 import {FooterDiv, LinkEvukes, LinkFooter} from './FooterStyled'
-import { Link } from 'react-router-dom'
 
 const Footer = () => {
     

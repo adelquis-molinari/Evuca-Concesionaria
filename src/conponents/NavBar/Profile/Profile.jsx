@@ -13,6 +13,7 @@ const Profile = () => {
     const handleProfile = () => {
         setProfile(!profile)
     }
+    console.log(user);
 
     return (
         <>

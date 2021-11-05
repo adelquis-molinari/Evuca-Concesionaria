@@ -6,6 +6,7 @@ import {marcasAutos, marcasMoto, marcasTractor } from './dataNav';
 import logoName from '../../img/logoAzul.png';
 import CardList from './CardList/CardList';
 import Profile from './Profile/Profile';
+import InputSearch from '../InputSearch/InputSearch';
 
 const NavBar = () => {
     // desplega Dropdown al hacer click en el boton
@@ -14,41 +15,59 @@ const NavBar = () => {
     const [dropAutos, setAutos] = useState(false);
     const [dropMoto, setMoto] = useState(false);
     const [dropTractor, setTractor] = useState(false);
+    const [seachMenu, setSeachMenu] = useState(false);
 
-    const { isAuthenticated, loginWithRedirect, logout} = useAuth0();
-
+    const { isAuthenticated, loginWithRedirect} = useAuth0();
+    //desplegar el menu de categorias Autos
     const autosDrop = () => {
         setAutos(!dropAutos)
         setMoto(false)
         setTractor(false)
     }
+    //desplegar el menu de categorias Motos
     const motoDrop = () => {
         setMoto(!dropMoto)
         setAutos(false)
         setTractor(false)
+        setDropdown(false)
+        setSeachMenu(false)
     }
+    //desplegar el menu de categorias Tractores
     const tractorDrop = () => {
         setTractor(!dropTractor)
         setAutos(false)
         setMoto(false)
+        setDropdown(false)
+        setSeachMenu(false)
     }
-
+    //desplegar el menu Postventa
     const handleClick = () => {
         setDropdown2(!dropdown2)
         setDropdown(false);
         setMoto(false)
         setAutos(false)
         setTractor(false)
+        setSeachMenu(false)
     }
-
+    //desplegar el menu Principal   
     const handleDisplay = () => {
         setDropdown(!dropdown)
         setDropdown2(false)
         setMoto(false)
         setAutos(false)
         setTractor(false)
+        setSeachMenu(false)
     }
-
+    //desplegar el menu de busqueda
+    const handleSeach = () => {
+        setSeachMenu(!seachMenu)
+        setDropdown(false)
+        setDropdown2(false)
+        setMoto(false)
+        setAutos(false)
+        setTractor(false)
+    }
+    //click fuera del menu se cierra
     return ( 
         
         <Nav>
@@ -61,7 +80,7 @@ const NavBar = () => {
                     {dropdown ? 
                         <React.Fragment>
                             <Dropdown>
-                                <div>
+                                <>
                                     <ButtonLink onMouseEnter={autosDrop} >
                                         <NavLink to="/automoviles">Automoviles  </NavLink>
                                     </ButtonLink>
@@ -71,8 +90,8 @@ const NavBar = () => {
                                     <ButtonLink onMouseEnter={tractorDrop} >
                                         <NavLink to="/tractores">Tractores </NavLink>
                                     </ButtonLink>
-                                </div>
-                                <div>
+                                </>
+                                <>
                                     {dropAutos ? 
                                         <CardList marcas={marcasAutos} />
                                         : null
@@ -85,7 +104,7 @@ const NavBar = () => {
                                         <CardList marcas={marcasTractor} />
                                         : null
                                     }
-                                </div>
+                                </>
                             </Dropdown>
                         
                         </React.Fragment>
@@ -107,7 +126,16 @@ const NavBar = () => {
                 </NavItem>
             </NavItems>
             <NavItems>
-                
+                    <ButtonLog 
+                        onClick={handleSeach}
+                    ><i className="fas fa-search"></i> Buscar</ButtonLog> 
+                    {seachMenu ? 
+                        <Dropdown>
+                            <InputSearch />
+                        </Dropdown>
+                        : null
+                    }
+                <>
                 {
                     isAuthenticated ?
                         <Profile />
@@ -116,6 +144,7 @@ const NavBar = () => {
                             onClick={() => loginWithRedirect() }
                         >iniciar Seción</ButtonLog>
                 }
+                </>
             </NavItems>
     </Nav>
     );

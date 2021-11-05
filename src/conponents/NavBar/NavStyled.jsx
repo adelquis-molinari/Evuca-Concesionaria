@@ -15,7 +15,7 @@ export const Nav = styled.nav`
     padding: 0.5rem 1rem;
     top: 0;
     width: 100%;
-    height: auto;
+    height: 4rem;
     z-index: 1;
     align-items: center;
     @media (max-width: 768px) {
