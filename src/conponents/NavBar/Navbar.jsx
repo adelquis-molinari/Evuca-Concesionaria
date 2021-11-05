@@ -1,16 +1,21 @@
 import React, {useState} from 'react';
-import {Nav, NavItems, NavItem, NavLink, ButtonLogin, Dropdown, ButtonLink } from './NavStyled';
-import logoName from '../../img/logoAzul.png';
+import { useAuth0 } from '@auth0/auth0-react';
 import {Link} from 'react-router-dom';
-import CardList from './CardList/CardList';
+import {Nav, NavItems, NavItem, NavLink, ButtonLog, Dropdown, ButtonLink } from './NavStyled';
 import {marcasAutos, marcasMoto, marcasTractor } from './dataNav';
+import logoName from '../../img/logoAzul.png';
+import CardList from './CardList/CardList';
+import Profile from './Profile/Profile';
+
 const NavBar = () => {
     // desplega Dropdown al hacer click en el boton
-    const [dropdown, setDropdown] = useState(false)
-    const [dropdown2, setDropdown2] = useState(false)
-    const [dropAutos, setAutos] = useState(false)
-    const [dropMoto, setMoto] = useState(false)
-    const [dropTractor, setTractor] = useState(false)
+    const [dropdown, setDropdown] = useState(false);
+    const [dropdown2, setDropdown2] = useState(false);
+    const [dropAutos, setAutos] = useState(false);
+    const [dropMoto, setMoto] = useState(false);
+    const [dropTractor, setTractor] = useState(false);
+
+    const { isAuthenticated, loginWithRedirect, logout} = useAuth0();
 
     const autosDrop = () => {
         setAutos(!dropAutos)
@@ -82,7 +87,7 @@ const NavBar = () => {
                                     }
                                 </div>
                             </Dropdown>
-                           
+                        
                         </React.Fragment>
                         : null}
                     </ButtonLink>
@@ -102,10 +107,18 @@ const NavBar = () => {
                 </NavItem>
             </NavItems>
             <NavItems>
-                <ButtonLogin to='/logins' >LogIn</ButtonLogin>
+                
+                {
+                    isAuthenticated ?
+                        <Profile />
+                    : 
+                        <ButtonLog 
+                            onClick={() => loginWithRedirect() }
+                        >iniciar Seción</ButtonLog>
+                }
             </NavItems>
-     </Nav>
-     );
+    </Nav>
+    );
 }
- 
+
 export default NavBar;

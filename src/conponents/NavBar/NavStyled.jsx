@@ -101,7 +101,7 @@ export const ButtonLink = styled.span`
         text-decoration: none;
     }
 `;
-export const ButtonLogin = styled(Link)`
+export const ButtonLog = styled.button`
     background-color: #ffffff;
     border: 1px solid #ffffff;
     border-radius: 4px;

@@ -1,0 +1,35 @@
+
+
+.profile {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.profile img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 30px;
+    margin-left: 20px;
+}
+.profile span {
+    font-size: 15px;
+    font-weight: bold;
+}
+
+/* menu desplegable perfil */
+
+.profile-dropdown {
+    position: absolute;
+    align-items: center;
+    top: 90px;
+    right: 50px;
+    background-color: #f9f9f9a8;
+    padding: 10px;
+    border-radius: 10px;
+}
