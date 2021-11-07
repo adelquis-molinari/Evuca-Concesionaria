@@ -1,7 +1,7 @@
 import React from "react";
 import "./Home.css"
 import {useState} from "react";
-
+import {apiSimpleAutos} from '../../Data/apiAutos'
 export function Home() {
 const image = ["https://es.theepochtimes.com/assets/uploads/2019/04/26c01f3789d0436e8702340cb0a43076.jpg","https://es.chevrolet.com/content/dam/chevrolet/na/us/english/index/about/new-roads-issue-12/teasers/01-images/farmtofreeway-teaser-16x9.jpg?imwidth=960","https://s1.1zoom.me/b6365/276/Fields_Sunrises_and_sunsets_Tractor_521258_2560x1440.jpg"]
 const [selectedIndex, setSelectedIndex] = useState(0);
@@ -58,6 +58,24 @@ const next = () => {
                         </div>
                     </div>
                 </div>
+                <div>
+                    <h2>{apiSimpleAutos[0].marca}</h2>
+                    <h3>{apiSimpleAutos[0].modelo}</h3>
+                    <img src={apiSimpleAutos[0].img} alt={apiSimpleAutos[0].modelo} />
+                    <img src={apiSimpleAutos[0].imgMarca} alt={apiSimpleAutos[0].marca} />
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores at quasi, incidunt sint soluta repudiandae consectetur ea rem ducimus tenetur alias, nulla, blanditiis quaerat tempore nobis est eveniet aliquid! Eos neque dolores mollitia vitae impedit exercitationem fugiat porro culpa, sed alias? Excepturi numquam officiis ex laudantium nulla corrupti. Ad, fugit!</p>
+                </div>
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
         </div>
     )
 }

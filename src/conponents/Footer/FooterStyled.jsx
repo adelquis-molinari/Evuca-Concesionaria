@@ -7,7 +7,6 @@ export const FooterDiv = styled.footer`
     background-color: ${colorFondo};
     color: ${colorPrimary};
     display: flex;
-    position: fixed;
     bottom: 0;
     padding: 20px;
     text-align: center;
