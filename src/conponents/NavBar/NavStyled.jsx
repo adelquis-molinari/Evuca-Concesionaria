@@ -9,14 +9,11 @@ export const Nav = styled.nav`
     justify-content: space-between;
     background-color: #fff;
     border-bottom: 1px solid #e5e5e5;
-    box-shadow: 0px 3px 45px -10px rgba(0,0,0,0.75);
-    -webkit-box-shadow: 0px 3px 45px -10px rgba(0,0,0,0.75);
-    -moz-box-shadow: 0px 3px 45px -10px rgba(0,0,0,0.75);
     padding: 0.5rem 1rem;
     top: 0;
     width: 100%;
     height: 4rem;
-    z-index: 1;
+    z-index: 10000;
     align-items: center;
     @media (max-width: 768px) {
         flex-direction: column;
@@ -28,29 +25,29 @@ export const Nav = styled.nav`
 
 // Nav Dropdown
 export const Dropdown = styled.div`
-    position: absolute;
     display: flex;
-    flex-direction: column;
+    position: fixed;
+    flex-direction: row;
     width: 100%;
     height: auto;
+    right: 0;
+    top: 5rem;
     text-align: left;
-    left: 0;
-    top: 100%;
-    background-color: #d4d4cee8;
+    background-color: #d4d4cef7;
     border-bottom: 1px solid ${colorSecondary};
-    box-shadow: -3px 25px 45px -10px rgba(0,0,0,0.75);
-    -webkit-box-shadow: -3px 25px 45px -10px rgba(0,0,0,0.75);
-    -moz-box-shadow: -3px 25px 45px -10px rgba(0,0,0,0.75);
     padding: 0.5rem 1rem;
-    li {
-        background: ${colorSecondary};
-        padding: 0.5rem;
-    }
+    transform: translateY(${props => props.transf}%);
+    transition: transform 0.3s ease-in-out;
     @media (max-width: 768px) {
         margin-right: 0px;
     }
 `;
 
+export const DivColumn = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+`;
 
 export const LogoName = styled.a`
     color:  ${colorPrimary};
@@ -95,6 +92,7 @@ export const ButtonLink = styled.span`
     font-size: 1rem;
     font-weight: bold;
     padding: 0.5rem 1rem;
+    height: 100%;
     cursor: pointer;
     &:hover {
         color: #81b644;
