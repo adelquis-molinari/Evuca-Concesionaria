@@ -7,7 +7,7 @@ import T6130 from '../img/tractores/newHolla/T6130.png';
 
 export const apiSimpleTractores = [
   {
-    id: 1,
+    id: 798478,
     marca: 'Deutz',
     modelo: 'Serie 6W',
     img: Serie6W,
@@ -15,7 +15,7 @@ export const apiSimpleTractores = [
     descripcion: 'Deutz Serie 6W 2021'
 },
 {
-    id: 2,
+    id: 366558,
     marca: 'John Deere',
     modelo: '6100E',
     img: jd6100E,
@@ -23,7 +23,7 @@ export const apiSimpleTractores = [
     descripcion: 'John Deere 6100E 2021'
 },
 {
-    id: 3,
+    id: 491566,
     marca: 'New Holland',
     modelo: 'T6130',
     img: T6130,
