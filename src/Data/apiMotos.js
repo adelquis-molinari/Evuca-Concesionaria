@@ -1,15 +1,15 @@
 import corven from '../img/motos/corven/corven.png';
-import hunter150rt from '../img/motos/corven/Hunter150rt.png';
-import newEnergy110 from '../img/motos/corven/New-Energy-110.png';
-import touringTriax250 from '../img/motos/corven/touring-triax-250.png';
+import hunter150rt from '../img/motos/corven/hunter/Hunter150rt.png';
+import newEnergy110 from '../img/motos/corven/new energy/New-Energy-110.png';
+import touringTriax250 from '../img/motos/corven/touring triax/touring-triax-250.png';
 import honda from '../img/motos/honda/honda.png';
-import wave from '../img/motos/honda/wave.jpg';
-import twister from '../img/motos/honda/twister.jpg';
-import cbr1000 from '../img/motos/honda/cbr1000.jpg';
+import wave from '../img/motos/honda/wave/wave.jpg';
+import twister from '../img/motos/honda/twister/twister.jpg';
+import cbr1000 from '../img/motos/honda/cbr/cbr1000.jpg';
 import yamaha from '../img/motos/yamaha/yamaha.png';
-import cripton from '../img/motos/yamaha/cripton.jpg';
-import fz25 from '../img/motos/yamaha/fz25.jpg';
-import YZFR1 from '../img/motos/yamaha/FZF-R1.jpg';
+import cripton from '../img/motos/yamaha/cripton/cripton.jpg';
+import fz25 from '../img/motos/yamaha/fz25/fz25.jpg';
+import YZFR1 from '../img/motos/yamaha/fzf-r1/FZF-R1.jpg';
 
 export const apiSimpleMotos = [
     {

@@ -1,0 +1,9 @@
+body{
+    margin-top:80px;
+}
+
+.shopContainer{
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 5%;
+}
