@@ -1,7 +1,7 @@
 import React from "react";
 import "./Home.css"
 import {useState} from "react";
-import {apiSimpleAutos} from '../../Data/apiAutos'
+import {apiSimpleAutos} from '../../Data/apiAutos';
 export function Home() {
 const image = ["https://es.theepochtimes.com/assets/uploads/2019/04/26c01f3789d0436e8702340cb0a43076.jpg","https://es.chevrolet.com/content/dam/chevrolet/na/us/english/index/about/new-roads-issue-12/teasers/01-images/farmtofreeway-teaser-16x9.jpg?imwidth=960","https://s1.1zoom.me/b6365/276/Fields_Sunrises_and_sunsets_Tractor_521258_2560x1440.jpg"]
 const [selectedIndex, setSelectedIndex] = useState(0);
@@ -19,6 +19,7 @@ const next = () => {
     setSelectedImage(image[nextIndex])
     setSelectedIndex(nextIndex);
 }
+
     return(
         <div>
             <div className="containerHome">
