@@ -11,6 +11,7 @@ export const apiSimpleTractores = [
         id: 798478,
         marca: 'Deutz',
         modelo: 'Serie 6W',
+        precio: '$17.000.000',
         img: Serie6W,
         imgMarca: deutz,
         descripcion: 'Deutz Serie 6W 2021'
@@ -19,6 +20,7 @@ export const apiSimpleTractores = [
         id: 366558,
         marca: 'John Deere',
         modelo: '6100E',
+        precio: '$16.800.000',
         img: jd6100E,
         imgMarca: johnDeere,
         descripcion: 'John Deere 6100E 2021'
@@ -27,6 +29,7 @@ export const apiSimpleTractores = [
         id: 491566,
         marca: 'New Holland',
         modelo: 'T6130',
+        precio: '$15.000.000',
         img: T6130,
         imgMarca: newHolla,
         descripcion: 'New Holland T6130 2021'
@@ -37,6 +40,7 @@ export const apiDetalladaTractores = [
         id: 8321753,
         marca: 'Deutz',
         modelo: 'Serie 6W',
+        precio: '$17.000.000',
         img: Serie6W,
         imgMarca: deutz,
         imgBanner: imgDeutz.banner,
@@ -48,6 +52,7 @@ export const apiDetalladaTractores = [
         id: 1079015,
         marca: 'John Deere',
         modelo: '6100E',
+        precio: '$16.800.000',
         img: jd6100E,
         imgMarca: johnDeere,
         imgBanner: imgJohnDeere6100e.banner,
@@ -60,6 +65,7 @@ export const apiDetalladaTractores = [
         id: 8871466,
         marca: 'New Holland',
         modelo: 'T6130',
+        precio: '$15.000.000',
         img: T6130,
         imgMarca: newHolla,
         imgBanner: imgNewHollandT6130.banner,
