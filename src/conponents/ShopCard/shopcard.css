@@ -1,0 +1,65 @@
+.shopCardContainer{
+    border: 1px solid #dedfe0;
+    border-radius: 8px;
+    width: 20%;
+    min-height: 300px;
+    margin: 20px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    overflow: hidden;
+    color: #287094;
+    position: relative;
+    background-color: rgba(230, 230, 230, 0.603);
+}
+
+
+.garajeContainer{
+    width: 40px;
+    height: 40px;
+    background: white;
+    border-radius: 50%;
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    right: 0;
+    top: 40%;
+    margin-right: 5px;
+}
+
+.garajeContainer:hover{
+    cursor: pointer;
+    color: #319dd3;
+    transition: 0.5s;
+}
+
+.shopCardContainer:hover{
+    box-shadow: -1px 1px 3px 0px grey;
+    border: 1px solid #38383850;
+    transition: 0.2s;
+}
+
+.shopCardText{
+    font-size: 17px;
+    margin-top: 25px;
+    margin-left: 5px;
+}
+
+.shopCardText p{
+    color: black;
+}
+
+.shopCardText h3:hover{
+    color:#1d526d;
+    transition: 0.3s;
+}
+
+.shopCardContainer img{
+    width: 100%;
+    object-fit:fill;
+    border-bottom: 1px solid #dedfe0;
+    min-height: 140px;
+    max-height: 140px;
+    background-color: white;
+}

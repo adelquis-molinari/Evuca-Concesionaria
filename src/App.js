@@ -5,6 +5,7 @@ import { Route } from "react-router-dom";
 import './App.css';
 import Footer from './conponents/Footer/Footer';
 import Search from './conponents/Search/Search';
+import Shop from './conponents/Shop/shop.js'
 
 export function App() {
   return (
@@ -12,6 +13,7 @@ export function App() {
       <Nav />
         <Route exact path="/" render={() => <Home />}/> 
         <Route  path="/busqueda" render={() => <Search />}/> 
+        <Route  path="/shop" render={() => <Shop/>}/> 
       <Footer />
     </Fragment>
   );

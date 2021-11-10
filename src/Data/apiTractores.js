@@ -1,9 +1,9 @@
 import deutz from '../img/tractores/deutz/deutzFahr.png';
 import Serie6W from '../img/tractores/deutz/Serie6W.png';
 import johnDeere from '../img/tractores/johnDeere/johnDeere.png';
-import jd6100E from '../img/tractores/johnDeere/6100E.png';
-import newHolla from '../img/tractores/newHolla/newHolla.png';
-import T6130 from '../img/tractores/newHolla/T6130.png';
+import jd6100E from '../img/tractores/johnDeere/6100E.jpg';
+import newHolla from '../img/tractores/newHolland/newHolland.png';
+import T6130 from '../img/tractores/newHolland/T6130.jpg';
 
 export const apiSimpleTractores = [
     {

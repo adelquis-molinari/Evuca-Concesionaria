@@ -1,14 +1,17 @@
-const initialState = [];
+const initialState = {
+    cards: [],
+};
 
-const reducer = (state = initialState, action) => {
+const cards = (state = initialState, action) => {
     switch(action.type) {
-    case "actions":
+    case "BUSCAR_VEHICULO":
+        console.log(action)
         return{
-            ...state
+            cards: action.payload
         }
     default:
         return
     }
 }
 
-export default reducer;
+export default cards;

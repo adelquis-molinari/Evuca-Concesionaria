@@ -8,8 +8,6 @@
     width: 100%;
     max-height: 400px;
     object-fit: cover;
-    margin-top: 80px;   
-    
 }
 
 .btnIzq{
@@ -66,20 +64,25 @@
 .seccionBuscar{
     display: flex;
     flex-direction: column;
-    margin-left: 20px;
-    margin-right: 20px;
-    /* color: #287094; */
     color: #023246
 }
 
-.seccionBuscar h1{
-    /* color: #023246; */
+.containerBuscar{
+    display: flex;
+    flex-direction: column;
+    margin-left: 15%;
+    margin-right: 15%;
+}
+.seccionBuscar h2{
     color: #287094;
+    margin-left: 40px;
 }
 
 .seccionTipos{
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     color: black;
+    flex-flow: row wrap;
+    
 }
 

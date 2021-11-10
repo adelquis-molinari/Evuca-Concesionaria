@@ -22,11 +22,15 @@ import gol from '../img/autos/volkswagen/gol/gol.png';
 import polo from '../img/autos/volkswagen/polo/polo.png';
 import virtus from '../img/autos/volkswagen/virtus/virtus.png';
 
+import { imgFordMondeo, imgFordBronco, imgFordEcosport, imgFordTerritory  } from '../Data/imgAutos';
+
+
 export const apiSimpleAutos= [
     {
         id: 179760,
         marca: 'Ford',
         modelo: 'Mondeo Híbrido',
+        precio: '$ 11.000.000',
         img: mondeo,
         imgMarca: ford,
         descripcion: 'Ford Mondeo Híbrido 2021'
@@ -34,6 +38,7 @@ export const apiSimpleAutos= [
         id: 255882,
         marca: 'Ford',
         modelo: 'Bronco',
+        precio: '$ 6.500.000',
         img: bronco,
         imgMarca: ford,
         descripcion: 'Ford Bronco 2021'
@@ -41,6 +46,7 @@ export const apiSimpleAutos= [
         id: 467051,
         marca: 'Ford',
         modelo: 'Ecosport',
+        precio: '$ 3.400.000',
         img: ecosport,
         imgMarca: ford,
         descripcion: 'Ford Ecosport 2021'
@@ -48,6 +54,7 @@ export const apiSimpleAutos= [
         id: 894454,
         marca: 'Ford',
         modelo: 'Territory',
+        precio: '$5.400.000',
         img: territory,
         imgMarca: ford,
         descripcion: 'Ford Territory 2021'
@@ -55,6 +62,7 @@ export const apiSimpleAutos= [
         id: 585811,
         marca: 'Fiat',
         modelo: 'Mobi',
+        precio: '$ 1.300.000',
         img: mobi,
         imgMarca: fiat,
         descripcion: 'Fiat Mobi 2021'
@@ -62,6 +70,7 @@ export const apiSimpleAutos= [
         id: 335661,
         marca: 'Fiat',
         modelo: 'Toro',
+        precio: '$ 2.800.000',
         img: toro,
         imgMarca: fiat,
         descripcion: 'Fiat Toro 2021'
@@ -69,6 +78,7 @@ export const apiSimpleAutos= [
         id: 173248,
         marca: 'Fiat',
         modelo: 'Uno Way',
+        precio: '$ 1.200.000',
         img: uno,
         imgMarca: fiat,
         descripcion: 'Fiat Uno 2021'
@@ -76,6 +86,7 @@ export const apiSimpleAutos= [
         id: 892602,
         marca: 'Peugeot',
         modelo: '208',
+        precio: '$ 2.700.000',
         img: p208,
         imgMarca: peugeot,
         descripcion: 'Peugeot 208 2021'
@@ -83,6 +94,7 @@ export const apiSimpleAutos= [
         id: 347439,
         marca: 'Peugeot',
         modelo: '308',
+        precio: '$5.500.000',
         img: p308,
         imgMarca: peugeot,
         descripcion: 'Peugeot 308 2021'
@@ -90,6 +102,7 @@ export const apiSimpleAutos= [
         id: 158095,
         marca: 'Peugeot',
         modelo: '5008',
+        precio: '$ 9.500.000',
         img: p5008,
         imgMarca: peugeot,
         descripcion: 'Peugeot 5008 2021'
@@ -97,6 +110,7 @@ export const apiSimpleAutos= [
         id: 11,
         marca: 'Peugeot',
         modelo: 'Partner Patagonica',
+        precio: '$ 3.800.000',
         img: patagonica,
         imgMarca: peugeot,
         descripcion: 'Peugeot Partner Patagonica 2021'
@@ -104,6 +118,7 @@ export const apiSimpleAutos= [
         id: 704160,
         marca: 'Renault',
         modelo: 'Captur',
+        precio: '$ 3.500.000',
         img: captur,
         imgMarca: renault,
         descripcion: 'Renault Captur 2021'
@@ -111,6 +126,7 @@ export const apiSimpleAutos= [
         id: 496303,
         marca: 'Renault',
         modelo: 'Logan',
+        precio: '$ 3.800.000',
         img: logan,
         imgMarca: renault,
         descripcion: 'Renault Logan 2021'
@@ -118,6 +134,7 @@ export const apiSimpleAutos= [
         id: 496303,
         marca: 'Renault',
         modelo: 'Sandero',
+        precio: '$ 2.700.000',
         img: sandero,
         imgMarca: renault,
         descripcion: 'Renault Sandero 2021'
@@ -125,6 +142,7 @@ export const apiSimpleAutos= [
         id: 247474,
         marca: 'Renault',
         modelo: 'Steway',
+        precio: '$ 2.900.000',
         img: steway,
         imgMarca: renault,
         descripcion: 'Renault Steway 2021'
@@ -132,6 +150,7 @@ export const apiSimpleAutos= [
         id: 398579,
         marca: 'Volkswagen',
         modelo: 'Gol',
+        precio: '$ 1.800.000',
         img: gol,
         imgMarca: volkswagen,
         descripcion: 'Volkswagen Gol 2021'
@@ -139,6 +158,7 @@ export const apiSimpleAutos= [
         id: 892280,
         marca: 'Volkswagen',
         modelo: 'Polo',
+        precio: '$ 3.800.000',
         img: polo,
         imgMarca: volkswagen,
         descripcion: 'Volkswagen Polo 2021'
@@ -146,6 +166,7 @@ export const apiSimpleAutos= [
         id: 919775,
         marca: 'Volkswagen',
         modelo: 'Virtus',
+        precio: '$ 4.600.000',
         img: virtus,
         imgMarca: volkswagen,
         descripcion: 'Volkswagen Virtus 2021'
@@ -156,46 +177,51 @@ export const apiDetalladaAutos= [
         id: 1718423,
         marca: 'Ford',
         modelo: 'Mondeo Híbrido',
+        precio: ' $ 11.000.000',
         img: mondeo,
         imgMarca: ford,
-        imgBanner: "bannerMondeo",
-        imgDescriptivas: 0,
+        imgBanner: imgFordMondeo.banner,
+        imgDescriptivas: [imgFordMondeo.img1, imgFordMondeo.img2, imgFordMondeo.img3, imgFordMondeo.img4],
         Titulo: 'Ford Mondeo Eficiencia y rendimiento',
         descripcion: 'Bajo el capót de un híbrido verán las mismas partes que en un vehículo convencional más una gran diferencia: un motor eléctrico. El motor de combustión interna y el motor eléctrico trabajan en conjunto para propulsar el vehículo.'
     },{
         id: 2558843,
         marca: 'Ford',
         modelo: 'Bronco',
+        precio: '$ 6.500.000',
         img: bronco,
         imgMarca: ford,
-        imgBanner: "bannerBronco",
-        imgDescriptivas: 0,
+        imgBanner: imgFordBronco.banner,
+        imgDescriptivas: [imgFordBronco.img1, imgFordBronco.img2, imgFordBronco.img3, imgFordBronco.img4],
         Titulo: 'El icono de la aventura',
         descripcion: 'La Bronco Sport Wildtrak cuenta con un avanzado sistema de tracción 4WD con control vectorial de torque y bloqueo de diferencial trasero. Además, su Sistema de Gestión de Terrenos (GOAT) tiene hasta 7 modos de manejo.'
     },{
         id: 4670547,
         marca: 'Ford',
         modelo: 'Ecosport',
+        precio: '$ 3.400.000',
         img: ecosport,
         imgMarca: ford,
-        imgBanner: "bannerEcosport",
-        imgDescriptivas: 0,
+        imgBanner: imgFordEcosport.banner,
+        imgDescriptivas: [imgFordEcosport.img1, imgFordEcosport.img2, imgFordEcosport.img3, imgFordEcosport.img4],
         Titulo: 'Creara para transfornar tu imaginación.',
         descripcion: 'La Ecosport conserva los elementos que definen su identidad: transmite confianza, combina refinamiento urbano con espíritu aventurero y revela una alta calidad en su dinámica de manejo.'
     },{
         id: 8944585,
         marca: 'Ford',
         modelo: 'Territory',
+        precio: '$ 5.400.000',
         img: territory,
         imgMarca: ford,
-        imgBanner: "bannerTerritory",
-        imgDescriptivas: 0,
+        imgBanner: imgFordTerritory.banner,
+        imgDescriptivas: [imgFordTerritory.img1, imgFordTerritory.img2, imgFordTerritory.img3, imgFordTerritory.img4],
         Titulo: 'Entrentemos la rutina, enfrentemos el cambio',
         descripcion: 'La Territory incorpora Ford Co-Pilot 360, un avanzado sistema de asistencia a la conducción de vanguardia, que incluye camara 360, alerta de puntos ciego, Sistema antibloqueo de frenos (ABS), distribución electrónica de frenado (EBD) y asistencia electrónica al frenado de emergencia (EBA)​'
     },{
         id: 5858365,
         marca: 'Fiat',
         modelo: 'Mobi',
+        precio: '$1.300.000',
         img: mobi,
         imgMarca: fiat,
         imgBanner: "bannerMobi",
@@ -206,6 +232,7 @@ export const apiDetalladaAutos= [
         id: 3356634,
         marca: 'Fiat',
         modelo: 'Toro',
+        precio: '$2.800.000',
         img: toro,
         imgMarca: fiat,
         imgBanner: "bannerToro",
@@ -216,6 +243,7 @@ export const apiDetalladaAutos= [
         id: 1732428,
         marca: 'Fiat',
         modelo: 'Uno Way',
+        precio: '$1.200.000',
         img: uno,
         imgMarca: fiat,
         imgBanner: "bannerUno",
@@ -226,6 +254,7 @@ export const apiDetalladaAutos= [
         id: 8926023,
         marca: 'Peugeot',
         modelo: '208',
+        precio: '$2.700.000',
         img: p208,
         imgMarca: peugeot,
         imgBanner: "banner208",
@@ -236,6 +265,7 @@ export const apiDetalladaAutos= [
         id: 34743923,
         marca: 'Peugeot',
         modelo: '308',
+        precio: '$5.500.000',
         img: p308,
         imgMarca: peugeot,
         imgBanner: "banner308",
@@ -246,6 +276,7 @@ export const apiDetalladaAutos= [
         id: 15809567,
         marca: 'Peugeot',
         modelo: 'SUV 5008',
+        precio: '$9.500.000',
         img: p5008,
         imgMarca: peugeot,
         imgBanner: "banner5008",
@@ -256,6 +287,7 @@ export const apiDetalladaAutos= [
         id: 2347653,
         marca: 'Peugeot',
         modelo: 'Partner Patagonica',
+        precio: '$3.800.000',
         img: patagonica,
         imgMarca: peugeot,
         imgBanner: "bannerPatagonica",
@@ -266,13 +298,18 @@ export const apiDetalladaAutos= [
         id: 7046034,
         marca: 'Renault',
         modelo: 'Captur',
+        precio: '$3.500.000',
         img: captur,
         imgMarca: renault,
-        descripcion: 'Renault Captur 2021'
+        imgBanner: "bannerCaptur",
+        imgDescriptivas: 0,
+        Titulo: 'Renault Captur',
+        descripcion: 'Inspirado en el concept car del mismo nombre, Renault CAPTUR representa un nuevo lenguaje en términos de diseño: moderno y sofisticado.'
     },{
         id: 4963043,
         marca: 'Renault',
         modelo: 'Logan',
+        precio: '$3.800.000',
         img: logan,
         imgMarca: renault,
         imgBanner: "bannerLogan",
@@ -283,6 +320,7 @@ export const apiDetalladaAutos= [
         id: 4963355,
         marca: 'Renault',
         modelo: 'Sandero',
+        precio: '$2.700.000',
         img: sandero,
         imgMarca: renault,
         imgBanner: "bannerSandero",
@@ -293,6 +331,7 @@ export const apiDetalladaAutos= [
         id: 2447456,
         marca: 'Renault',
         modelo: 'Steway',
+        precio: '$2.900.000',
         img: steway,
         imgMarca: renault,
         imgBanner: "bannerSteway",
@@ -303,6 +342,7 @@ export const apiDetalladaAutos= [
         id: 3957998,
         marca: 'Volkswagen',
         modelo: 'Gol',
+        precio: '$1.800.000',
         img: gol,
         imgMarca: volkswagen,
         imgBanner: "bannerGol",
@@ -313,6 +353,7 @@ export const apiDetalladaAutos= [
         id: 8925180,
         marca: 'Volkswagen',
         modelo: 'Polo',
+        precio: '$3.800.000',
         img: polo,
         imgMarca: volkswagen,
         imgBanner: "bannerPolo",
@@ -323,6 +364,7 @@ export const apiDetalladaAutos= [
         id: 9197791,
         marca: 'Volkswagen',
         modelo: 'Virtus',
+        precio: '$4.600.000',
         img: virtus,
         imgMarca: volkswagen,
         imgBanner: "bannerVirtus",

@@ -38,6 +38,7 @@ export const Dropdown = styled.div`
     padding: 0.5rem 1rem;
     transform: translateY(${props => props.transf}%);
     transition: transform 0.3s ease-in-out;
+    z-index: 10;
     @media (max-width: 768px) {
         margin-right: 0px;
     }

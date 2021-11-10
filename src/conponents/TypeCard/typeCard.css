@@ -1,0 +1,29 @@
+.typeImg{
+    width:75%;
+    min-height: 50%;
+    margin-top: 20px;
+}
+
+.containerType{
+    border: 1px solid rgba(0, 0, 0, 0.171);
+    box-shadow: -1px 1px 3px 0px grey;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width:25vh;
+    max-width:200px;
+    height:25vh;
+    max-height:200px;
+    position:relative;
+    color:#287094;
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-decoration: none;
+}
+
+.typeHover :hover{
+    /* border: 1px solid grey; */
+    cursor: pointer;
+}
