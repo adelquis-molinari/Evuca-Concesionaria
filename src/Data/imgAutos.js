@@ -82,7 +82,7 @@ export const imgPeugeot5008 = {
     img4: require('../img/autos/peugeot/5008/pc4.jpg').default,
 }
 
-export const imgPeugoetPatagonica = {
+export const imgPeugeotPatagonica = {
     banner: require('../img/autos/peugeot/patagonica/ppb.jpg').default,
     img1: require('../img/autos/peugeot/patagonica/pp1.jpg').default,
     img2: require('../img/autos/peugeot/patagonica/pp2.jpg').default,

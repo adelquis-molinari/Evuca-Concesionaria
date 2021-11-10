@@ -23,6 +23,10 @@ import polo from '../img/autos/volkswagen/polo/polo.png';
 import virtus from '../img/autos/volkswagen/virtus/virtus.png';
 
 import { imgFordMondeo, imgFordBronco, imgFordEcosport, imgFordTerritory  } from '../Data/imgAutos';
+import { imgFiatMobi, imgFiatToro, imgFiatUno } from '../Data/imgAutos';
+import { imgPeugeot208, imgPeugeot308, imgPeugeot5008, imgPeugeotPatagonica } from '../Data/imgAutos';
+import { imgRenaultCaptur, imgRenaultLogan, imgRenaultSandero, imgRenaultSteway } from '../Data/imgAutos';
+import { imgVolkswagenGol, imgVolkswagenPolo, imgVolkswagenVirtus } from '../Data/imgAutos';
 
 
 export const apiSimpleAutos= [
@@ -224,8 +228,8 @@ export const apiDetalladaAutos= [
         precio: '$1.300.000',
         img: mobi,
         imgMarca: fiat,
-        imgBanner: "bannerMobi",
-        imgDescriptivas: 0,
+        imgBanner: imgFiatMobi.banner,
+        imgDescriptivas: [imgFiatMobi.img1, imgFiatMobi.img2, imgFiatMobi.img3, imgFiatMobi.img4],
         Titulo: 'Nuevo Fiat MOBI Like',
         descripcion: 'El FIAT Mobi mantiene su esencia pero ahora renueva su parrilla delantera y algunos otros detalles en línea con el resto de los modelos de FIAT. Este city car también agrega novedades en el equipamiento como la central multimedia de 7’’ con conectividad Android Auto & Carplay.'
     },{
@@ -235,8 +239,8 @@ export const apiDetalladaAutos= [
         precio: '$2.800.000',
         img: toro,
         imgMarca: fiat,
-        imgBanner: "bannerToro",
-        imgDescriptivas: 0,
+        imgBanner: imgFiatToro.banner,
+        imgDescriptivas: [imgFiatToro.img1, imgFiatToro.img2, imgFiatToro.img3, imgFiatToro.img4],
         Titulo: 'Tienes todo lo que necesitás para una nueva aventura.',
         descripcion: 'De una, te va a fascinar el nuevo capot. Después, te vas a enamorar de la nueva parrilla, con el logo de Fiat y el detalle de la bandera italiana. Un diseño musculoso, que equilibra belleza y fuerza. El frente de la nueva Fiat Toro es increible.'
     },{
@@ -246,8 +250,8 @@ export const apiDetalladaAutos= [
         precio: '$1.200.000',
         img: uno,
         imgMarca: fiat,
-        imgBanner: "bannerUno",
-        imgDescriptivas: 0,
+        imgBanner: imgFiatUno.banner,
+        imgDescriptivas: [imgFiatUno.img1, imgFiatUno.img2, imgFiatUno.img3, imgFiatUno.img4],
         Titulo: 'Varios autos en UNO solo.',
         descripcion: 'El Fiat Uno llama la atención. Además de su renovado diseño frontal –más moderno y lleno de personalidad–, el Uno cuenta con nuevos paragolpes y parrilla, que resaltan los contornos del modelo.'
     },{
@@ -257,8 +261,8 @@ export const apiDetalladaAutos= [
         precio: '$2.700.000',
         img: p208,
         imgMarca: peugeot,
-        imgBanner: "banner208",
-        imgDescriptivas: 0,
+        imgBanner: imgPeugeot208.banner,
+        imgDescriptivas: [imgPeugeot208.img1, imgPeugeot208.img2, imgPeugeot208.img3, imgPeugeot208.img4],
         Titulo: 'Unboring the future',
         descripcion: 'El diseño del 208 adopta el nuevo lenguaje de diseño de la marca Peugeot, con la nueva firma lumínica que se asemeja a los colmillos del León. En el frente, aparece el nombre del modelo para un toque distintivo y moderno. En el lateral, el juego de sombras le da un perfil dinámico. Y en la parte posterior, las luces traseras con forma de garra completan un diseño armonioso.'
     },{
@@ -268,8 +272,8 @@ export const apiDetalladaAutos= [
         precio: '$5.500.000',
         img: p308,
         imgMarca: peugeot,
-        imgBanner: "banner308",
-        imgDescriptivas: 0,
+        imgBanner: imgPeugeot308.banner,
+        imgDescriptivas: [imgPeugeot308.img1, imgPeugeot308.img2, imgPeugeot308.img3, imgPeugeot308.img4],
         Titulo: 'Estilo y Elegancia',
         descripcion: 'De nuevas líneas en su diseño exterior, el Peugeot 308 integra los últimos códigos estilísticos de la marca. A simple vista, un estilo moderno con detalles tecnológicos lumínicos impactantes, de frente felino, que conjuga lo dinámico y lo exclusivo.'
     },{
@@ -279,8 +283,8 @@ export const apiDetalladaAutos= [
         precio: '$9.500.000',
         img: p5008,
         imgMarca: peugeot,
-        imgBanner: "banner5008",
-        imgDescriptivas: 0,
+        imgBanner: imgPeugeot5008.banner,
+        imgDescriptivas: [imgPeugeot5008.img1, imgPeugeot5008.img2, imgPeugeot5008.img3, imgPeugeot5008.img4],
         Titulo: 'SUV Peugeot 5008 ',
         descripcion: 'Dejate seducir por el nuevo SUV PEUGEOT 5008. Con un nuevo frente, este SUV tiene líneas elegantes y modernas que conjugan en un diseño sofisticado. Un vehículo pensado para disfrutar en familia gracias a sus 7 plazas.'
     },{
@@ -290,8 +294,8 @@ export const apiDetalladaAutos= [
         precio: '$3.800.000',
         img: patagonica,
         imgMarca: peugeot,
-        imgBanner: "bannerPatagonica",
-        imgDescriptivas: 0,
+        imgBanner: imgPeugeotPatagonica.banner,
+        imgDescriptivas: [imgPeugeotPatagonica.img1, imgPeugeotPatagonica.img2, imgPeugeotPatagonica.img3, imgPeugeotPatagonica.img4],
         Titulo: 'La Compañera para tu familia',
         descripcion: 'Con su aspecto que inspira robustez y dinamismo, Partner Patagonica afirma su pertenencia al universo de los monovolumenes. Sus faros de vidrio liso y las protecciones reforzadas imponen un carácter robusto de confianza y solidez. '
     },{
@@ -301,8 +305,8 @@ export const apiDetalladaAutos= [
         precio: '$3.500.000',
         img: captur,
         imgMarca: renault,
-        imgBanner: "bannerCaptur",
-        imgDescriptivas: 0,
+        imgBanner: imgRenaultCaptur.banner,
+        imgDescriptivas: [imgRenaultCaptur.img1, imgRenaultCaptur.img2, imgRenaultCaptur.img3, imgRenaultCaptur.img4],
         Titulo: 'Renault Captur',
         descripcion: 'Inspirado en el concept car del mismo nombre, Renault CAPTUR representa un nuevo lenguaje en términos de diseño: moderno y sofisticado.'
     },{
@@ -312,8 +316,8 @@ export const apiDetalladaAutos= [
         precio: '$3.800.000',
         img: logan,
         imgMarca: renault,
-        imgBanner: "bannerLogan",
-        imgDescriptivas: 0,
+        imgBanner: imgRenaultLogan.banner,
+        imgDescriptivas: [imgRenaultLogan.img1, imgRenaultLogan.img2, imgRenaultLogan.img3, imgRenaultLogan.img4],
         Titulo: 'Un sedán para el momento en el que estás.',
         descripcion: 'El diseño renovado, el gran espacio interior junto con un baúl suficientemente grande para todo lo que querés llevar, son algunas de las características que hacen al Renault LOGAN, el vehículo que te merecés.'
     },{
@@ -323,8 +327,8 @@ export const apiDetalladaAutos= [
         precio: '$2.700.000',
         img: sandero,
         imgMarca: renault,
-        imgBanner: "bannerSandero",
-        imgDescriptivas: 0,
+        imgBanner: imgRenaultSandero.banner,
+        imgDescriptivas: [imgRenaultSandero.img1, imgRenaultSandero.img2, imgRenaultSandero.img3, imgRenaultSandero.img4],
         Titulo: 'Sos urbano,sos alguien con caractér.',
         descripcion: 'Con un diseño completamente renovado, su nueva identidad lumínica, llantas diamantadas 16” y su caja CVT, el Renault SANDERO es el auto perfecto que se adapta a todo lo que sos.'
     },{
@@ -334,8 +338,8 @@ export const apiDetalladaAutos= [
         precio: '$2.900.000',
         img: steway,
         imgMarca: renault,
-        imgBanner: "bannerSteway",
-        imgDescriptivas: 0,
+        imgBanner: imgRenaultSteway.banner,
+        imgDescriptivas: [imgRenaultSteway.img1, imgRenaultSteway.img2, imgRenaultSteway.img3, imgRenaultSteway.img4],
         Titulo: 'Un vehículo con actitud para enfrentar cualquier camino.',
         descripcion: 'Su gran despeje del suelo y sus nuevos faros C-Shape le otorgan una actitud intrépida que junto a las luces LED traseras, trazan una línea que resalta el movimiento. Un auto diseñado a la altura de lo que te propongas .'
     },{
@@ -345,8 +349,8 @@ export const apiDetalladaAutos= [
         precio: '$1.800.000',
         img: gol,
         imgMarca: volkswagen,
-        imgBanner: "bannerGol",
-        imgDescriptivas: 0,
+        imgBanner: imgVolkswagenGol.banner,
+        imgDescriptivas: [imgVolkswagenGol.img1, imgVolkswagenGol.img2, imgVolkswagenGol.img3, imgVolkswagenGol.img4],
         Titulo: 'El auto que te mereces',
         descripcion: 'El Gol incorpora en su versión Trendline la caja automática Tiptronic de 6 velocidades para que disfrutes de tus viajes como nunca antes. Esta nueva característica se combina con el reconocido motor 1.6 l de 16 V y 110 CV.'
     },{
@@ -356,8 +360,8 @@ export const apiDetalladaAutos= [
         precio: '$3.800.000',
         img: polo,
         imgMarca: volkswagen,
-        imgBanner: "bannerPolo",
-        imgDescriptivas: 0,
+        imgBanner: imgVolkswagenPolo.banner,
+        imgDescriptivas: [imgVolkswagenPolo.img1, imgVolkswagenPolo.img2, imgVolkswagenPolo.img3, imgVolkswagenPolo.img4],
         Titulo: 'Vas a querer llamarlo tu nuevo auto',
         descripcion: 'El nuevo Polo GTS se convierte en una referencia en deportividad dentro de su segmento gracias a su diseño imponente y exclusivo. Los detalles de calidad en rojo y negro brillante, los faros full LED y su frontal aguerrida nos muestran toda la deportividad en una sola mirada.'
     },{
@@ -367,8 +371,8 @@ export const apiDetalladaAutos= [
         precio: '$4.600.000',
         img: virtus,
         imgMarca: volkswagen,
-        imgBanner: "bannerVirtus",
-        imgDescriptivas: 0,
+        imgBanner: imgVolkswagenVirtus.banner,
+        imgDescriptivas: [imgVolkswagenVirtus.img1, imgVolkswagenVirtus.img2, imgVolkswagenVirtus.img3, imgVolkswagenVirtus.img4],
         Titulo: 'La potencia que buscás, con la comodidad que necesitás.',
         descripcion: 'El Nuevo Virtus GTS se convierte en una nueva referencia en deportividad marcando diferencia con su gran espacio interno. Su diseño imponente exclusivo trae detalles de altísima calidad en color rojo y negro sumados a las líneas cromadas en su exterior. Su frontal aguerrido nos muestra toda la deportividad en una sola mirada.'
     }
