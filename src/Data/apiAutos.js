@@ -37,7 +37,8 @@ export const apiSimpleAutos= [
         precio: '$ 11.000.000',
         img: mondeo,
         imgMarca: ford,
-        descripcion: 'Ford Mondeo Híbrido 2021'
+        descripcion: 'Ford Mondeo Híbrido 2021',
+        tipo: 'auto'
     },{
         id: 255882,
         marca: 'Ford',
@@ -45,7 +46,8 @@ export const apiSimpleAutos= [
         precio: '$ 6.500.000',
         img: bronco,
         imgMarca: ford,
-        descripcion: 'Ford Bronco 2021'
+        descripcion: 'Ford Bronco 2021',
+        tipo: 'auto'
     },{
         id: 467051,
         marca: 'Ford',
@@ -53,7 +55,8 @@ export const apiSimpleAutos= [
         precio: '$ 3.400.000',
         img: ecosport,
         imgMarca: ford,
-        descripcion: 'Ford Ecosport 2021'
+        descripcion: 'Ford Ecosport 2021',
+        tipo: 'auto'
     },{
         id: 894454,
         marca: 'Ford',
@@ -61,7 +64,8 @@ export const apiSimpleAutos= [
         precio: '$5.400.000',
         img: territory,
         imgMarca: ford,
-        descripcion: 'Ford Territory 2021'
+        descripcion: 'Ford Territory 2021',
+        tipo: 'auto'
     },{
         id: 585811,
         marca: 'Fiat',
@@ -69,7 +73,8 @@ export const apiSimpleAutos= [
         precio: '$ 1.300.000',
         img: mobi,
         imgMarca: fiat,
-        descripcion: 'Fiat Mobi 2021'
+        descripcion: 'Fiat Mobi 2021',
+        tipo: 'auto'
     },{
         id: 335661,
         marca: 'Fiat',
@@ -77,7 +82,8 @@ export const apiSimpleAutos= [
         precio: '$ 2.800.000',
         img: toro,
         imgMarca: fiat,
-        descripcion: 'Fiat Toro 2021'
+        descripcion: 'Fiat Toro 2021',
+        tipo: 'auto'
     },{
         id: 173248,
         marca: 'Fiat',
@@ -85,7 +91,8 @@ export const apiSimpleAutos= [
         precio: '$ 1.200.000',
         img: uno,
         imgMarca: fiat,
-        descripcion: 'Fiat Uno 2021'
+        descripcion: 'Fiat Uno 2021',
+        tipo: 'auto'
     },{
         id: 892602,
         marca: 'Peugeot',
@@ -93,7 +100,8 @@ export const apiSimpleAutos= [
         precio: '$ 2.700.000',
         img: p208,
         imgMarca: peugeot,
-        descripcion: 'Peugeot 208 2021'
+        descripcion: 'Peugeot 208 2021',
+        tipo: 'auto'
     },{
         id: 347439,
         marca: 'Peugeot',
@@ -101,7 +109,8 @@ export const apiSimpleAutos= [
         precio: '$5.500.000',
         img: p308,
         imgMarca: peugeot,
-        descripcion: 'Peugeot 308 2021'
+        descripcion: 'Peugeot 308 2021',
+        tipo: 'auto'
     },{
         id: 158095,
         marca: 'Peugeot',
@@ -109,7 +118,8 @@ export const apiSimpleAutos= [
         precio: '$ 9.500.000',
         img: p5008,
         imgMarca: peugeot,
-        descripcion: 'Peugeot 5008 2021'
+        descripcion: 'Peugeot 5008 2021',
+        tipo: 'auto'
     },{
         id: 11,
         marca: 'Peugeot',
@@ -117,7 +127,8 @@ export const apiSimpleAutos= [
         precio: '$ 3.800.000',
         img: patagonica,
         imgMarca: peugeot,
-        descripcion: 'Peugeot Partner Patagonica 2021'
+        descripcion: 'Peugeot Partner Patagonica 2021',
+        tipo: 'auto'
     },{
         id: 704160,
         marca: 'Renault',
@@ -125,7 +136,8 @@ export const apiSimpleAutos= [
         precio: '$ 3.500.000',
         img: captur,
         imgMarca: renault,
-        descripcion: 'Renault Captur 2021'
+        descripcion: 'Renault Captur 2021',
+        tipo: 'auto'
     },{
         id: 496303,
         marca: 'Renault',
@@ -133,7 +145,8 @@ export const apiSimpleAutos= [
         precio: '$ 3.800.000',
         img: logan,
         imgMarca: renault,
-        descripcion: 'Renault Logan 2021'
+        descripcion: 'Renault Logan 2021',
+        tipo: 'auto'
     },{
         id: 496303,
         marca: 'Renault',
@@ -141,7 +154,8 @@ export const apiSimpleAutos= [
         precio: '$ 2.700.000',
         img: sandero,
         imgMarca: renault,
-        descripcion: 'Renault Sandero 2021'
+        descripcion: 'Renault Sandero 2021',
+        tipo: 'auto'
     },{
         id: 247474,
         marca: 'Renault',
@@ -149,7 +163,8 @@ export const apiSimpleAutos= [
         precio: '$ 2.900.000',
         img: steway,
         imgMarca: renault,
-        descripcion: 'Renault Steway 2021'
+        descripcion: 'Renault Steway 2021',
+        tipo: 'auto'
     },{
         id: 398579,
         marca: 'Volkswagen',
@@ -157,7 +172,8 @@ export const apiSimpleAutos= [
         precio: '$ 1.800.000',
         img: gol,
         imgMarca: volkswagen,
-        descripcion: 'Volkswagen Gol 2021'
+        descripcion: 'Volkswagen Gol 2021',
+        tipo: 'auto'
     },{
         id: 892280,
         marca: 'Volkswagen',
@@ -165,7 +181,8 @@ export const apiSimpleAutos= [
         precio: '$ 3.800.000',
         img: polo,
         imgMarca: volkswagen,
-        descripcion: 'Volkswagen Polo 2021'
+        descripcion: 'Volkswagen Polo 2021',
+        tipo: 'auto'
     },{
         id: 919775,
         marca: 'Volkswagen',
@@ -173,7 +190,8 @@ export const apiSimpleAutos= [
         precio: '$ 4.600.000',
         img: virtus,
         imgMarca: volkswagen,
-        descripcion: 'Volkswagen Virtus 2021'
+        descripcion: 'Volkswagen Virtus 2021',
+        tipo: 'auto'
     }
 ]
 export const apiDetalladaAutos= [
@@ -187,7 +205,8 @@ export const apiDetalladaAutos= [
         imgBanner: imgFordMondeo.banner,
         imgDescriptivas: [imgFordMondeo.img1, imgFordMondeo.img2, imgFordMondeo.img3, imgFordMondeo.img4],
         Titulo: 'Ford Mondeo Eficiencia y rendimiento',
-        descripcion: 'Bajo el capót de un híbrido verán las mismas partes que en un vehículo convencional más una gran diferencia: un motor eléctrico. El motor de combustión interna y el motor eléctrico trabajan en conjunto para propulsar el vehículo.'
+        descripcion: 'Bajo el capót de un híbrido verán las mismas partes que en un vehículo convencional más una gran diferencia: un motor eléctrico. El motor de combustión interna y el motor eléctrico trabajan en conjunto para propulsar el vehículo.',
+        tipo: 'auto'
     },{
         id: 2558843,
         marca: 'Ford',
@@ -198,7 +217,8 @@ export const apiDetalladaAutos= [
         imgBanner: imgFordBronco.banner,
         imgDescriptivas: [imgFordBronco.img1, imgFordBronco.img2, imgFordBronco.img3, imgFordBronco.img4],
         Titulo: 'El icono de la aventura',
-        descripcion: 'La Bronco Sport Wildtrak cuenta con un avanzado sistema de tracción 4WD con control vectorial de torque y bloqueo de diferencial trasero. Además, su Sistema de Gestión de Terrenos (GOAT) tiene hasta 7 modos de manejo.'
+        descripcion: 'La Bronco Sport Wildtrak cuenta con un avanzado sistema de tracción 4WD con control vectorial de torque y bloqueo de diferencial trasero. Además, su Sistema de Gestión de Terrenos (GOAT) tiene hasta 7 modos de manejo.',
+        tipo: 'auto'
     },{
         id: 4670547,
         marca: 'Ford',
@@ -209,7 +229,8 @@ export const apiDetalladaAutos= [
         imgBanner: imgFordEcosport.banner,
         imgDescriptivas: [imgFordEcosport.img1, imgFordEcosport.img2, imgFordEcosport.img3, imgFordEcosport.img4],
         Titulo: 'Creara para transfornar tu imaginación.',
-        descripcion: 'La Ecosport conserva los elementos que definen su identidad: transmite confianza, combina refinamiento urbano con espíritu aventurero y revela una alta calidad en su dinámica de manejo.'
+        descripcion: 'La Ecosport conserva los elementos que definen su identidad: transmite confianza, combina refinamiento urbano con espíritu aventurero y revela una alta calidad en su dinámica de manejo.',
+        tipo: 'auto'
     },{
         id: 8944585,
         marca: 'Ford',
@@ -220,7 +241,8 @@ export const apiDetalladaAutos= [
         imgBanner: imgFordTerritory.banner,
         imgDescriptivas: [imgFordTerritory.img1, imgFordTerritory.img2, imgFordTerritory.img3, imgFordTerritory.img4],
         Titulo: 'Entrentemos la rutina, enfrentemos el cambio',
-        descripcion: 'La Territory incorpora Ford Co-Pilot 360, un avanzado sistema de asistencia a la conducción de vanguardia, que incluye camara 360, alerta de puntos ciego, Sistema antibloqueo de frenos (ABS), distribución electrónica de frenado (EBD) y asistencia electrónica al frenado de emergencia (EBA)​'
+        descripcion: 'La Territory incorpora Ford Co-Pilot 360, un avanzado sistema de asistencia a la conducción de vanguardia, que incluye camara 360, alerta de puntos ciego, Sistema antibloqueo de frenos (ABS), distribución electrónica de frenado (EBD) y asistencia electrónica al frenado de emergencia (EBA)​',
+        tipo: 'auto'
     },{
         id: 5858365,
         marca: 'Fiat',
@@ -231,7 +253,8 @@ export const apiDetalladaAutos= [
         imgBanner: imgFiatMobi.banner,
         imgDescriptivas: [imgFiatMobi.img1, imgFiatMobi.img2, imgFiatMobi.img3, imgFiatMobi.img4],
         Titulo: 'Nuevo Fiat MOBI Like',
-        descripcion: 'El FIAT Mobi mantiene su esencia pero ahora renueva su parrilla delantera y algunos otros detalles en línea con el resto de los modelos de FIAT. Este city car también agrega novedades en el equipamiento como la central multimedia de 7’’ con conectividad Android Auto & Carplay.'
+        descripcion: 'El FIAT Mobi mantiene su esencia pero ahora renueva su parrilla delantera y algunos otros detalles en línea con el resto de los modelos de FIAT. Este city car también agrega novedades en el equipamiento como la central multimedia de 7’’ con conectividad Android Auto & Carplay.',
+        tipo: 'auto'
     },{
         id: 3356634,
         marca: 'Fiat',
@@ -242,7 +265,8 @@ export const apiDetalladaAutos= [
         imgBanner: imgFiatToro.banner,
         imgDescriptivas: [imgFiatToro.img1, imgFiatToro.img2, imgFiatToro.img3, imgFiatToro.img4],
         Titulo: 'Tienes todo lo que necesitás para una nueva aventura.',
-        descripcion: 'De una, te va a fascinar el nuevo capot. Después, te vas a enamorar de la nueva parrilla, con el logo de Fiat y el detalle de la bandera italiana. Un diseño musculoso, que equilibra belleza y fuerza. El frente de la nueva Fiat Toro es increible.'
+        descripcion: 'De una, te va a fascinar el nuevo capot. Después, te vas a enamorar de la nueva parrilla, con el logo de Fiat y el detalle de la bandera italiana. Un diseño musculoso, que equilibra belleza y fuerza. El frente de la nueva Fiat Toro es increible.',
+        tipo: 'auto'
     },{
         id: 1732428,
         marca: 'Fiat',
@@ -253,7 +277,8 @@ export const apiDetalladaAutos= [
         imgBanner: imgFiatUno.banner,
         imgDescriptivas: [imgFiatUno.img1, imgFiatUno.img2, imgFiatUno.img3, imgFiatUno.img4],
         Titulo: 'Varios autos en UNO solo.',
-        descripcion: 'El Fiat Uno llama la atención. Además de su renovado diseño frontal –más moderno y lleno de personalidad–, el Uno cuenta con nuevos paragolpes y parrilla, que resaltan los contornos del modelo.'
+        descripcion: 'El Fiat Uno llama la atención. Además de su renovado diseño frontal –más moderno y lleno de personalidad–, el Uno cuenta con nuevos paragolpes y parrilla, que resaltan los contornos del modelo.',
+        tipo: 'auto'
     },{
         id: 8926023,
         marca: 'Peugeot',
@@ -264,7 +289,8 @@ export const apiDetalladaAutos= [
         imgBanner: imgPeugeot208.banner,
         imgDescriptivas: [imgPeugeot208.img1, imgPeugeot208.img2, imgPeugeot208.img3, imgPeugeot208.img4],
         Titulo: 'Unboring the future',
-        descripcion: 'El diseño del 208 adopta el nuevo lenguaje de diseño de la marca Peugeot, con la nueva firma lumínica que se asemeja a los colmillos del León. En el frente, aparece el nombre del modelo para un toque distintivo y moderno. En el lateral, el juego de sombras le da un perfil dinámico. Y en la parte posterior, las luces traseras con forma de garra completan un diseño armonioso.'
+        descripcion: 'El diseño del 208 adopta el nuevo lenguaje de diseño de la marca Peugeot, con la nueva firma lumínica que se asemeja a los colmillos del León. En el frente, aparece el nombre del modelo para un toque distintivo y moderno. En el lateral, el juego de sombras le da un perfil dinámico. Y en la parte posterior, las luces traseras con forma de garra completan un diseño armonioso.',
+        tipo: 'auto'
     },{
         id: 34743923,
         marca: 'Peugeot',
@@ -275,7 +301,8 @@ export const apiDetalladaAutos= [
         imgBanner: imgPeugeot308.banner,
         imgDescriptivas: [imgPeugeot308.img1, imgPeugeot308.img2, imgPeugeot308.img3, imgPeugeot308.img4],
         Titulo: 'Estilo y Elegancia',
-        descripcion: 'De nuevas líneas en su diseño exterior, el Peugeot 308 integra los últimos códigos estilísticos de la marca. A simple vista, un estilo moderno con detalles tecnológicos lumínicos impactantes, de frente felino, que conjuga lo dinámico y lo exclusivo.'
+        descripcion: 'De nuevas líneas en su diseño exterior, el Peugeot 308 integra los últimos códigos estilísticos de la marca. A simple vista, un estilo moderno con detalles tecnológicos lumínicos impactantes, de frente felino, que conjuga lo dinámico y lo exclusivo.',
+        tipo: 'auto'
     },{
         id: 15809567,
         marca: 'Peugeot',
@@ -286,7 +313,8 @@ export const apiDetalladaAutos= [
         imgBanner: imgPeugeot5008.banner,
         imgDescriptivas: [imgPeugeot5008.img1, imgPeugeot5008.img2, imgPeugeot5008.img3, imgPeugeot5008.img4],
         Titulo: 'SUV Peugeot 5008 ',
-        descripcion: 'Dejate seducir por el nuevo SUV PEUGEOT 5008. Con un nuevo frente, este SUV tiene líneas elegantes y modernas que conjugan en un diseño sofisticado. Un vehículo pensado para disfrutar en familia gracias a sus 7 plazas.'
+        descripcion: 'Dejate seducir por el nuevo SUV PEUGEOT 5008. Con un nuevo frente, este SUV tiene líneas elegantes y modernas que conjugan en un diseño sofisticado. Un vehículo pensado para disfrutar en familia gracias a sus 7 plazas.',
+        tipo: 'auto'
     },{
         id: 2347653,
         marca: 'Peugeot',
@@ -297,7 +325,8 @@ export const apiDetalladaAutos= [
         imgBanner: imgPeugeotPatagonica.banner,
         imgDescriptivas: [imgPeugeotPatagonica.img1, imgPeugeotPatagonica.img2, imgPeugeotPatagonica.img3, imgPeugeotPatagonica.img4],
         Titulo: 'La Compañera para tu familia',
-        descripcion: 'Con su aspecto que inspira robustez y dinamismo, Partner Patagonica afirma su pertenencia al universo de los monovolumenes. Sus faros de vidrio liso y las protecciones reforzadas imponen un carácter robusto de confianza y solidez. '
+        descripcion: 'Con su aspecto que inspira robustez y dinamismo, Partner Patagonica afirma su pertenencia al universo de los monovolumenes. Sus faros de vidrio liso y las protecciones reforzadas imponen un carácter robusto de confianza y solidez. ',
+        tipo: 'auto'
     },{
         id: 7046034,
         marca: 'Renault',
@@ -308,7 +337,8 @@ export const apiDetalladaAutos= [
         imgBanner: imgRenaultCaptur.banner,
         imgDescriptivas: [imgRenaultCaptur.img1, imgRenaultCaptur.img2, imgRenaultCaptur.img3, imgRenaultCaptur.img4],
         Titulo: 'Renault Captur',
-        descripcion: 'Inspirado en el concept car del mismo nombre, Renault CAPTUR representa un nuevo lenguaje en términos de diseño: moderno y sofisticado.'
+        descripcion: 'Inspirado en el concept car del mismo nombre, Renault CAPTUR representa un nuevo lenguaje en términos de diseño: moderno y sofisticado.',
+        tipo: 'auto'
     },{
         id: 4963043,
         marca: 'Renault',
@@ -319,7 +349,8 @@ export const apiDetalladaAutos= [
         imgBanner: imgRenaultLogan.banner,
         imgDescriptivas: [imgRenaultLogan.img1, imgRenaultLogan.img2, imgRenaultLogan.img3, imgRenaultLogan.img4],
         Titulo: 'Un sedán para el momento en el que estás.',
-        descripcion: 'El diseño renovado, el gran espacio interior junto con un baúl suficientemente grande para todo lo que querés llevar, son algunas de las características que hacen al Renault LOGAN, el vehículo que te merecés.'
+        descripcion: 'El diseño renovado, el gran espacio interior junto con un baúl suficientemente grande para todo lo que querés llevar, son algunas de las características que hacen al Renault LOGAN, el vehículo que te merecés.',
+        tipo: 'auto'
     },{
         id: 4963355,
         marca: 'Renault',
@@ -330,7 +361,8 @@ export const apiDetalladaAutos= [
         imgBanner: imgRenaultSandero.banner,
         imgDescriptivas: [imgRenaultSandero.img1, imgRenaultSandero.img2, imgRenaultSandero.img3, imgRenaultSandero.img4],
         Titulo: 'Sos urbano,sos alguien con caractér.',
-        descripcion: 'Con un diseño completamente renovado, su nueva identidad lumínica, llantas diamantadas 16” y su caja CVT, el Renault SANDERO es el auto perfecto que se adapta a todo lo que sos.'
+        descripcion: 'Con un diseño completamente renovado, su nueva identidad lumínica, llantas diamantadas 16” y su caja CVT, el Renault SANDERO es el auto perfecto que se adapta a todo lo que sos.',
+        tipo: 'auto'
     },{
         id: 2447456,
         marca: 'Renault',
@@ -341,7 +373,8 @@ export const apiDetalladaAutos= [
         imgBanner: imgRenaultSteway.banner,
         imgDescriptivas: [imgRenaultSteway.img1, imgRenaultSteway.img2, imgRenaultSteway.img3, imgRenaultSteway.img4],
         Titulo: 'Un vehículo con actitud para enfrentar cualquier camino.',
-        descripcion: 'Su gran despeje del suelo y sus nuevos faros C-Shape le otorgan una actitud intrépida que junto a las luces LED traseras, trazan una línea que resalta el movimiento. Un auto diseñado a la altura de lo que te propongas .'
+        descripcion: 'Su gran despeje del suelo y sus nuevos faros C-Shape le otorgan una actitud intrépida que junto a las luces LED traseras, trazan una línea que resalta el movimiento. Un auto diseñado a la altura de lo que te propongas .',
+        tipo: 'auto'
     },{
         id: 3957998,
         marca: 'Volkswagen',
@@ -352,7 +385,8 @@ export const apiDetalladaAutos= [
         imgBanner: imgVolkswagenGol.banner,
         imgDescriptivas: [imgVolkswagenGol.img1, imgVolkswagenGol.img2, imgVolkswagenGol.img3, imgVolkswagenGol.img4],
         Titulo: 'El auto que te mereces',
-        descripcion: 'El Gol incorpora en su versión Trendline la caja automática Tiptronic de 6 velocidades para que disfrutes de tus viajes como nunca antes. Esta nueva característica se combina con el reconocido motor 1.6 l de 16 V y 110 CV.'
+        descripcion: 'El Gol incorpora en su versión Trendline la caja automática Tiptronic de 6 velocidades para que disfrutes de tus viajes como nunca antes. Esta nueva característica se combina con el reconocido motor 1.6 l de 16 V y 110 CV.',
+        tipo: 'auto'
     },{
         id: 8925180,
         marca: 'Volkswagen',
@@ -363,7 +397,8 @@ export const apiDetalladaAutos= [
         imgBanner: imgVolkswagenPolo.banner,
         imgDescriptivas: [imgVolkswagenPolo.img1, imgVolkswagenPolo.img2, imgVolkswagenPolo.img3, imgVolkswagenPolo.img4],
         Titulo: 'Vas a querer llamarlo tu nuevo auto',
-        descripcion: 'El nuevo Polo GTS se convierte en una referencia en deportividad dentro de su segmento gracias a su diseño imponente y exclusivo. Los detalles de calidad en rojo y negro brillante, los faros full LED y su frontal aguerrida nos muestran toda la deportividad en una sola mirada.'
+        descripcion: 'El nuevo Polo GTS se convierte en una referencia en deportividad dentro de su segmento gracias a su diseño imponente y exclusivo. Los detalles de calidad en rojo y negro brillante, los faros full LED y su frontal aguerrida nos muestran toda la deportividad en una sola mirada.',
+        tipo: 'auto'
     },{
         id: 9197791,
         marca: 'Volkswagen',
@@ -374,6 +409,7 @@ export const apiDetalladaAutos= [
         imgBanner: imgVolkswagenVirtus.banner,
         imgDescriptivas: [imgVolkswagenVirtus.img1, imgVolkswagenVirtus.img2, imgVolkswagenVirtus.img3, imgVolkswagenVirtus.img4],
         Titulo: 'La potencia que buscás, con la comodidad que necesitás.',
-        descripcion: 'El Nuevo Virtus GTS se convierte en una nueva referencia en deportividad marcando diferencia con su gran espacio interno. Su diseño imponente exclusivo trae detalles de altísima calidad en color rojo y negro sumados a las líneas cromadas en su exterior. Su frontal aguerrido nos muestra toda la deportividad en una sola mirada.'
+        descripcion: 'El Nuevo Virtus GTS se convierte en una nueva referencia en deportividad marcando diferencia con su gran espacio interno. Su diseño imponente exclusivo trae detalles de altísima calidad en color rojo y negro sumados a las líneas cromadas en su exterior. Su frontal aguerrido nos muestra toda la deportividad en una sola mirada.',
+        tipo: 'auto'
     }
 ]

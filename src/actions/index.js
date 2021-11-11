@@ -1,7 +1,7 @@
-export function buscarVehiculo(payload) {
-    console.log(payload)
-    return{
-        type: "BUSCAR_VEHICULO",
+
+export function loadData(payload) {
+    return {
+        type: "LOAD_DATA",
         payload
     }
-};
+}

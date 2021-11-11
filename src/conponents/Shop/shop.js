@@ -8,10 +8,11 @@ import { connect } from 'react-redux';
 
 
 export function Shop(props) {
+    const shopId = props.match.params.id;
     let marcasDeAutos = ["Fiat", "Volkswagen", "Ford", "Peugeot","Renault"]
     let marcasDeMotos = ["Corven","Honda","Yamaha"]
     let marcasDeTractores = ["Deutz","John Deere","New Holland"]
-    if (props.cards === "Autos"){
+    if (shopId === "autos"){
         return(
             <div className="shopContainer">
                 {apiSimpleAutos.map(a =><ShopCard
@@ -21,7 +22,7 @@ export function Shop(props) {
             </div>
         )
     }
-    if (props.cards === "Motos"){
+    if (shopId === "motos"){
         return(
             <div className="shopContainer">
                 {apiSimpleMotos.map(m =><ShopCard
@@ -31,7 +32,7 @@ export function Shop(props) {
             </div>
         )
     }
-    if (props.cards === "Tractores"){
+    if (shopId === "tractores"){
         return(
             <div className="shopContainer">
                 {apiSimpleTractores.map(t =><ShopCard
@@ -41,8 +42,8 @@ export function Shop(props) {
             </div>
         )
     }
-    if(marcasDeAutos.includes(props.cards)){
-        let autosFiltrados = apiSimpleAutos.filter(auto => auto.marca === props.cards)
+    if(marcasDeAutos.includes(shopId)){
+        let autosFiltrados = apiSimpleAutos.filter(auto => auto.marca === shopId)
         return(
             <div className="shopContainer">
                 {autosFiltrados.map(a =><ShopCard
@@ -52,8 +53,8 @@ export function Shop(props) {
             </div>
         )
     }
-    if(marcasDeMotos.includes(props.cards)){
-        let motosFiltradas = apiSimpleMotos.filter(moto => moto.marca === props.cards)
+    if(marcasDeMotos.includes(shopId)){
+        let motosFiltradas = apiSimpleMotos.filter(moto => moto.marca === shopId)
         return(
             <div className="shopContainer">
                 {motosFiltradas.map(m =><ShopCard
@@ -63,8 +64,8 @@ export function Shop(props) {
             </div>
         )
     }
-    if(marcasDeTractores.includes(props.cards)){
-        let tractoresFiltrados = apiSimpleTractores.filter(tractor => tractor.marca === props.cards)
+    if(marcasDeTractores.includes(shopId)){
+        let tractoresFiltrados = apiSimpleTractores.filter(tractor => tractor.marca === shopId)
         return(
             <div className="shopContainer">
                 {tractoresFiltrados.map(t =><ShopCard
@@ -74,14 +75,14 @@ export function Shop(props) {
             </div>
         )
     }
-    else{
-        return window.location.href="/"
-    }
+    // else{
+    //     return window.location.href="/"
+    // }
 }
 
 function mapStateToProps(state) {
     return {
-    cards: state ? state.cards : [],
+    dataSimple: state?.dataSimple ? state.dataSimple : [],
     }
 }
 
