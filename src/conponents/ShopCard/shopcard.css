@@ -1,15 +1,12 @@
 .shopCardContainer{
     border: 1px solid #dedfe0;
     border-radius: 8px;
-    width: 20%;
-    min-height: 300px;
-    margin: 20px;
-    border-top-left-radius: 8px;
-    border-top-right-radius: 8px;
-    overflow: hidden;
     color: #287094;
     position: relative;
     background-color: rgba(230, 230, 230, 0.603);
+    width: 20%;
+    min-height: 300px;
+    margin: 5px;
 }
 
 
@@ -18,7 +15,7 @@
     height: 40px;
     background: white;
     border-radius: 50%;
-    border: 1px solid black;
+    border: 1px solid #dedfe0;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -48,6 +45,8 @@
 
 .shopCardText p{
     color: black;
+    position: absolute;
+    bottom: 0;
 }
 
 .shopCardText h3:hover{
@@ -57,9 +56,12 @@
 
 .shopCardContainer img{
     width: 100%;
-    object-fit:fill;
+    object-fit:contain;
     border-bottom: 1px solid #dedfe0;
     min-height: 140px;
     max-height: 140px;
     background-color: white;
+    text-align: center;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
 }

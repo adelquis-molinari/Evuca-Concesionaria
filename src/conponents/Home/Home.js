@@ -1,8 +1,6 @@
 import React from "react";
 import "./Home.css"
 import {useState} from "react";
-import { Link } from 'react-router-dom';
-import {apiSimpleAutos} from '../../Data/apiAutos'
 import TypeCard from "../TypeCard/typeCard.jsx"
 import motoIcon from "../../img/iconos/iconMoto.png"
 import tractorIcon from "../../img/iconos/iconTractor.png"
