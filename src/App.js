@@ -6,6 +6,7 @@ import './App.css';
 import Footer from './conponents/Footer/Footer';
 import Search from './conponents/Search/Search';
 import Shop from './conponents/Shop/shop.js'
+import Articulo from "./conponents/Articulo/articulo.js"
 
 export function App() {
   return (
@@ -14,6 +15,7 @@ export function App() {
         <Route exact path="/" render={() => <Home />}/> 
         <Route  path="/busqueda" render={() => <Search />}/> 
         <Route  path="/shop" render={() => <Shop/>}/> 
+        <Route  path="/article:id" component={Articulo}/> 
       <Footer />
     </Fragment>
   );

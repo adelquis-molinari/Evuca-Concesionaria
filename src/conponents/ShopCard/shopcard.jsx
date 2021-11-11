@@ -3,7 +3,6 @@ import "./shopcard.css"
 import { Link } from 'react-router-dom';
 
 export default function ShopCard(props){
-    console.log(props)
     return(
         <div className="shopCardContainer">
         <div>

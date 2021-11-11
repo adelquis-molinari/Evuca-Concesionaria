@@ -6,7 +6,7 @@ import {buscarVehiculo} from "../../actions/index"
 
 function TypeCard (props){
     function clickLink(){
-        console.log(props.cards(props.text))
+        props.cards(props.text)
     }
     return(
         <Link to={`shop/${props.link ? props.link : props.text}`} style={{ textDecoration: 'none' }} onClick={clickLink}>
