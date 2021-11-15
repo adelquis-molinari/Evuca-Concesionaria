@@ -83,7 +83,7 @@ export const NavLink = styled(Link)`
     padding: 0.5rem 1rem;
     cursor: pointer;
     &:hover {
-        color: #81b644;
+        color: #319dd3;
         text-decoration: none;
     }
 `;
@@ -96,7 +96,7 @@ export const ButtonLink = styled.span`
     height: 100%;
     cursor: pointer;
     &:hover {
-        color: #81b644;
+        color: #319dd3;
         text-decoration: none;
     }
 `;
@@ -120,5 +120,14 @@ export const ButtonLog = styled.button`
     }
     @media (max-width: 768px) {
         margin-right: 0px;
+    }
+`;
+export const SvgGarage = styled.svg`
+    width: 25px;
+    fill: ${colorPrimary};
+    margin-right: 0.5rem;
+    cursor: pointer;
+    &:hover {
+        fill: #319dd3;
     }
 `;

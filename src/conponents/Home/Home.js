@@ -4,6 +4,7 @@ import {useState} from "react";
 import TypeCard from "../TypeCard/typeCard.jsx"
 import motoIcon from "../../img/iconos/iconMoto.png"
 import tractorIcon from "../../img/iconos/iconTractor.png"
+import Outstanding from "../Outstanding/Outstanding"
 
 
 export function Home() {
@@ -33,8 +34,8 @@ const next = () => {
                 <h1>Evucar</h1>
                     <p>Concesionaria Online</p>
                 <div className="buttonContainer">
-                    <button className="btnIzq" onClick={previous}><i class="fas fa-chevron-circle-left"></i></button>
-                    <button className="btnDere" onClick={next}><i class="fas fa-chevron-circle-right"></i></button>
+                    <button className="btnIzq" onClick={previous}><i className="fas fa-chevron-circle-left"></i></button>
+                    <button className="btnDere" onClick={next}><i className="fas fa-chevron-circle-right"></i></button>
                 </div>
             </div>
             
@@ -56,6 +57,9 @@ const next = () => {
                         />
                         </div>
                     </div>
+                </div>
+                    <Outstanding />
+                <div className="containerBuscar">
                     <div className="seccionBuscar">
                     <h2>Buscar vehiculo por marca:</h2>
                         <div className="seccionTipos">

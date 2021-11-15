@@ -25,7 +25,8 @@ export function Articulo(props){
         setSelectedIndex(nextIndex);
     }
 
-    const precioEnDolar = Math.round(parseInt(vehiculoActual[0].precio.replace(/\./g,'').replace(/\$/g,""))/100.12).toLocaleString('de-DE')
+    const precioEnDolar = Math.round(vehiculoActual[0].precio/100.12).toLocaleString('de-DE')
+    const precioArs = vehiculoActual[0].precio.toLocaleString('de-DE')
     console.log(precioEnDolar)
     if (vehiculoActual) {
         return(
@@ -53,9 +54,9 @@ export function Articulo(props){
                     </div>
                         <div className="articlePrecio">
                             <h3>Precio sugerido en pesos:</h3>
-                            <p>{vehiculoActual[0].precio}</p>
+                            <p>{`$${precioArs} ARS`}</p>
                             <h3>Precio sugerido en dolares:</h3>
-                            <p>{`$${precioEnDolar}`}</p>
+                            <p>{`$${precioEnDolar} USD`}</p>
                             <div className="articleButtons">
                                 <a>Reservar</a>
                                 <a>Consultar</a>
