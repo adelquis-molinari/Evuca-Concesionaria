@@ -3,7 +3,7 @@ const initialState = {
     dataDetallada: []
 };
 
-const cards = (state = initialState, action) => {
+const appData = (state = initialState, action) => {
     switch(action.type) {
     case "LOAD_DATA":
         console.log(JSON.parse(action.payload), 'dataaa')
@@ -17,4 +17,4 @@ const cards = (state = initialState, action) => {
     }
 }
 
-export default cards;
+export default appData;
