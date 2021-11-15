@@ -1,0 +1,29 @@
+.comentarioUser{
+    display: flex;
+    align-items: center;
+}
+
+.comentario{
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+    padding: 5px;
+    border: 1px solid black;
+    border-radius: 8px;
+}
+
+.comentarioStars{
+    display: flex;
+}
+
+.comentarioStars p{
+    margin: 0;
+}
+
+.comentarioUser img{
+    width: 40px;
+    height: 40px;
+    object-fit:cover;
+    border-radius:50%;
+}
+

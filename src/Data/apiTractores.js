@@ -11,7 +11,8 @@ export const apiSimpleTractores = [
         id: 798478,
         marca: 'Deutz',
         modelo: 'Serie 6W',
-        precio: '$17.000.000',
+        precio: 17000000,
+        cantidad: 4,
         img: Serie6W,
         imgMarca: deutz,
         descripcion: 'Deutz Serie 6W 2021',
@@ -21,7 +22,8 @@ export const apiSimpleTractores = [
         id: 366558,
         marca: 'John Deere',
         modelo: '6100E',
-        precio: '$16.800.000',
+        precio: 16800000,
+        cantidad: 4,
         img: jd6100E,
         imgMarca: johnDeere,
         descripcion: 'John Deere 6100E 2021',
@@ -31,7 +33,8 @@ export const apiSimpleTractores = [
         id: 491566,
         marca: 'New Holland',
         modelo: 'T6130',
-        precio: '$15.000.000',
+        precio: 15000000,
+        cantidad: 4,
         img: T6130,
         imgMarca: newHolla,
         descripcion: 'New Holland T6130 2021',
@@ -40,10 +43,11 @@ export const apiSimpleTractores = [
 ];
 export const apiDetalladaTractores = [
     {
-        id: 8321753,
+        id: 798478,
         marca: 'Deutz',
         modelo: 'Serie 6W',
-        precio: '$17.000.000',
+        precio: 17000000,
+        cantidad: 4,
         img: Serie6W,
         imgMarca: deutz,
         imgBanner: imgDeutz.banner,
@@ -53,10 +57,11 @@ export const apiDetalladaTractores = [
         tipo: 'tractor'
     },
     {
-        id: 1079015,
+        id: 366558,
         marca: 'John Deere',
         modelo: '6100E',
-        precio: '$16.800.000',
+        precio: 16800000,
+        cantidad: 4,
         img: jd6100E,
         imgMarca: johnDeere,
         imgBanner: imgJohnDeere6100e.banner,
@@ -67,15 +72,16 @@ export const apiDetalladaTractores = [
         tipo: 'tractor'
     },
     {
-        id: 8871466,
+        id: 491566,
         marca: 'New Holland',
         modelo: 'T6130',
-        precio: '$15.000.000',
+        precio: 15000000,
+        cantidad: 4,
         img: T6130,
         imgMarca: newHolla,
         imgBanner: imgNewHollandT6130.banner,
         imgDescriptivas: [imgNewHollandT6130.img1, imgNewHollandT6130.img2, imgNewHollandT6130.img3, imgNewHollandT6130.img4],
-        Titulo: 'Pura potencia y máxima eficioencia para los agricultores y ganaderos del mañana.',
+        Titulo: 'Pura potencia y máxima eficiencia para los agricultores y ganaderos del mañana.',
         descripcion: `Resistencia y rendimiento que dan como resultado una alta productividad con un menor costo operativo. 
         Motor New Holland, con versiones de hasta 132 CV, turboalimentado con intercooler. Controles posicionados ergonómicamente para el operador con un diseño moderno.`,
         tipo: 'tractor'

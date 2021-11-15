@@ -5,9 +5,24 @@ export function loadData(payload) {
     }
 }
 
-export function loadUserData(payload) {
+export function addGarage(payload) {
+    console.log(payload,"actons");
     return {
-        type: "LOAD_USER_DATA",
+        type: "ADD_GARAGE",
+        payload
+    }
+}
+
+export function removeGarage(payload) {
+    return {
+        type: "REMOVE_GARAGE",
+        payload
+    }
+}
+
+export function setStock(payload) {
+    return {
+        type: "SET_STOCK",
         payload
     }
 }

@@ -75,9 +75,9 @@ export function Shop(props) {
             </div>
         )
     }
-    // else{
-    //     return window.location.href="/"
-    // }
+    else{
+        return window.location.href="/"
+    }
 }
 
 function mapStateToProps(state) {

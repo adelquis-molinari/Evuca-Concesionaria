@@ -1,0 +1,9 @@
+.inputRadio{
+    display: none;
+}
+
+.comentarioStar{
+    font-size:20px;
+    cursor: pointer;
+    text-align: center;
+}

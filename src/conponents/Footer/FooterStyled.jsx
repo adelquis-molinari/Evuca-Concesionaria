@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 export const FooterDiv = styled.footer`
     background-color: ${colorFondo};
     color: ${colorPrimary};
+    width: 100%;
     display: flex;
     bottom: 0;
     padding: 20px;
@@ -13,7 +14,6 @@ export const FooterDiv = styled.footer`
     font-size: 12px;
     flex-direction: row;
     justify-content: space-between;
-    width: 100%;
 `;
 
 export const LinkEvukes = styled(Link)`
