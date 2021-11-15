@@ -2,10 +2,10 @@ import React, {Fragment, useEffect} from 'react'
 import Nav from './conponents/NavBar/Navbar'
 import Home from "./conponents/Home/Home.js"
 import { Route } from "react-router-dom";
-import './App.css';
 import Footer from './conponents/Footer/Footer';
 import Search from './conponents/Search/Search';
-import Shop from './conponents/Shop/shop.js'
+import Shop from './conponents/Shop/shop.js';
+import ShoppingCart from './conponents/Shopping Cart/ShoppoingCard';
 import { apiSimpleAutos, apiDetalladaAutos } from '../src/Data/apiAutos';
 import { apiSimpleMotos, apiDetalladaMotos } from "../src/Data/apiMotos";
 import { apiSimpleTractores, apiDetalladaTractores } from "../src/Data/apiTractores";
@@ -20,7 +20,7 @@ export function App(props) {
     if(payloadData) {
       props.loadData(payloadData)
     }
-  }, [])
+  })
 
   useEffect(()=> {
       const dataSimple = apiSimpleAutos.concat(apiSimpleMotos, apiSimpleTractores);
@@ -29,7 +29,7 @@ export function App(props) {
         dataSimple: dataSimple,
         dataDetallada: dataDetallada
       }
-      console.log(myData,'datasimple')
+      // console.log(myData,'datasimple')
       localStorage.setItem('my-data', JSON.stringify(myData))
   })
 
@@ -39,6 +39,7 @@ export function App(props) {
         <Route exact path="/" render={() => <Home />}/> 
         <Route  path="/busqueda" render={() => <Search />}/> 
         <Route  path="/shop/:id" component={Shop}/> 
+        <Route  path="/shopping-cart" render={()=> <ShoppingCart />}/> 
       <Footer />
     </Fragment>
   );
