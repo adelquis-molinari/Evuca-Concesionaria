@@ -21,18 +21,20 @@ export function App(props) {
     if(payloadData) {
       props.loadData(payloadData)
     }
-  })
+  },[])
 
   useEffect(()=> {
       const dataSimple = apiSimpleAutos.concat(apiSimpleMotos, apiSimpleTractores);
       const dataDetallada = apiDetalladaAutos.concat(apiDetalladaMotos, apiDetalladaTractores);
       const myData = {
         dataSimple: dataSimple,
-        dataDetallada: dataDetallada
+        dataDetallada: dataDetallada,
+        dataGarage: [],
+        stock:true,
       }
       // console.log(myData,'datasimple')
       localStorage.setItem('my-data', JSON.stringify(myData))
-  })
+  },[])
 
   return (
     <Fragment>
