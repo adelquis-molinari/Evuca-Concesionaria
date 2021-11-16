@@ -29,9 +29,9 @@ export const Dropdown = styled.div`
     position: fixed;
     flex-direction: row;
     width: 100%;
-    height: auto;
+    height: 140px;
     right: 0;
-    top: 5rem;
+    top: 0;
     text-align: left;
     background-color: #d4d4cef7;
     border-bottom: 1px solid ${colorSecondary};
@@ -69,7 +69,8 @@ export const NavItems = styled.ul`
         padding:12px;
     }
 `;
-export const NavItem = styled.li`
+export const NavItem = styled.div`
+    padding: 0.5rem 1rem;
     margin-right: 1rem;
     @media (max-width: 768px) {
         margin-bottom: 1rem;
@@ -78,31 +79,29 @@ export const NavItem = styled.li`
 export const NavLink = styled(Link)`
     color: ${colorPrimary};
     text-decoration: none;
-    font-size: 1rem;
+    font-size: 2.3rem;
     font-weight: bold;
     padding: 0.5rem 1rem;
     cursor: pointer;
     &:hover {
-        color: #81b644;
+        color: #319dd3;
         text-decoration: none;
     }
 `;
 export const ButtonLink = styled.span`
     color: ${colorPrimary};
-    text-decoration: none;
-    font-size: 1rem;
+    font-size: 2.3rem;
     font-weight: bold;
     padding: 0.5rem 1rem;
     height: 100%;
     cursor: pointer;
     &:hover {
-        color: #81b644;
-        text-decoration: none;
+        color: #319dd3;
     }
 `;
 export const ButtonLog = styled.button`
-    background-color: #ffffff;
-    border: 1px solid #ffffff;
+    background: none;
+    border: none;
     border-radius: 4px;
     color: ${colorPrimary};
     cursor: pointer;
@@ -113,12 +112,21 @@ export const ButtonLog = styled.button`
     margin-right: 50px;
     &:hover  {
         background-color: ${colorFondo};
-        border: 1px solid #e5e5e5;
+        border: 1px solid ${colorPrimary};
         color: #ffffff;
         text-decoration: none;
         transition: 0.2s;
     }
     @media (max-width: 768px) {
         margin-right: 0px;
+    }
+`;
+export const SvgGarage = styled.svg`
+    width: 25px;
+    fill: ${colorPrimary};
+    margin-right: 0.5rem;
+    cursor: pointer;
+    &:hover {
+        fill: #319dd3;
     }
 `;

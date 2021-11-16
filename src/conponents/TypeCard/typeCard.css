@@ -23,6 +23,10 @@
     text-decoration: none;
 }
 
+.containerType p{
+    text-align: center;
+}
+
 .typeHover :hover{
     /* border: 1px solid grey; */
     cursor: pointer;

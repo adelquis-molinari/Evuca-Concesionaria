@@ -4,6 +4,7 @@ import {useState} from "react";
 import TypeCard from "../TypeCard/typeCard.jsx"
 import motoIcon from "../../img/iconos/iconMoto.png"
 import tractorIcon from "../../img/iconos/iconTractor.png"
+import Outstanding from "../Outstanding/Outstanding"
 
 
 export function Home() {
@@ -33,8 +34,8 @@ const next = () => {
                 <h1>Evucar</h1>
                     <p>Concesionaria Online</p>
                 <div className="buttonContainer">
-                    <button className="btnIzq" onClick={previous}><i class="fas fa-chevron-circle-left"></i></button>
-                    <button className="btnDere" onClick={next}><i class="fas fa-chevron-circle-right"></i></button>
+                    <button className="btnIzq" onClick={previous}><i className="fas fa-chevron-circle-left"></i></button>
+                    <button className="btnDere" onClick={next}><i className="fas fa-chevron-circle-right"></i></button>
                 </div>
             </div>
             
@@ -56,6 +57,9 @@ const next = () => {
                         />
                         </div>
                     </div>
+                </div>
+                    <Outstanding />
+                <div className="containerBuscar">
                     <div className="seccionBuscar">
                     <h2>Buscar vehiculo por marca:</h2>
                         <div className="seccionTipos">
@@ -119,43 +123,26 @@ const next = () => {
                         <div className="seccionTipos">
                         <TypeCard
                             img={"https://images.vexels.com/media/users/3/146881/isolated/preview/c9358db7338035de67f494f317a1ef61-monedas.png"}
-                            text={"Menos de $200.000"}
-                            link={"200.000"}
+                            text={"Menos de $2.000.000"}
+                            link={"Gama baja"}
                         />
                         <TypeCard
                             img={"https://img.freepik.com/vector-gratis/dolar-billetes-aislados-blanco_68708-401.jpg?size=626&ext=jpg"}
-                            text={"Menos de $300.000"}
-                            link={"300.000"}
+                            text={"Menos de $5.000.000"}
+                            link={"500.000"}
                         />
                         <TypeCard
                             img={"https://media.istockphoto.com/vectors/vector-dollar-and-coins-sign-money-dollar-icon-currency-dollar-bill-vector-id1198508991?k=20&m=1198508991&s=170667a&w=0&h=bclBktNfoXgADlp9onjEZan8mVif0xjm9z_c60vOfHc="}
-                            text={"Mas de $400.000"}
-                            link={"400.000"}
+                            text={"Mas de $5.000.000"}
+                            link={"5.000.000"}
                         />
                         </div>
                     </div>
                 </div>
                 <div>
-                    {/* <h2>{apiSimpleAutos[0].marca}</h2>
-                    <h3>{apiSimpleAutos[0].modelo}</h3>
-                    <img src={apiSimpleAutos[0].img} alt={apiSimpleAutos[0].modelo} />
-                    <img src={apiSimpleAutos[0].imgMarca} alt={apiSimpleAutos[0].marca} /> */}
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores at quasi, incidunt sint soluta repudiandae consectetur ea rem ducimus tenetur alias, nulla, blanditiis quaerat tempore nobis est eveniet aliquid! Eos neque dolores mollitia vitae impedit exercitationem fugiat porro culpa, sed alias? Excepturi numquam officiis ex laudantium nulla corrupti. Ad, fugit!</p>
                 </div>
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
         </div>
     )
 }
-
 
 export default Home

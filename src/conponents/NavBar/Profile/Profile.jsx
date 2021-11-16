@@ -13,7 +13,7 @@ const Profile = () => {
     const handleProfile = () => {
         setProfile(!profile)
     }
-    console.log(user);
+    console.log(user, 'usuario');
 
     return (
         <>
@@ -30,7 +30,7 @@ const Profile = () => {
                         <h3>{user.name}</h3>
                         <ButtonLog 
                             onClick={() => logout({returnTo: window.location.origin})}
-                        >Cerrar Seción</ButtonLog>
+                        >Cerrar Sesión</ButtonLog>
                     </div>
                 </div>
                 :
