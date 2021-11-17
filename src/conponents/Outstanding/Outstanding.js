@@ -10,13 +10,13 @@ const Outstanding = (props) => {
                 <h2>{apiDetalladaAutos[9].Titulo}</h2>
                 <div className="text-arear">
                     <p>{apiDetalladaAutos[9].descripcion}</p>
-                    <Link to={`shop/${apiDetalladaAutos[9].id}`} style={{ textDecoration: 'none' }} >
+                    <Link to={`/article/${apiDetalladaAutos[9].id}`} style={{ textDecoration: 'none' }} >
                     <styled.ButtonOuts>Conoce tu Próximo Auto</styled.ButtonOuts>
                     </Link>
                 </div>
             </styled.Body>
         </styled.ContainerOutstanding>
-     );
+    );
 }
- 
+
 export default Outstanding;
