@@ -12,7 +12,7 @@ export function Shop(props) {
     let marcasDeAutos = ["Fiat", "Volkswagen", "Ford", "Peugeot","Renault"]
     let marcasDeMotos = ["Corven","Honda","Yamaha"]
     let marcasDeTractores = ["Deutz","John Deere","New Holland"]
-    if (shopId === "autos"){
+    if (shopId === "Autos"){
         return(
             <div className="shopContainer">
                 {apiSimpleAutos.map(a =><ShopCard
@@ -22,7 +22,7 @@ export function Shop(props) {
             </div>
         )
     }
-    if (shopId === "motos"){
+    if (shopId === "Motos"){
         return(
             <div className="shopContainer">
                 {apiSimpleMotos.map(m =><ShopCard
@@ -32,7 +32,7 @@ export function Shop(props) {
             </div>
         )
     }
-    if (shopId === "tractores"){
+    if (shopId === "Tractores"){
         return(
             <div className="shopContainer">
                 {apiSimpleTractores.map(t =><ShopCard

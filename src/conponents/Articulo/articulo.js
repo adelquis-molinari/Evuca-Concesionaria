@@ -7,11 +7,10 @@ import Comentario from "../Comentario/comentario.jsx"
 
 export function Articulo(props){
     const vehiculoActual = props.dataDetallada.filter(vehiculos => vehiculos.id === parseInt(props.match.params.id))
-    console.log(vehiculoActual[0])
     // Carrusel
-    const image = vehiculoActual[0].imgDescriptivas
+    const image = vehiculoActual[0]?.imgDescriptivas
     const [selectedIndex, setSelectedIndex] = useState(0);
-    const [selectedImage, setSelectedImage] = useState(image[0])
+    const [selectedImage, setSelectedImage] = useState(image? image[0] : {})
     const previous = () => {
         const condition = selectedIndex > 0;
         const nextIndex = condition ? selectedIndex - 1 : image.length -1;
@@ -24,11 +23,10 @@ export function Articulo(props){
         setSelectedImage(image[nextIndex])
         setSelectedIndex(nextIndex);
     }
-
-    const precioEnDolar = Math.round(vehiculoActual[0].precio/100.12).toLocaleString('de-DE')
-    const precioArs = vehiculoActual[0].precio.toLocaleString('de-DE')
-    console.log(precioEnDolar)
-    if (vehiculoActual) {
+    
+    const precioEnDolar = Math.round(vehiculoActual[0]?.precio/100.12).toLocaleString('de-DE')
+    const precioArs = vehiculoActual[0]?.precio.toLocaleString('de-DE')
+    if (vehiculoActual[0]) {
         return(
     <div>
 

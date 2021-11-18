@@ -28,6 +28,7 @@ export const ButtonOuts = styled.button`
     padding: 10px;
     border: 1px solid ${nor.colorAccions};
     border-radius: 8px;
+    cursor:pointer;
     &:hover{
         background: ${nor.colorAccions};
         transform: scale(1.05);

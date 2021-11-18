@@ -45,15 +45,15 @@ const next = () => {
                         <div className="seccionTipos">
                             <TypeCard
                                 img={"https://www.carmax.com/cars/images/type-icons/sedans.svg"}
-                                text={"autos"}
+                                text={"Autos"}
                             />
                             <TypeCard
                             img={motoIcon}
-                            text={"motos"}
+                            text={"Motos"}
                             />
                             <TypeCard
                             img={tractorIcon}
-                            text={"tractores"}
+                            text={"Tractores"}
                         />
                         </div>
                     </div>
