@@ -18,5 +18,5 @@ const Outstanding = (props) => {
         </styled.ContainerOutstanding>
     );
 }
- 
+
 export default Outstanding;

@@ -9,6 +9,7 @@ import { connect } from 'react-redux';
 
 export function Shop(props) {
     const shopId = props.match.params.id;
+    console.log(shopId)
     let marcasDeAutos = ["Fiat", "Volkswagen", "Ford", "Peugeot","Renault"]
     let marcasDeMotos = ["Corven","Honda","Yamaha"]
     let marcasDeTractores = ["Deutz","John Deere","New Holland"]
@@ -75,9 +76,42 @@ export function Shop(props) {
             </div>
         )
     }
-    else{
-        return window.location.href="/"
+    if(shopId === "gama baja"){
+        let vehiculosFiltrados = props.dataSimple.filter(vehiculo => vehiculo.precio <= 2000000)
+        return(
+            <div className="shopContainer">
+                {vehiculosFiltrados.map(v =><ShopCard
+                props = {v}
+                />
+                )}
+            </div>
+        )
     }
+    if(shopId === "gama media"){
+        let vehiculosFiltrados = props.dataSimple.filter(vehiculo => vehiculo.precio <= 5000000)
+        return(
+            <div className="shopContainer">
+                {vehiculosFiltrados.map(v =><ShopCard
+                props = {v}
+                />
+                )}
+            </div>
+        )
+    }
+    if(shopId === "gama alta"){
+        let vehiculosFiltrados = props.dataSimple.filter(vehiculo => vehiculo.precio > 5000000)
+        return(
+            <div className="shopContainer">
+                {vehiculosFiltrados.map(v =><ShopCard
+                props = {v}
+                />
+                )}
+            </div>
+        )
+    }
+    // else{
+    //     return window.location.href="/"
+    // }
 }
 
 function mapStateToProps(state) {

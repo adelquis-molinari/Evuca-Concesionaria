@@ -113,7 +113,7 @@ export const apiDetalladaMotos = [
     {
         id: 228835,
         marca: 'Corven',
-        modelo: 'Hunter 15 rt',
+        modelo: 'Hunter 150 rt',
         precio : 160000,
         cantidad: 4,
         img: hunter150rt,

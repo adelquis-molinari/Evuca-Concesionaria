@@ -1,11 +1,12 @@
 import React from "react";
 import "./articulo.css";
-import {connect} from 'react-redux';
+import {connect, useDispatch} from 'react-redux';
 import {useState} from "react";
 import Estrellas from "../Puntaje/estrellas.jsx"
 import Comentario from "../Comentario/comentario.jsx"
-
+import {addGarage} from "../../actions"
 export function Articulo(props){
+    const dispatch = useDispatch();
     const vehiculoActual = props.dataDetallada.filter(vehiculos => vehiculos.id === parseInt(props.match.params.id))
     // Carrusel
     const image = vehiculoActual[0]?.imgDescriptivas
@@ -34,12 +35,27 @@ export function Articulo(props){
             <div className="imgContainer">
                 <img className="articleBanner" src={vehiculoActual[0].imgBanner} alt="articleBanner"></img>
                 <div className="titleArticle">
-                    <h1>{vehiculoActual[0].marca} {vehiculoActual[0].modelo} <i className="fas fa-warehouse garajeTitulo"></i></h1>
-                    <h1><Estrellas/></h1>   
+                    <h1>{vehiculoActual[0].marca} {vehiculoActual[0].modelo}</h1>
+                    {vehiculoActual[0].cantidad > 0 ?
+                        <i 
+                        onClick={() => dispatch(addGarage(vehiculoActual[0]))}
+                        className="fas fa-warehouse garajeTitulo"></i>
+                        :
+                            <span>Lo sentimos , no hay {vehiculoActual[0].tipo} disponible</span>
+                    }
+                    <h2><Estrellas/></h2>   
                 </div>
             </div>
             <div className="articleDescripcion">
-                <h1>{vehiculoActual[0].Titulo}</h1>
+                <h2>{vehiculoActual[0].Titulo}</h2>
+                {
+                    vehiculoActual[0].cantidad > 0 ? 
+                    <div className="cantidad">
+                        <h5>Cantidad disponible: {vehiculoActual[0].cantidad}</h5>
+                    </div>
+                    :
+                    null
+                }
                 <p>{vehiculoActual[0].descripcion}</p>
             </div>
                 <div className="descripcionContainer">

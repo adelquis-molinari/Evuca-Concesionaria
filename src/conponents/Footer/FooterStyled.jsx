@@ -7,6 +7,7 @@ export const FooterDiv = styled.footer`
     background-color: ${colorFondo};
     color: ${colorPrimary};
     width: 100%;
+    position: relative;
     display: flex;
     bottom: 0;
     padding: 20px;

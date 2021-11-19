@@ -1,0 +1,140 @@
+.nav-transp{
+    background-color: rgba(253, 253, 253, 0.479);
+    display: flex;
+    height: 5rem;
+    top: 0;
+    padding: 0 15px;
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.3s ease 0s;
+    width: 100%;
+}
+.linea-1{
+    background-color: #287094;
+    height: 3px;
+    border-radius: 1px;
+    width: 50%;
+    margin: 0 auto;
+}
+.linea-2{
+    background-color: #287094;
+    height: 3px;
+    border-radius: 1px;
+    width: 20%;
+    margin: 0 auto;
+}
+.logo-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+}
+.logo{
+    width: 150px;
+    margin-right: 10px;
+}
+
+.hamburger{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    margin-right: 10px;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 10%;
+}
+.hamburger i{
+    color: #287094;
+    font-size: 2.125rem;
+}
+
+/* menu lateral */
+.menu-lateral{
+    background-color: rgb(235, 235, 235);
+    border-radius: 0 10px 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    left: 0;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    transform: translateX(-100%);
+    transition: all 0.3s ease 0s;
+    width: 80%;
+    z-index: 2;
+}
+.menu-lateral-active{
+    transform: translateX(0);
+}
+/* cierra menu-lateral */
+.close-menu{
+    color: #287094;
+    height: 100px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    padding: 0 1.875rem;
+    z-index: 3;
+}
+.close-menu i{
+    font-size: 3rem;
+    cursor: pointer;
+}
+.close-menu i:hover{
+    color: #287094;
+}
+/* contenedor menu-lateral */
+.menu-items{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    height: 100%;
+    padding: 0 1.875rem 0 1.875rem;
+}
+.menu-lateral-content{
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    width: 100%;
+}
+
+/* icon garageNav */
+.garajeNav{
+    color: #287094;
+    cursor: pointer;
+    font-size: 1.125rem;
+    margin-right: 1.875rem;
+}
+
+.garajeNav:hover{
+    color: #319dd3;
+    transform: scale(1.1);
+    transition: all 0.3s ease 0s;
+}
+.garage-animations{
+    animation-name: fadeIn;
+    animation-duration: 5s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+}
+
+@keyframes fadeIn {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+        color: #319dd3;
+    }
+    100% {
+        transform: scale(1);
+    }
+}

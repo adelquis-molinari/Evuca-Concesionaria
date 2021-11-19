@@ -7,9 +7,10 @@ import Search from './conponents/Search/Search';
 import Articulo from "./conponents/Articulo/articulo.js"
 import Shop from './conponents/Shop/shop.js';
 import ShoppingCart from './conponents/Shopping Cart/ShoppoingCard';
-import { apiSimpleAutos, apiDetalladaAutos } from '../src/Data/apiAutos';
-import { apiSimpleMotos, apiDetalladaMotos } from "../src/Data/apiMotos";
-import { apiSimpleTractores, apiDetalladaTractores } from "../src/Data/apiTractores";
+import UploadData from './conponents/UploadData/UploadData'
+// import { apiSimpleAutos, apiDetalladaAutos } from '../src/Data/apiAutos';
+// import { apiSimpleMotos, apiDetalladaMotos } from "../src/Data/apiMotos";
+// import { apiSimpleTractores, apiDetalladaTractores } from "../src/Data/apiTractores";
 import { loadData } from './actions';
 import {connect} from 'react-redux'
 
@@ -21,19 +22,7 @@ export function App(props) {
     if(payloadData) {
       props.loadData(payloadData)
     }
-  })
-
-  useEffect(()=> {
-      const dataSimple = apiSimpleAutos.concat(apiSimpleMotos, apiSimpleTractores);
-      const dataDetallada = apiDetalladaAutos.concat(apiDetalladaMotos, apiDetalladaTractores);
-      const myData = {
-        dataSimple: dataSimple,
-        dataDetallada: dataDetallada
-      }
-      // console.log(myData,'datasimple')
-      localStorage.setItem('my-data', JSON.stringify(myData))
-  })
-
+  },[])
   return (
     <Fragment>
       <Nav />
@@ -42,6 +31,7 @@ export function App(props) {
         <Route  path="/shop/:id" component={Shop}/> 
         <Route  path="/article/:id" component={Articulo}/> 
         <Route  path="/shopping-cart" render={()=> <ShoppingCart />}/> 
+        <Route  path="/admim/upload-data" render={()=> <UploadData />}/> 
       <Footer />
     </Fragment>
   );

@@ -178,7 +178,7 @@ export const apiSimpleAutos= [
         cantidad: 4,
         img: steway,
         imgMarca: renault,
-        descripcion: 'Renault Steway 2021',
+        descripcion: 'Renault Stepway 2021',
         tipo: 'auto'
     },{
         id: 398579,
