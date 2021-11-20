@@ -67,7 +67,7 @@
     top: 0;
     transform: translateX(-100%);
     transition: all 0.3s ease 0s;
-    width: 80%;
+    width: 40%;
     z-index: 2;
 }
 .menu-lateral-active{

@@ -2,6 +2,7 @@ import React, {useState} from 'react'
 import './ShoppingCart.css';
 import Parking from './Parking';
 import Confirm from './Confirm';
+import Footer from '../Footer/Footer';
 
 const ShoppingCart = () => {
     //estado de comfirmacion de compra
@@ -17,6 +18,7 @@ const ShoppingCart = () => {
             <Parking setConfirm={setConfirm} />
         }
         </div>
+
     );
 }
 

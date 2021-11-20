@@ -153,3 +153,11 @@
     transform: scale(1.05);
     transition: all 0.3s ease-in-out;
 }
+/* form */
+.shopForm{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    height: 600px;
+}

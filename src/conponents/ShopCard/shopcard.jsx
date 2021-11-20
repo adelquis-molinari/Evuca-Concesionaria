@@ -7,7 +7,7 @@ import {addGarage} from '../../actions';
 export default function ShopCard(props){
     const dispatch = useDispatch();
     return(
-        <div className="shopCardContainer">
+        <div className="shopCardContainer" key={props.props.id} >
         <div>
             <Link to={`/article/${props.props.id}`} style={{textDecoration: 'none', color:"#287094"}}>
             <img src={props.props.img} alt={props.props.descripcion}/>

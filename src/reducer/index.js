@@ -16,7 +16,6 @@ localStorage.setItem('my-data', JSON.stringify(myData));
 const appData = (state = myData , action) => {
     switch(action.type) {
     case "LOAD_DATA":
-        // console.log(JSON.parse(action.payload), 'dataaa')
         const jsonData = JSON.parse(action.payload)
         return {
             dataSimple: jsonData.dataSimple,
@@ -25,8 +24,17 @@ const appData = (state = myData , action) => {
             stock: jsonData.stock
         }
     case "ADD_GARAGE":
-        //agregar al estado dataGarage
-        //reduir cantidad de estado dataSimple
+        console.log(action.payload);
+        const newGarage = [...state.dataGarage];
+        const inGarage = newGarage.findIndex(item => item.id === action.payload.id);
+        console.log(inGarage,'reducer');
+        if (inGarage === -1) {
+            newGarage.push(action.payload);
+         } 
+        else {
+            return newGarage[inGarage].cantidad = newGarage[inGarage].cantidad + 1;
+        }
+
         const newDataSimple = state.dataSimple.map(item => {
             if(item.modelo === action.payload.modelo) {
                 item.cantidad = item.cantidad - 1;
@@ -39,20 +47,16 @@ const appData = (state = myData , action) => {
             }
             return item;
         });
-        const newDataGarage = state.dataGarage.concat(action.payload);
         return {
             ...state,
             dataSimple: newDataSimple,
             dataDetallada: newDataDetallada,
-            dataGarage: newDataGarage
+            dataGarage: newGarage
         }
-        // return {
-        //     ...state,
-        //     dataGarage: [...state.dataGarage, action.payload]
-        // }
     case "REMOVE_GARAGE":
+        console.log(action.payload, "reducer");
         return {
-            dataGarage: [...state.filter(item => item.id !== action.payload)]
+            // dataGarage: [...state.filter(item => item.idGarage !== action.payload)]
         }
     case "SET_STOCK":
         return {

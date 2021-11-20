@@ -5,10 +5,23 @@ import {useState} from "react";
 import Estrellas from "../Puntaje/estrellas.jsx"
 import Comentario from "../Comentario/comentario.jsx"
 import {addGarage} from "../../actions"
+import {v4 as uuidv4} from 'uuid';
+
+
 export function Articulo(props){
     const dispatch = useDispatch();
     const vehiculoActual = props.dataDetallada.filter(vehiculos => vehiculos.id === parseInt(props.match.params.id))
-    console.log(vehiculoActual[0])
+    // const [vehiculo, setVehiculo] = useState(
+    //     {
+    //         id: props.match.params.id,
+    //         marca: vehiculoActual[0].marca,
+    //         modelo: vehiculoActual[0].modelo,
+    //         precio: vehiculoActual[0].precio,
+    //         img: vehiculoActual[0].img,
+    //         cantidad: 1,
+    //     }
+    // );
+    // console.log(vehiculo);
     // Carrusel
     const image = vehiculoActual[0].imgDescriptivas
     const [selectedIndex, setSelectedIndex] = useState(0);
@@ -27,7 +40,7 @@ export function Articulo(props){
     }
     const precioEnDolar = Math.round(vehiculoActual[0].precio/100.12).toLocaleString('de-DE')
     const precioArs = vehiculoActual[0].precio.toLocaleString('de-DE')
-    console.log(precioEnDolar)
+
     if (vehiculoActual) {
         return(
     <div>
@@ -39,7 +52,7 @@ export function Articulo(props){
                     <h1>{vehiculoActual[0].marca} {vehiculoActual[0].modelo}</h1>
                     {vehiculoActual[0].cantidad > 0 ?
                         <i 
-                        onClick={() => dispatch(addGarage(vehiculoActual[0]))}
+                        onClick={() => dispatch(addGarage(vehiculoActual))}
                         className="fas fa-warehouse garajeTitulo"></i>
                         :
                             <span>Lo sentimos , no hay {vehiculoActual[0].tipo} disponible</span>

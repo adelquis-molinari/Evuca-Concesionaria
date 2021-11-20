@@ -12,12 +12,12 @@ export function addGarage(payload) {
     }
 }
 
-// export function removeGarage(payload) {
-//     return {
-//         type: "REMOVE_GARAGE",
-//         payload
-//     }
-// }
+export function removeGarage(payload) {
+    return {
+        type: "REMOVE_GARAGE",
+        payload
+    }
+}
 
 export function setStock(payload) {
     return {

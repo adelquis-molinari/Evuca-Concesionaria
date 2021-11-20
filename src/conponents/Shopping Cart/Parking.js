@@ -1,10 +1,12 @@
 import React, {useState, useEffect} from 'react'
-import { connect } from 'react-redux'
-import {apiSimpleAutos} from '../../Data/apiAutos';
+import {useSelector, useDispatch} from 'react-redux';
+import {removeGarage} from '../../actions'
 
 const Parking = ({setConfirm}) => {
+    const garage = useSelector(state => state.dataGarage);
+    const dispatch = useDispatch();
     //recorrer apiSimpleAutos
-    const [autos, setAutos] = useState(apiSimpleAutos); 
+    const [autos, setAutos] = useState(garage); 
     const [total, setTotal] = useState(0);
     //funcion elimina del estado los autos
     const eliminarAuto = (id) => {
@@ -39,7 +41,7 @@ const Parking = ({setConfirm}) => {
                                 <p className="card-title">{auto.modelo}</p>
                                 <button
                                 className="btn-eliminar"
-                                onClick={() => eliminarAuto(auto.id)}
+                                onClick={() => dispatch(removeGarage(auto.idGarage))}
                                 >Sacar del garage</button>
                             </div>
                             <div className="card-item-header">

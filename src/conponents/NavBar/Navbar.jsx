@@ -45,7 +45,7 @@ const NavBar = (props) => {
                 <div
                 onClick={handleMenu}
                 className="hamburger">
-                    <i class="fas fa-bars"></i>
+                    <i className="fas fa-bars"></i>
                 </div>
                 <div className="logo-container" >
                     <span className="linea-1" ></span>
@@ -84,7 +84,7 @@ const NavBar = (props) => {
                     className="close-menu">
                         <i 
                         onClick={handleMenu}
-                        class="fas fa-times"></i>
+                        className="fas fa-times"></i>
                     </div>
                     <div className="menu-lateral-content">
                         <div className="menu-items">
