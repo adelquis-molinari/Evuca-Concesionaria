@@ -1,0 +1,83 @@
+.contactanos{
+    width: 100%;
+    max-height: 600px;
+    object-fit: cover;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.icono1{
+    width: 30%;
+    max-height: 250px;
+    object-fit: cover;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.icono2{
+    width: 30%;
+    max-height: 250px;
+    object-fit: cover;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.icono3{
+    width: 30%;
+    max-height: 250px;
+    object-fit: cover;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.containerContact h3{
+    text-align: center;
+}
+
+.containerContact p{
+    text-align: center;
+}
+
+.containerContact form{
+    background-color: #287094;
+    border-radius: 3px;
+    color: white;
+    font-size: 14px;
+    padding: 20px;
+    margin: 0 auto;
+    width: 300px;
+}
+
+
+.containerContact input{
+    border: solid 1px #ccc;
+    padding: 10px;
+    width: 280px;
+}
+
+.containerContact textarea{
+    border: solid 1px #ccc;
+    padding: 10px;
+    width: 280px;
+}
+
+.containerContact button{
+    border: 0;
+    border-radius: 3px;
+    display: inline-block;
+    padding: 10px 15px;
+    text-decoration: none;
+    color: #287094;
+    background-color:#ccc;
+    text-align: center;
+    font-weight: bold;
+    width: 303px;
+}
+
+
+.containerContact button:hover{
+    background-color:#999;
+}

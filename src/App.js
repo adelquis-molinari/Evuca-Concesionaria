@@ -12,6 +12,7 @@ import { apiSimpleMotos, apiDetalladaMotos } from "../src/Data/apiMotos";
 import { apiSimpleTractores, apiDetalladaTractores } from "../src/Data/apiTractores";
 import { loadData } from './actions';
 import {connect} from 'react-redux'
+import  Contacto from "./conponents/Contacto/Contact"
 
 
 
@@ -44,7 +45,8 @@ export function App(props) {
         <Route  path="/shop/:id" component={Shop}/> 
         <Route  path="/article/:id" component={Articulo}/> 
         <Route  path="/shopping-cart" render={()=> <ShoppingCart />}/> 
-      <Footer />
+        <Route  path="/contact" render={() => <Contacto/>}/>
+        <Footer />
     </Fragment>
   );
 }
