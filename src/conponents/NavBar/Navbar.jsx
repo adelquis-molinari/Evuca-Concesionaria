@@ -7,8 +7,9 @@ import './Navbar.css';
 import {ButtonLog, NavLink, NavItem, ButtonLink, Dropdown} from './NavStyled';
 import Profile from './Profile/Profile';
 import InputSearch from '../InputSearch/InputSearch';
+import { connect } from 'react-redux';
 
-const NavBar = () => {
+const NavBar = (props) => {
     // desplega Dropdown al hacer click en el boton
     const [dropdown, setDropdown] = useState(false);
     const [dropdown2, setDropdown2] = useState(false);
@@ -37,6 +38,7 @@ const NavBar = () => {
         setSeachMenu(!seachMenu);
         setDropdown(false);
     }
+    // carrito de compras
     return ( 
         <>
             <nav className="nav-transp">
@@ -52,6 +54,13 @@ const NavBar = () => {
                     </Link>
                     <span className="linea-2" ></span>
                 </div>
+                <>
+                    <Link to="/shopping-cart" style={{ textDecoration: 'none' }} >
+                        <i className={ 
+                            props.dataGarage.length > 0 ? "fas fa-warehouse garajeNav garage-animations garageNav" : "fas fa-warehouse garajeNav garageNav"
+                        }></i>
+                    </Link >
+                </>
                 <ButtonLog 
                         onClick={handleSeach}
                     ><i className="fas fa-search"></i></ButtonLog> 
@@ -114,4 +123,10 @@ const NavBar = () => {
 }
 
 
-export default NavBar;
+const mapStateToProps = state => {
+    return {
+        dataGarage: state?.dataGarage ? state.dataGarage : [],
+    }
+}
+
+export default connect(mapStateToProps)(NavBar);

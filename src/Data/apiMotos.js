@@ -24,7 +24,7 @@ export const apiSimpleMotos = [
         cantidad: 4,
         img: hunter150rt,
         imgMarca: corven,
-        descripcion: 'corven hunter 150 rt 2021',
+        descripcion: 'Corven Hunter 150 Rt 2021',
         tipo: 'moto'
     },{
         id: 676590,
@@ -34,7 +34,7 @@ export const apiSimpleMotos = [
         cantidad: 4,
         img: newEnergy110,
         imgMarca: corven,
-        descripcion: 'corven newEnergy 110 2021',
+        descripcion: 'Corven NewEnergy 110 2021',
         tipo: 'moto'
     },{
         id: 426733,
@@ -44,7 +44,7 @@ export const apiSimpleMotos = [
         cantidad: 4,
         img: touringTriax250,
         imgMarca: corven,
-        descripcion: 'corven touring Triax 250 2021',
+        descripcion: 'Corven Touring Triax 250 2021',
         tipo: 'moto'
     },{
         id: 455972,
@@ -54,7 +54,7 @@ export const apiSimpleMotos = [
         cantidad: 4,
         img: wave,
         imgMarca: honda,
-        descripcion: 'honda wave 2021',
+        descripcion: 'Honda Wave 2021',
         tipo: 'moto'
     },{
         id: 441901,
@@ -64,7 +64,7 @@ export const apiSimpleMotos = [
         cantidad: 4,
         img: twister,
         imgMarca: honda,
-        descripcion: 'honda twister 2021',
+        descripcion: 'Honda Twister 2021',
         tipo: 'moto'
     },{
         id: 947310,
@@ -74,7 +74,7 @@ export const apiSimpleMotos = [
         cantidad: 4,
         img: cbr1000,
         imgMarca: honda,
-        descripcion: 'honda cbr 1000 2021',
+        descripcion: 'Honda Cbr 1000 2021',
         tipo: 'moto'
     },{
         id: 531023,
@@ -84,7 +84,7 @@ export const apiSimpleMotos = [
         cantidad: 4,
         img: cripton,
         imgMarca: yamaha,
-        descripcion: 'yamaha cripton 2021',
+        descripcion: 'Yamaha Cripton 2021',
         tipo: 'moto'
     },{
         id: 674599,
@@ -94,7 +94,7 @@ export const apiSimpleMotos = [
         cantidad: 4,
         img: fz25,
         imgMarca: yamaha,
-        descripcion: 'yamaha fz 25 2021',
+        descripcion: 'Yamaha Fz 25 2021',
         tipo: 'moto'
     },{
         id: 603092,
@@ -104,7 +104,7 @@ export const apiSimpleMotos = [
         cantidad: 4,
         img: YZFR1,
         imgMarca: yamaha,
-        descripcion: 'yamaha fz fr1 2021',
+        descripcion: 'Yamaha Fz fr1 2021',
         tipo: 'moto'
     }
 ]
@@ -113,7 +113,7 @@ export const apiDetalladaMotos = [
     {
         id: 228835,
         marca: 'Corven',
-        modelo: 'Hunter 15 rt',
+        modelo: 'Hunter 150 rt',
         precio : 160000,
         cantidad: 4,
         img: hunter150rt,

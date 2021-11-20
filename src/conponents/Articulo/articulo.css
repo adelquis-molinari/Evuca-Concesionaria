@@ -78,11 +78,9 @@ body{
     justify-content: center;
 }
 .carruselImg{
-    width: 100%;
+    width: 800px;
     height: 500px;
-    max-width: 800px;
-    min-width: 800px;
-    object-fit:contain;
+    object-fit:cover;   
 }
 
 .btnIzqArticle{
@@ -91,13 +89,13 @@ body{
     top: 50%;
     margin-left: 10px;
     font-size:40px;
-    color: rgba(216, 216, 216, 0.884);
+    color: rgba(255, 255, 255, 0.568);
     background-color: transparent;
     border: 1px solid transparent;
 }
 .btnIzqArticle:hover{
     cursor: pointer;
-    color: rgb(216, 216, 216);
+    color: rgba(255, 255, 255, 0.692);
     font-size:45px;
     transition: 0.2s;
 }
@@ -108,13 +106,13 @@ body{
     top: 50%;
     margin-right: 10px;
     font-size:40px;
-    color: rgba(216, 216, 216, 0.884);
+    color: rgba(255, 255, 255, 0.568);
     background-color: transparent;
     border: 1px solid transparent;
 }
 .btnDereArticle:hover{
     cursor: pointer;
-    color: rgb(216, 216, 216);
+    color: rgba(255, 255, 255, 0.692);
     font-size: 45px;
     transition: 0.2s;
 }
