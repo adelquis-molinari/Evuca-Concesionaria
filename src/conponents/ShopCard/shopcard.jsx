@@ -16,7 +16,7 @@ export default function ShopCard(props){
                 {props.props.cantidad > 0 ?
                 <i 
                     onClick={() => dispatch(addGarage(props.props))}
-                    className="fas fa-warehouse garajeTitulo">
+                    className="fas fa-warehouse">
                 </i>
                 :
                 null
@@ -26,7 +26,7 @@ export default function ShopCard(props){
             <Link to={`/article/${props.props.id}`} style={{textDecoration: 'none', color:"#287094"}}>
             <h3>{props.props.descripcion}</h3>
             </Link>
-            <p>{props.props.precio}</p>
+            <p>{`$${props.props.precio.toLocaleString('de-DE')}`}</p>
             </div>
         </div>
     </div>

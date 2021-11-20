@@ -11,6 +11,7 @@ import {v4 as uuidv4} from 'uuid';
 export function Articulo(props){
     const dispatch = useDispatch();
     const vehiculoActual = props.dataDetallada.filter(vehiculos => vehiculos.id === parseInt(props.match.params.id))
+<<<<<<< HEAD
     // const [vehiculo, setVehiculo] = useState(
     //     {
     //         id: props.match.params.id,
@@ -22,10 +23,12 @@ export function Articulo(props){
     //     }
     // );
     // console.log(vehiculo);
+=======
+>>>>>>> 9da4f3a0be20b9f850f505c7ff2ae05dc5fbaf18
     // Carrusel
-    const image = vehiculoActual[0].imgDescriptivas
+    const image = vehiculoActual[0]?.imgDescriptivas
     const [selectedIndex, setSelectedIndex] = useState(0);
-    const [selectedImage, setSelectedImage] = useState(image[0])
+    const [selectedImage, setSelectedImage] = useState(image? image[0] : {})
     const previous = () => {
         const condition = selectedIndex > 0;
         const nextIndex = condition ? selectedIndex - 1 : image.length -1;
@@ -38,10 +41,17 @@ export function Articulo(props){
         setSelectedImage(image[nextIndex])
         setSelectedIndex(nextIndex);
     }
+<<<<<<< HEAD
     const precioEnDolar = Math.round(vehiculoActual[0].precio/100.12).toLocaleString('de-DE')
     const precioArs = vehiculoActual[0].precio.toLocaleString('de-DE')
 
     if (vehiculoActual) {
+=======
+    
+    const precioEnDolar = Math.round(vehiculoActual[0]?.precio/100.12).toLocaleString('de-DE')
+    const precioArs = vehiculoActual[0]?.precio.toLocaleString('de-DE')
+    if (vehiculoActual[0]) {
+>>>>>>> 9da4f3a0be20b9f850f505c7ff2ae05dc5fbaf18
         return(
     <div>
 

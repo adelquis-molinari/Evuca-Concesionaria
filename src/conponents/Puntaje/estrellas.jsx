@@ -5,6 +5,7 @@ import "./estrellas.css";
 function Estrellas () {
     const [rating, setRating] = useState(null)
     const [hover, setHover] = useState(null)
+    console.log(rating)
 
     return(
         <div>

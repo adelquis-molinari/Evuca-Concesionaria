@@ -10,6 +10,7 @@ import ShoppingCart from './conponents/Shopping Cart/ShoppoingCard';
 import Pag404 from './conponents/Pag404';
 import { loadData } from './actions';
 import {connect} from 'react-redux'
+import  Contacto from "./conponents/Contacto/Contact"
 
 
 
@@ -28,8 +29,9 @@ export function App(props) {
         <Route  path="/shop/:id" component={Shop}/> 
         <Route  path="/article/:id" component={Articulo}/> 
         <Route  path="/shopping-cart" render={()=> <ShoppingCart />}/> 
-        <Route  connect={<Pag404 />}/>
-        <Route path="/" render={()=> <Footer /> }  />
+        <Route  path="/contact" render={() => <Contacto/>}/>
+        <Route component={Pag404}/>
+      <Footer />
     </Fragment>
   );
 }
