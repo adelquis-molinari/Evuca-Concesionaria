@@ -100,9 +100,9 @@ const NavBar = (props) => {
                         </div>
                         { dropdown2 ?
                         <div className="menu-items">
-                            <NavLink onClick={handleMenu} to="/shop/autos">Automoviles  </NavLink>
-                            <NavLink onClick={handleMenu} to="/shop/motos">Motocicletas </NavLink>
-                            <NavLink onClick={handleMenu} to="/shop/tractores">Tractores </NavLink>
+                            <NavLink onClick={handleMenu} to="/shop/Autos">Automoviles  </NavLink>
+                            <NavLink onClick={handleMenu} to="/shop/Motos">Motocicletas </NavLink>
+                            <NavLink onClick={handleMenu} to="/shop/Tractores">Tractores </NavLink>
                         </div>
                         : null
                         }

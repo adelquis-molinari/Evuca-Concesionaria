@@ -2,11 +2,19 @@ import React from 'react';
 import styled from 'styled-components';
 
 const ErrorSpanStyled = styled.span`
-    color: red;
-    font-size: 1.5rem;
-    font-weight: bold;
-    margin-top: 1rem;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    text-align: center;
     width: 100%;
+    height: 5%;
+    bottom: 5%;
+    left: 0;
+    padding: 5px;
+    color: white;
+    font-size: 0.875rem;
+    font-weight: bold;
+    background: #ff8888;
 `;
 
 

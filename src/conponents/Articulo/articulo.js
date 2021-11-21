@@ -11,20 +11,6 @@ import {v4 as uuidv4} from 'uuid';
 export function Articulo(props){
     const dispatch = useDispatch();
     const vehiculoActual = props.dataDetallada.filter(vehiculos => vehiculos.id === parseInt(props.match.params.id))
-<<<<<<< HEAD
-    // const [vehiculo, setVehiculo] = useState(
-    //     {
-    //         id: props.match.params.id,
-    //         marca: vehiculoActual[0].marca,
-    //         modelo: vehiculoActual[0].modelo,
-    //         precio: vehiculoActual[0].precio,
-    //         img: vehiculoActual[0].img,
-    //         cantidad: 1,
-    //     }
-    // );
-    // console.log(vehiculo);
-=======
->>>>>>> 9da4f3a0be20b9f850f505c7ff2ae05dc5fbaf18
     // Carrusel
     const image = vehiculoActual[0]?.imgDescriptivas
     const [selectedIndex, setSelectedIndex] = useState(0);
@@ -41,17 +27,10 @@ export function Articulo(props){
         setSelectedImage(image[nextIndex])
         setSelectedIndex(nextIndex);
     }
-<<<<<<< HEAD
-    const precioEnDolar = Math.round(vehiculoActual[0].precio/100.12).toLocaleString('de-DE')
-    const precioArs = vehiculoActual[0].precio.toLocaleString('de-DE')
-
-    if (vehiculoActual) {
-=======
     
     const precioEnDolar = Math.round(vehiculoActual[0]?.precio/100.12).toLocaleString('de-DE')
     const precioArs = vehiculoActual[0]?.precio.toLocaleString('de-DE')
     if (vehiculoActual[0]) {
->>>>>>> 9da4f3a0be20b9f850f505c7ff2ae05dc5fbaf18
         return(
     <div>
 
@@ -62,7 +41,7 @@ export function Articulo(props){
                     <h1>{vehiculoActual[0].marca} {vehiculoActual[0].modelo}</h1>
                     {vehiculoActual[0].cantidad > 0 ?
                         <i 
-                        onClick={() => dispatch(addGarage(vehiculoActual))}
+                        onClick={() => dispatch(addGarage(vehiculoActual[0]))}
                         className="fas fa-warehouse garajeTitulo"></i>
                         :
                             <span>Lo sentimos , no hay {vehiculoActual[0].tipo} disponible</span>

@@ -10,7 +10,7 @@ export const FooterDiv = styled.footer`
     position: relative;
     display: flex;
     bottom: 0;
-    padding: 20px;
+    padding: 20px 0 ;
     text-align: center;
     font-size: 12px;
     flex-direction: row;

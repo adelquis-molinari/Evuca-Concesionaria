@@ -24,6 +24,14 @@
     justify-content: center;
     align-items: center;
 }
+.content-input{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 .form-group label{
     width: 30%;
     height: auto;
