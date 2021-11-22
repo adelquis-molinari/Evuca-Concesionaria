@@ -8,6 +8,7 @@ import {ButtonLog, NavLink, NavItem, ButtonLink, Dropdown} from './NavStyled';
 import Profile from './Profile/Profile';
 import InputSearch from '../InputSearch/InputSearch';
 import { connect } from 'react-redux';
+import NavCart from '../NavCart';
 
 const NavBar = (props) => {
     // desplega Dropdown al hacer click en el boton
@@ -55,11 +56,12 @@ const NavBar = (props) => {
                     <span className="linea-2" ></span>
                 </div>
                 <>
-                    <Link to="/shopping-cart" style={{ textDecoration: 'none' }} >
+                    {/* <Link to="/shopping-cart" style={{ textDecoration: 'none' }} >
                         <i className={ 
                             props.dataGarage.length > 0 ? "fas fa-warehouse garajeNav garage-animations garageNav" : "fas fa-warehouse garajeNav garageNav"
                         }></i>
-                    </Link >
+                    </Link > */}
+                    <NavCart />
                 </>
                 <ButtonLog 
                         onClick={handleSeach}

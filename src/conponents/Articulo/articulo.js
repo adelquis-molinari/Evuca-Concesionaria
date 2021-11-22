@@ -5,7 +5,6 @@ import {useState} from "react";
 import Estrellas from "../Puntaje/estrellas.jsx"
 import Comentario from "../Comentario/comentario.jsx"
 import {addGarage} from "../../actions"
-import {v4 as uuidv4} from 'uuid';
 
 
 export function Articulo(props){
@@ -39,7 +38,7 @@ export function Articulo(props){
                 <img className="articleBanner" src={vehiculoActual[0].imgBanner} alt="articleBanner"></img>
                 <div className="titleArticle">
                     <h1>{vehiculoActual[0].marca} {vehiculoActual[0].modelo}</h1>
-                    {vehiculoActual[0].cantidad > 0 ?
+                    {vehiculoActual[0].stock > 0 ?
                         <i 
                         onClick={() => dispatch(addGarage(vehiculoActual[0]))}
                         className="fas fa-warehouse garajeTitulo"></i>
@@ -52,9 +51,9 @@ export function Articulo(props){
             <div className="articleDescripcion">
                 <h2>{vehiculoActual[0].Titulo}</h2>
                 {
-                    vehiculoActual[0].cantidad > 0 ? 
+                    vehiculoActual[0].stock > 0 ? 
                     <div className="cantidad">
-                        <h5>Cantidad disponible: {vehiculoActual[0].cantidad}</h5>
+                        <h5>Cantidad disponible: {vehiculoActual[0].stock}</h5>
                     </div>
                     :
                     null
@@ -65,8 +64,8 @@ export function Articulo(props){
                     <div className="carruselArticle">
                         <img src={selectedImage} alt="carrouselImg" className="carruselImg"/>
                         <div className="buttonContainerArticle">
-                            <button className="btnIzqArticle" onClick={previous}><i class="fas fa-chevron-circle-left"></i></button>
-                            <button className="btnDereArticle" onClick={next}><i class="fas fa-chevron-circle-right"></i></button>
+                            <button className="btnIzqArticle" onClick={previous}><i className="fas fa-chevron-circle-left"></i></button>
+                            <button className="btnDereArticle" onClick={next}><i className="fas fa-chevron-circle-right"></i></button>
                         </div>
                     </div>
                         <div className="articlePrecio">

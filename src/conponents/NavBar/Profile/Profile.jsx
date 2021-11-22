@@ -13,8 +13,6 @@ const Profile = () => {
     const handleProfile = () => {
         setProfile(!profile)
     }
-    console.log(user, 'usuario');
-
     return (
         <>
             <div 

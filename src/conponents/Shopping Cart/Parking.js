@@ -1,22 +1,22 @@
 import React, {useState, useEffect} from 'react'
 import {useSelector, useDispatch} from 'react-redux';
 import {removeGarage} from '../../actions'
+import { useAuth0 } from '@auth0/auth0-react';
 
 const Parking = ({setConfirm}) => {
     const garage = useSelector(state => state.dataGarage);
     const dispatch = useDispatch();
+    const { isAuthenticated, loginWithRedirect } = useAuth0();
     //recorrer apiSimpleAutos
-    const [autos, setAutos] = useState(garage); 
+    const [autos, setAutos] = useState(garage);
+    console.log(autos);
     const [total, setTotal] = useState(0);
-    //funcion elimina del estado los autos
-    const eliminarAuto = (id) => {
-        const nuevoEstado = autos.filter(auto => auto.id !== id);
-        setAutos(nuevoEstado);
-    }
+
     //funcion para sumar los autos
     useEffect(() => {
         const total = autos.reduce((acumulador, auto) => acumulador + auto.precio, 0);
-        setTotal(total);
+        const precioArs = total.toLocaleString('de-DE')
+        setTotal(precioArs);
     }, [autos]);
     return ( 
         <>
@@ -33,9 +33,16 @@ const Parking = ({setConfirm}) => {
             </div>
             {
                 autos.map(auto => {
+                    const cantCar = auto.precio * auto.cantCart;
+                    const precioArs = cantCar.toLocaleString('de-DE')
                     return (
                         <div className="shop-body" key={auto.id}>
                             <div className="card-item-header">
+                                <div className="count-car">
+                                    <i class="fas fa-sort-up"></i>
+                                        <span>{auto.cantCart}</span>
+                                    <i class="fas fa-sort-down"></i>
+                                </div>
                                 <img src={auto.img} alt={auto.name}/>
                                 <p className="card-marca">{auto.marca}</p>
                                 <p className="card-title">{auto.modelo}</p>
@@ -45,7 +52,7 @@ const Parking = ({setConfirm}) => {
                                 >Sacar del garage</button>
                             </div>
                             <div className="card-item-header">
-                                <p>$ {auto.precio}</p>
+                                <p>$ {precioArs}</p>
                             </div>
                         </div>
                     )
@@ -59,10 +66,18 @@ const Parking = ({setConfirm}) => {
             </div>
             <div className="shop-confirm">
                 <h2>Estas a solo un paso más</h2>
-                <button
-                className="btn-confirm"
-                onClick={() => setConfirm(true)}
-                >Confirmar</button>
+                {
+                    isAuthenticated ?
+                    <button
+                    className="btn-confirm"
+                    onClick={() => setConfirm(true)}
+                    >Confirmar</button>
+                    :
+                    <button
+                    className="btn-confirm"
+                    onClick={() => loginWithRedirect() }
+                    >Logeate para confirmar</button>
+                }
             </div>
         </>
         );

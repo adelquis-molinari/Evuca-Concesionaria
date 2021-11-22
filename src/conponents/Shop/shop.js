@@ -17,6 +17,7 @@ export function Shop(props) {
         return(
             <div className="shopContainer">
                 {apiSimpleAutos.map(a =><ShopCard
+                key={a.id}
                 props = {a}
                 />
                 )}
@@ -27,6 +28,7 @@ export function Shop(props) {
         return(
             <div className="shopContainer">
                 {apiSimpleMotos.map(m =><ShopCard
+                key={m.id}
                 props = {m}
                 />
                 )}
@@ -37,6 +39,7 @@ export function Shop(props) {
         return(
             <div className="shopContainer">
                 {apiSimpleTractores.map(t =><ShopCard
+                key={t.id}
                 props = {t}
                 />
                 )}
@@ -48,6 +51,7 @@ export function Shop(props) {
         return(
             <div className="shopContainer">
                 {autosFiltrados.map(a =><ShopCard
+                key={a.id}
                 props = {a}
                 />
                 )}
@@ -59,6 +63,7 @@ export function Shop(props) {
         return(
             <div className="shopContainer">
                 {motosFiltradas.map(m =><ShopCard
+                key={m.id}
                 props = {m}
                 />
                 )}
@@ -70,6 +75,7 @@ export function Shop(props) {
         return(
             <div className="shopContainer">
                 {tractoresFiltrados.map(t =><ShopCard
+                key={t.id}
                 props = {t}
                 />
                 )}
@@ -81,6 +87,7 @@ export function Shop(props) {
         return(
             <div className="shopContainer">
                 {vehiculosFiltrados.map(v =><ShopCard
+                key={v.id}
                 props = {v}
                 />
                 )}
@@ -92,6 +99,7 @@ export function Shop(props) {
         return(
             <div className="shopContainer">
                 {vehiculosFiltrados.map(v =><ShopCard
+                key={v.id}
                 props = {v}
                 />
                 )}
@@ -103,6 +111,7 @@ export function Shop(props) {
         return(
             <div className="shopContainer">
                 {vehiculosFiltrados.map(v =><ShopCard
+                key={v.id}
                 props = {v}
                 />
                 )}

@@ -138,7 +138,7 @@
     box-shadow: 2px 2px 5px 0px #e5e5e5;
 }
 .btn-confirm{
-    width: 150px;
+    width: 300px;
     height: 40px;
     color: #7a7a7a;
     font-size: 18px;
@@ -148,9 +148,10 @@
     cursor: pointer;
 }
 .btn-confirm:hover{
-    color: #319dd3;
+    color: #fff;
     background: #51d3df;
     transform: scale(1.05);
+    border: none;
     transition: all 0.3s ease-in-out;
 }
 /* form */
@@ -160,4 +161,27 @@
     align-items: center;
     width: 80%;
     height: 600px;
+}
+
+/* component count cart */
+.count-car{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 15px;
+    height: auto;
+    padding: 5px;
+    margin: 0 10px 0 10px;
+    box-shadow: 2px 2px 5px 0px #e5e5e5;
+}
+.count-car i{
+    font-size: 16px;
+    color: #7a7a7a;
+    cursor: pointer;
+}
+.count-car span{
+    font-size: 16px;
+    font-weight: bold;
+    color: #319dd3;
 }
