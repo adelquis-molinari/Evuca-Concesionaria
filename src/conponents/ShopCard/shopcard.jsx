@@ -1,12 +1,9 @@
 import React from 'react';
 import "./shopcard.css";
-import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-import {addGarage} from '../../actions';
 
 
 export default function ShopCard(props){
-    const dispatch = useDispatch();
     return(
         <div className="shopCardContainer" key={props.props.id} >
         <div>

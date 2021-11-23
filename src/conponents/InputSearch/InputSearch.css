@@ -85,3 +85,20 @@
     font-size: 25px;
     font-weight: 400;
 }
+@media screen and (max-width: 768px) {
+    .input-group {
+        padding: 10px;
+        justify-content: center;
+        align-items: center;
+    }
+    .input-control{
+        width: 60%;
+        height: 40px;
+        font-size: 1rem;
+    }
+    .btn-Search{
+        height: 40px;
+        width: 40px;
+        font-size: 1rem;
+    }
+}

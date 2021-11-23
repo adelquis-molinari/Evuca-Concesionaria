@@ -55,14 +55,7 @@ const NavBar = (props) => {
                     </Link>
                     <span className="linea-2" ></span>
                 </div>
-                <>
-                    {/* <Link to="/shopping-cart" style={{ textDecoration: 'none' }} >
-                        <i className={ 
-                            props.dataGarage.length > 0 ? "fas fa-warehouse garajeNav garage-animations garageNav" : "fas fa-warehouse garajeNav garageNav"
-                        }></i>
-                    </Link > */}
                     <NavCart />
-                </>
                 <ButtonLog 
                         onClick={handleSeach}
                     ><i className="fas fa-search"></i></ButtonLog> 
@@ -90,15 +83,21 @@ const NavBar = (props) => {
                     </div>
                     <div className="menu-lateral-content">
                         <div className="menu-items">
-                        <NavItem>
-                            <ButtonLink onClick={handleMenu2}>Vehiculos</ButtonLink>
-                        </NavItem>
-                        <NavItem>
-                            <ButtonLink onClick={handleMenu3}>Post Venta </ButtonLink>
-                        </NavItem>
-                        <NavItem >
-                            <NavLink onClick={handleMenu} to="/agencias">Agencias</NavLink>
-                        </NavItem>
+                            <NavItem >
+                                <NavLink onClick={handleMenu} to="/">Inicio</NavLink>
+                            </NavItem>
+                            <NavItem>
+                                <ButtonLink onClick={handleMenu2}>Vehiculos <i className="fas fa-chevron-right icon-arrow" ></i>  </ButtonLink>
+                            </NavItem>
+                            {/* <NavItem>
+                                <ButtonLink onClick={handleMenu3}>Post Venta </ButtonLink>
+                            </NavItem> */}
+                            <NavItem >
+                                <NavLink onClick={handleMenu} to="/agencias">Agencias</NavLink>
+                            </NavItem>
+                            <NavItem >
+                                <NavLink onClick={handleMenu} to="/contact">Contactanos</NavLink>
+                            </NavItem>
                         </div>
                         { dropdown2 ?
                         <div className="menu-items">

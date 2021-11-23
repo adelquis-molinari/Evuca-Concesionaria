@@ -35,12 +35,8 @@ const LoadingDiv = styled.div`
 }
 `;
 
-
-
-const Loading = () => {
-    return ( 
+const Loading = () =>  ( 
         <LoadingDiv />
-     );
-}
- 
+    )
+
 export default Loading;

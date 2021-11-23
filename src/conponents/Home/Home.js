@@ -112,10 +112,10 @@ const next = () => {
                             img={"http://www.yamaha-motor.com.sv/moduloCotizacionPiezas/img/Logo_-_Yamaha_Shield_-_001.png"}
                             text={"Yamaha"}
                             />
-                        <TypeCard
+                        {/* <TypeCard
                             img={"http://www.yamaha-motor.com.sv/moduloCotizacionPiezas/img/Logo_-_Yamaha_Shield_-_001.png"}
                             text={"Uno mas"}
-                            />
+                            /> */}
                         </div>
                     </div>
                     <div className="seccionBuscar">

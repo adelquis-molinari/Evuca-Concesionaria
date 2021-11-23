@@ -1,11 +1,11 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-import perfilImg from '../../img/Imglogin/face4.jpg';
+// import perfilImg from '../../../../img/Imglogin/face4.jpg';
 import './index.css';
 
 const NavDashboard = () => {
     return ( 
-        <div class="sidebar">
+        <div class="sidebar-dashboard">
         <div class="logo-content">
             <div class="logo">
                 <i class="fab fa-slack"></i>
@@ -57,10 +57,10 @@ const NavDashboard = () => {
                 <span class="tooltip">Setting</span>
             </li>
         </ul>
-        <div class="profile-content">
-            <div class="profile">
-                <div class="profile-details">
-                    <img src={perfilImg} alt="" />
+        <div class="profile-dashboard-content">
+            <div class="profile-dashboard">
+                <div class="profile-dashboard-details">
+                    {/* <img src={perfilImg} alt="" /> */}
                     <div class="name-job">
                         <div class="name">Peter</div>
                         <div class="job">develop</div>

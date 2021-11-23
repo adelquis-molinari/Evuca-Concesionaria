@@ -79,7 +79,7 @@ export const NavItem = styled.div`
 export const NavLink = styled(Link)`
     color: ${colorPrimary};
     text-decoration: none;
-    font-size: 2.3rem;
+    font-size: 1.875rem;
     font-weight: bold;
     padding: 0.5rem 1rem;
     cursor: pointer;
@@ -87,16 +87,24 @@ export const NavLink = styled(Link)`
         color: #319dd3;
         text-decoration: none;
     }
+    @media (max-width: 768px) {
+        font-size: 1.25rem;
+        padding: 0.5rem 0;
+    }
 `;
 export const ButtonLink = styled.span`
     color: ${colorPrimary};
-    font-size: 2.3rem;
+    font-size: 30px;
     font-weight: bold;
     padding: 0.5rem 1rem;
     height: 100%;
     cursor: pointer;
     &:hover {
         color: #319dd3;
+    }
+    @media (max-width: 768px) {
+        font-size: 1.25rem;
+        padding: 0.5rem 0;
     }
 `;
 export const ButtonLog = styled.button`

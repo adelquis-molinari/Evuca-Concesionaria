@@ -104,31 +104,31 @@ body{
 
 /* profile */
 
-.sidebar .profile-content{
+.sidebar-dashboard .profile-dashboard-content{
     position: absolute;
     color: #fff;
     bottom: 0;
     left: 0;
     width: 100%;
 }
-.profile{
+.profile-dashboard{
     position: relative;
     padding: 10px 6px;
     transition: all 0.3s ease-in-out;
     background:#1f13c4
 }
-.profile-details{
+.profile-dashboard-details{
     display: flex;
     align-items: center;
     opacity: 0;
     pointer-events: none;
     white-space: nowrap;
 }
-.sidebar.active .profile-content .profile .profile-details{
+.sidebar-dashboard.active .profile-dashboard-content .profile-dashboard .profile-dashboard-details{
     opacity: 1;
     pointer-events: auto;
 }
-.profile-details img{
+.profile-dashboard-details img{
     width: 45px;
     height: 45px;
     border-radius: 15%;
@@ -197,19 +197,19 @@ body{
     opacity: 0;
     pointer-events: none;
 }
-.sidebar.active ul li .tooltip{
+.sidebar-dashboard.active ul li .tooltip{
     display: none;
 }
-.sidebar ul li:hover .tooltip{
+.sidebar-dashboard ul li:hover .tooltip{
     transform: all 0.5s ease;
     top: 50%;
     opacity: 1;
 }
-.sidebar .links-name{
+.sidebar-dashboard .links-name{
     opacity: 0;
     pointer-events: none;
 }
-.sidebar.active .links-name{
+.sidebar-dashboard.active .links-name{
     opacity: 1;
     pointer-events: auto;
 }

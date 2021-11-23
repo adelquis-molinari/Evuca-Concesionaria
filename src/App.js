@@ -1,19 +1,18 @@
 import React, {Fragment, useEffect} from 'react'
+import {connect} from 'react-redux'
 import Nav from './conponents/NavBar/Navbar'
 import Home from "./conponents/Home/Home.js"
 import Footer from './conponents/Footer/Footer';
 import { Route } from "react-router-dom";
 import { useAuth0 } from '@auth0/auth0-react';
+import { loadData } from './actions';
 import Search from './conponents/Search/Search';
 import Articulo from "./conponents/Articulo/articulo.js"
 import Shop from './conponents/Shop/shop.js';
 import ShoppingCart from './conponents/Shopping Cart/ShoppoingCard';
-// import Pag404 from './conponents/Pag404';
-import { loadData } from './actions';
-import Loading from './conponents/Loading';
-import {connect} from 'react-redux'
 import  Contacto from "./conponents/Contacto/Contact"
-
+import Loading from './conponents/Loading';
+// import Pag404 from './conponents/Pag404';
 
 
 function App(props) {

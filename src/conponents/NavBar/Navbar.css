@@ -105,3 +105,27 @@
     height: 100%;
     width: 100%;
 }
+.icon-arrow{
+    color: #287094;
+    font-size: 1.875rem;
+}
+@media (max-width: 768px){
+    .linea-1{
+        display: none;
+    }
+    .linea-2{
+        display: none;
+    }
+    .logo{
+        width: 100px;
+    }
+    .menu-lateral{
+        width: 100%;
+    }
+    .icon-arrow{
+        font-size: 1.25rem;
+    }
+    .menu-items{
+        padding: 0 0.9375rem 0 0.9375rem;
+    }
+}

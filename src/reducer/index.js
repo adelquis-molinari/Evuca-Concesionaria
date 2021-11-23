@@ -49,11 +49,89 @@ const appData = (state = myData , action) => {
         }
         // localStorage.setItem('my-data', JSON.stringify(newData));
         return newData
-    case "REMOVE_GARAGE":
-        console.log(action.payload, "reducer");
-        return {
-            // dataGarage: [...state.filter(item => item.idGarage !== action.payload)]
+    case "ADD_AMOUNT":
+        console.log(action.payload);
+        const newGarage2 = [...state.dataGarage]
+        const newCount = newGarage2.map(item => {
+            if(item.id === action.payload.id) {
+                item.cantCart++;
+            }
+            return item;
+        });
+        const newDataSimple2 = state.dataSimple.map(item => {
+            if(item.id === action.payload.id) {
+                if (item.cantCart === 4) {
+                    return  item;
+                }
+                item.stock = item.stock - 1;
+            }
+            return item;
+        });
+        const newDataDetallada2 = state.dataDetallada.map(item => {
+            if(item.id === action.payload.id) {
+                if (item.cantCart === 4) {
+                    return item;
+                }
+                item.stock = item.stock - 1;
+            }
+            return item;
+        });
+        const newData2 = {
+            dataSimple: newDataSimple2,
+            dataDetallada: newDataDetallada2,
+            dataGarage: newCount,
         }
+        // localStorage.setItem('my-data', JSON.stringify(newData2));
+        return newData2
+    case "REMOVE_AMOUNT":
+        const newGarage3 = [...state.dataGarage]
+        const newCount2 = newGarage3.map(item => {
+            if(item.id === action.payload.id) {
+                item.cantCart--;
+            }
+            return item;
+        });
+        const newDataSimple3 = state.dataSimple.map(item => {
+            if(item.id === action.payload.id) {
+                item.stock = item.stock + 1;
+            }
+            return item;
+        });
+        const newDataDetallada3 = state.dataDetallada.map(item => {
+            if(item.id === action.payload.id) {
+                item.stock = item.stock + 1;
+            }
+            return item;
+        });
+        const newData3 = {
+            dataSimple: newDataSimple3,
+            dataDetallada: newDataDetallada3,
+            dataGarage: newCount2,
+        }
+        // localStorage.setItem('my-data', JSON.stringify(newData3));
+        return newData3
+    case "REMOVE_GARAGE":
+        const newGarage4 = [...state.dataGarage]
+        const newDataSimple4 = state.dataSimple.map(item => {
+            if(item.id === action.payload.id) {
+                item.stock = item.stock + 3;
+            }
+            return item;
+        });
+        const newDataDetallada4 = state.dataDetallada.map(item => {
+            if(item.id === action.payload.id) {
+                item.stock = item.stock + 3;
+            }
+            return item;
+        });
+        const data5 = newGarage4.filter(item => item.id !== action.payload.id);
+        const newData4 = {
+            dataSimple: newDataSimple4,
+            dataDetallada: newDataDetallada4,
+            dataGarage: data5,
+        }
+        // localStorage.setItem('my-data', JSON.stringify(newData4));
+        return newData4
     case "SET_STOCK":
         return {
             stock: !state.stock

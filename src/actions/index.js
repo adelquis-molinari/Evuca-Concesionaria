@@ -11,6 +11,18 @@ export function addGarage(payload) {
         payload
     }
 }
+export function addAmount(payload) {
+    return {
+        type: "ADD_AMOUNT",
+        payload
+    }
+}
+export function removeAmount(payload) {
+    return {
+        type: "REMOVE_AMOUNT",
+        payload
+    }
+}
 
 export function removeGarage(payload) {
     return {

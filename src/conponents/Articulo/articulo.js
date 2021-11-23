@@ -74,8 +74,8 @@ export function Articulo(props){
                             <h3>Precio sugerido en dolares:</h3>
                             <p>{`$${precioEnDolar} USD`}</p>
                             <div className="articleButtons">
-                                <a>Reservar</a>
-                                <a>Consultar</a>
+                                {/* <a>Reservar</a>
+                                <a>Consultar</a> */}
                             </div>
                         </div>
                 </div>

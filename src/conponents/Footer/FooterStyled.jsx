@@ -15,6 +15,11 @@ export const FooterDiv = styled.footer`
     font-size: 12px;
     flex-direction: row;
     justify-content: space-between;
+    @media (max-width: 768px) {
+        flex-direction: column;
+        align-items: center;
+        padding:12px 0;
+    }
 `;
 
 export const LinkEvukes = styled(Link)`
