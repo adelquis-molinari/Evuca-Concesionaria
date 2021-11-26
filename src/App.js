@@ -12,11 +12,28 @@ import Shop from './conponents/Shop/shop.js';
 import ShoppingCart from './conponents/Shopping Cart/ShoppoingCard';
 import  Contacto from "./conponents/Contacto/Contact"
 import Loading from './conponents/Loading';
+import {addDataRedux, checkUserDb} from './Firebase/AddUserDb';
+// import { apiSimpleAutos } from "./Data/apiAutos";
+// import { apiSimpleMotos } from "./Data/apiMotos";
+// import { apiSimpleTractores } from "./Data/apiTractores";
+// import { addProduct } from './Firebase/AddProduct';
+
+// const dataSimple = apiSimpleAutos.concat(apiSimpleMotos, apiSimpleTractores);
+// const myData = {
+//     dataSimple: dataSimple,
+// };
 // import Pag404 from './conponents/Pag404';
 
 
 function App(props) {
-  const { isLoading } = useAuth0();
+  const { isLoading, user, isAuthenticated } = useAuth0();
+
+  useEffect(()=> {
+    if(isAuthenticated) {
+      checkUserDb(user)
+    }
+  })
+
 
   useEffect(() => {
     if (isLoading) { 
@@ -27,6 +44,7 @@ function App(props) {
     const payloadData = localStorage.getItem('my-data');
     if(payloadData) {
       props.loadData(payloadData)
+      // addProduct(myData)
     }
   },[props])
   return (

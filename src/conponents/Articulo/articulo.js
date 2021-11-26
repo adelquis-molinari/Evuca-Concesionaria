@@ -9,7 +9,7 @@ import {addGarage} from "../../actions"
 
 export function Articulo(props){
     const dispatch = useDispatch();
-    const vehiculoActual = props.dataDetallada.filter(vehiculos => vehiculos.id === parseInt(props.match.params.id))
+    const vehiculoActual = props.dataSimple.filter(vehiculos => vehiculos.id === parseInt(props.match.params.id))
     // Carrusel
     const image = vehiculoActual[0]?.imgDescriptivas
     const [selectedIndex, setSelectedIndex] = useState(0);
@@ -58,7 +58,7 @@ export function Articulo(props){
                     :
                     null
                 }
-                <p>{vehiculoActual[0].descripcion}</p>
+                <p>{vehiculoActual[0].descripcionDetallada}</p>
             </div>
                 <div className="descripcionContainer">
                     <div className="carruselArticle">
@@ -92,7 +92,7 @@ export function Articulo(props){
 
 function mapStateToProps(state) {
     return {
-    dataDetallada: state?.dataDetallada ? state.dataDetallada : [],
+    dataSimple: state?.dataSimple ? state.dataSimple : [],
     }
 }
 
