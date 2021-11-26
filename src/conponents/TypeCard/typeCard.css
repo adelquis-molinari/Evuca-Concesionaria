@@ -27,7 +27,6 @@
     text-align: center;
 }
 
-.typeHover :hover{
-    /* border: 1px solid grey; */
+.containerType :hover{
     cursor: pointer;
 }

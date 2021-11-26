@@ -12,6 +12,8 @@ import Shop from './conponents/Shop/shop.js';
 import ShoppingCart from './conponents/Shopping Cart/ShoppoingCard';
 import  Contacto from "./conponents/Contacto/Contact"
 import Loading from './conponents/Loading';
+import DashBoard from "./dashBoard/src/components/Dashboard/index"
+
 // import Pag404 from './conponents/Pag404';
 
 
@@ -38,6 +40,7 @@ function App(props) {
         <Route  path="/article/:id" component={Articulo}/> 
         <Route  path="/shopping-cart" render={()=> <ShoppingCart />}/> 
         <Route  path="/contact" render={() => <Contacto/>}/>
+        <Route  path="/admin" render={() => <DashBoard/>}/>
         {/* <Route component={Pag404}/> */}
       <Footer />
     </Fragment>
