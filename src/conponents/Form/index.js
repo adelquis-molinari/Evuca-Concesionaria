@@ -1,8 +1,12 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
+import Swal from 'sweetalert2';
+import Calendar from 'react-calendar';
 import { useAuth0 } from '@auth0/auth0-react';
-import './index.css';
 import { Redirect } from 'react-router-dom';
-import ErrorSpan from '../ErrorSpan';
+import InputSelect from '../InputSelect';
+import './index.css';
+import 'react-calendar/dist/Calendar.css';
+
 const FormBase = ({status}) => {
     const expressions = {
 		user: /^[a-zA-Z0-9_-]{4,16}$/, // Letras, numeros, guion y guion_bajo
@@ -15,6 +19,8 @@ const FormBase = ({status}) => {
 	}
 
     const { user } = useAuth0();
+    const [time, setTime] = useState(0);
+    const [render, setRender] = useState(true);
     const [error, setError] = useState({
         name: false,
         lastname: false,
@@ -33,7 +39,7 @@ const FormBase = ({status}) => {
         nickName: user.nickname,
         picture: user.picture,
         status: status,
-        updatedAt: user.updated_at,
+        fecha: '',
     });
     const [redirect, setRedirect] = useState(false);
     const {name, lastname,email, city, phone} = users;
@@ -66,16 +72,73 @@ const FormBase = ({status}) => {
     }
     const ErrorMessage = (name, current) => {
         if(error[name]){
-            return <ErrorSpan error={`El ${current} es requerido`}/>
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: `El campo ${current} no es valido`,
+                backdrop: `
+                    rgba(0,0,123,0.4)
+                `
+            });
         }
     }
+    // calendario
+    const [value, setValue] =useState(new Date());
+    // extraer sunday
+    useEffect(() => {
+    if(value.getDay() === 0){
+        setRender(false);
+        Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: '25 feriado',
+            backdrop: `
+            rgba(0,0,123,0.4)
+            `
+        });
+        console.log(render, 'in');
+    }else{
+        console.log(render, 'out');
+        setRender(true);
+    }
+    }, [value]);
+    
+    useEffect(() => {
+        const day = value.getDate();
+        const month = value.getMonth() + 1;
+        const year = value.getFullYear();
+        const date = day + '/' + month + '/' + year;
+        setUsers({
+            ...users,
+            fecha: date
+        })
+    }, [value]);
+    // 25 diciembre no se puede cambiar el status
+    useEffect(() => {
+        if(value.getDate() === 25 && value.getMonth() === 11){
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: '25 feriado',
+                backdrop: `
+                    rgba(0,0,123,0.4)
+                `
+            });
+            setRender(false);
+            console.log(render, 'in 25');
+        }else{setRender(true);}
+    },[value]);
+    // sumar un mes mas a la fecha actual
+    const currentDay = new Date()
+    const nextMonth = new Date(currentDay.setMonth(currentDay.getMonth() + 1));
+
     // enviar datos
     const handleSubmit = (e) => {
         e.preventDefault();
         if(name.trim() === '' || lastname.trim() === '' || email.trim() === '' || city.trim() === '' || phone.trim() === ''){
             setError({
                 ...error,
-                campos: true
+                campos: true,
             });
             return;
         }
@@ -102,14 +165,29 @@ const FormBase = ({status}) => {
             nickName: user.nickname,
             picture: user.picture,
             status: status,
-            updatedAt: user.updated_at,
+            fecha: time,
         });
         // redirect to parking componentes
         setRedirect(true);
     }
+    // render
+if(render){
     return ( 
         <form className='form-content' onSubmit={handleSubmit} >
             <fieldset className='field'>
+                <div className='form-group-date'>
+                    <Calendar
+                        minDate={new Date()}
+                        maxDate={nextMonth}
+                        onChange={setValue}
+                        value={value}
+                    />
+                </div>
+                <div className='form-group'>
+                    < InputSelect 
+                        setTime={setTime}
+                    />
+                </div>
                 <div className="form-group">
                     <label>Nombre</label>
                     <input
@@ -175,12 +253,24 @@ const FormBase = ({status}) => {
                 {error.email && ErrorMessage('email', 'Email')}
                 {error.city && ErrorMessage('city', 'Ciudad')}
                 {error.phone && ErrorMessage('phone', 'Telefono')}
-                {error.campos && <ErrorSpan error='Todos los campos son obligatorios' />}
+                {error.campos && ErrorMessage('campos', ' ')}
             <button type="submit" className="btn-submit">Submit</button>
             </fieldset>
             {redirect && <Redirect to='/' />}
         </form>
     );
+}else{
+    return (
+        <div className='form-group-date'>
+            <Calendar
+                minDate={new Date()}
+                maxDate={nextMonth}
+                onChange={setValue}
+                value={value}
+            />
+        </div>
+    )
+}
 }
 
 export default FormBase

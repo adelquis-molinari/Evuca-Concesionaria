@@ -12,11 +12,12 @@ import Shop from './conponents/Shop/shop.js';
 import ShoppingCart from './conponents/Shopping Cart/ShoppoingCard';
 import  Contacto from "./conponents/Contacto/Contact"
 import Loading from './conponents/Loading';
+import PrivateRoute from './conponents/Private-route'
 // import Pag404 from './conponents/Pag404';
-
+import ShiftDashboard from './conponents/ShiftDashboard'
 
 function App(props) {
-  const { isLoading } = useAuth0();
+  const { isLoading} = useAuth0();
 
   useEffect(() => {
     if (isLoading) { 
@@ -37,7 +38,8 @@ function App(props) {
         <Route  path="/shop/:id" component={Shop}/> 
         <Route  path="/article/:id" component={Articulo}/> 
         <Route  path="/shopping-cart" render={()=> <ShoppingCart />}/> 
-        <Route  path="/contact" render={() => <Contacto/>}/>
+        <PrivateRoute  path="/contact" component={Contacto}/>
+        <Route  path="/shift-dashboard" component={ShiftDashboard}/>
         {/* <Route component={Pag404}/> */}
       <Footer />
     </Fragment>

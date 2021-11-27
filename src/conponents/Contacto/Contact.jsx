@@ -3,6 +3,7 @@ import banner from "./img/Banner.jpg";
 import telefono from "./img/icono telefono.png";
 import correo from "./img/icono correo.png";
 import chat from "./img/icono chat.png";
+import FormBase from '../Form'
 import "./Contact.css";
 
 
@@ -31,24 +32,9 @@ const contact = () => {
                 <br></br>
                 <br></br>
                 <br></br>
-                <form>
-                    <label >Nombre:</label>
-                    <input type="text" class="texto"/> 
-                    <label >Correo Electronico:</label> 
-                    <input type="text" class="texto"/> 
-                    <label >Asunto:</label> 
-                    <input type="text" class="texto"/> 
-                    <label> Mensaje:</label> 
-                    <textarea type="enviar"class="texto"/> 
-                    <br></br>
-                    <button>Enviar</button>
-                </form>
-                <br></br>
-                <br></br>
-                <br></br>
-                <br></br>
-                <br></br>
-                <br></br>
+                <div className="content-form-contact">
+                    <FormBase status='consulta' />
+                </div>
             </div>
         
     )

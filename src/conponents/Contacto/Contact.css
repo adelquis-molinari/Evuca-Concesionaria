@@ -41,43 +41,10 @@
     text-align: center;
 }
 
-.containerContact form{
-    background-color: #287094;
-    border-radius: 3px;
-    color: white;
-    font-size: 14px;
-    padding: 20px;
-    margin: 0 auto;
-    width: 300px;
-}
-
-
-.containerContact input{
-    border: solid 1px #ccc;
-    padding: 10px;
-    width: 280px;
-}
-
-.containerContact textarea{
-    border: solid 1px #ccc;
-    padding: 10px;
-    width: 280px;
-}
-
-.containerContact button{
-    border: 0;
-    border-radius: 3px;
-    display: inline-block;
-    padding: 10px 15px;
-    text-decoration: none;
-    color: #287094;
-    background-color:#ccc;
-    text-align: center;
-    font-weight: bold;
-    width: 303px;
-}
-
-
-.containerContact button:hover{
-    background-color:#999;
+.content-form-contact{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 6.25rem;
 }

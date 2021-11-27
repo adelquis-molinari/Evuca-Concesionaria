@@ -30,10 +30,10 @@ const NavBar = (props) => {
         setDropdown3(false);
     }
     //desplegar el menu de Postventa
-    const handleMenu3 = () => {
-        setDropdown3(!dropdown3);
-        setDropdown2(false);
-    }
+    // const handleMenu3 = () => {
+    //     setDropdown3(!dropdown3);
+    //     setDropdown2(false);
+    // }
     //desplegar el menu de busqueda
     const handleSeach = () => {
         setSeachMenu(!seachMenu);

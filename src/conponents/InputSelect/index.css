@@ -1,0 +1,24 @@
+.content-shift{
+    position: flex;
+    justify-content: center;
+    align-items: center;
+    width: 34.375rem;
+}
+.content-shift select{
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5rem;
+    border: none;
+    border-bottom: 1px solid #535353;
+    margin: 1.25rem 0 1.25rem 0;
+}
+.content-shift select option{
+    font-size: 1rem;
+    color: #319dd3;
+}
+.content-shift select:focus{
+    outline: none;
+}

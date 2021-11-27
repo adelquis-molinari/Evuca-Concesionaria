@@ -20,9 +20,17 @@
     width: 100%;
     height: auto;
     display: flex;
-    /* flex-direction: column; */
     justify-content: center;
     align-items: center;
+}
+.form-group-date{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 0 20px;
 }
 .content-input{
     width: 100%;
