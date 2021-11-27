@@ -41,7 +41,7 @@ export const addDataRedux = async () => {
     }
 }
 
-export const addUserComment = async (user, comment, params)=> {
+export const addUserComment = async (user, comment, params, puntaje)=> {
     try {
         const docRef = doc(db, 'usuarios', user.sub);
         await updateDoc(docRef, {
@@ -51,6 +51,7 @@ export const addUserComment = async (user, comment, params)=> {
                 nickname: user.nickname,
                 picture: user.picture,
                 time: Date.now(),
+                puntaje: puntaje,
             })
         });
     } catch(e) {

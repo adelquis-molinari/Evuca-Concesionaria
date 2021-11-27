@@ -1,10 +1,9 @@
 import React from 'react';
 import "./comentario.css"
-import ComentarioEstrellas from "../ComentarioPuntaje/comentarioEstrellas.jsx"
+import ComentarioEstrellas from "../ComentarioEstrellas/index"
 
 
-
-export default function Comentario(props){
+export default function Comentario(props){  
     const date = new Date(props.time);
     return(
         <div className="comentario">
@@ -13,8 +12,8 @@ export default function Comentario(props){
                 <p>{props.nickname}</p>
             </div>
             <div className="comentarioStars">
-                <ComentarioEstrellas></ComentarioEstrellas>
-                <p>Fecha: {date.toLocaleString('es')}</p>
+            <ComentarioEstrellas rating={props.puntaje}></ComentarioEstrellas>
+                <p>-  Fecha: {date.toLocaleString('es')}</p>
             </div>
             <div className="comentarioTexto">
                     <p>{props.comentario}</p>

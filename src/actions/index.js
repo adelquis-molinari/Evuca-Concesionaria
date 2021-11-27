@@ -37,3 +37,10 @@ export function setStock(payload) {
         payload
     }
 }
+
+export function getRating(payload) {
+    return {
+        type: "GET_RATING",
+        payload
+    }
+}

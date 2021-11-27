@@ -3,13 +3,23 @@
     align-items: center;
 }
 
+.comentariosContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color:rgba(128, 128, 128, 0.123);
+}
 .comentario{
     display: flex;
     flex-direction: column;
-    margin: 10px;
+    margin: 15px 10px 5px 300px;
     padding: 5px;
     border: 1px solid black;
     border-radius: 8px;
+    width: 50%;
+    height: 130px;
+    background-color: white;
+
 }
 
 .comentarioStars{
@@ -17,7 +27,7 @@
 }
 
 .comentarioStars p{
-    margin: 0;
+    margin: 0px ;
 }
 
 .comentarioUser img{
@@ -25,5 +35,14 @@
     height: 40px;
     object-fit:cover;
     border-radius:50%;
+    margin: 5px 15px 5px 5px;
 }
 
+.comentarioTexto{
+    overflow: hidden;
+    font-size: 20px;
+}
+
+.comentarioTexto p{
+    margin-left: 5px;
+}

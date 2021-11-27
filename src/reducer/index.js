@@ -6,6 +6,7 @@ const dataSimple = apiSimpleAutos.concat(apiSimpleMotos, apiSimpleTractores);
 const myData = {
     dataSimple: dataSimple,
     dataGarage: [],
+    rating: "",
 };
 
 localStorage.setItem('my-data', JSON.stringify(myData));
@@ -101,6 +102,11 @@ const appData = (state = myData , action) => {
     case "SET_STOCK":
         return {
             stock: !state.stock
+        }
+    case "GET_RATING":
+        return {
+            ...state,
+            rating: action.payload
         }
     default:
         return

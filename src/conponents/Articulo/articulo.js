@@ -2,15 +2,18 @@ import React from "react";
 import "./articulo.css";
 import {connect, useDispatch} from 'react-redux';
 import {useState, useEffect} from "react";
-import Estrellas from "../Puntaje/estrellas.jsx"
+import BannerEstrellas from "../BannerEstrellas/bannerEstrellas.jsx"
 import Comentario from "../Comentario/comentario.jsx"
 import {addGarage} from "../../actions"
 import { useAuth0 } from '@auth0/auth0-react';
 import {addUserComment, getComment} from "../../Firebase/AddUserDb"
+import ComentarioEstrellas from "../ComentarioPuntaje/comentarioPuntaje.jsx"
 
 export function Articulo(props){
     const dispatch = useDispatch();
     const vehiculoActual = props.dataSimple.filter(vehiculos => vehiculos.id === parseInt(props.match.params.id))
+    const todosLosPuntajes = []
+    
     // Carrusel
     const image = vehiculoActual[0]?.imgDescriptivas
     const [selectedIndex, setSelectedIndex] = useState(0);
@@ -35,7 +38,6 @@ export function Articulo(props){
 
     // Comentario
     const { user, isAuthenticated} = useAuth0();
-
     const handleChange = (e) => {
         if(user) {
             setComent(e.target.value)
@@ -44,24 +46,21 @@ export function Articulo(props){
     const handleSubmit = (e) => {
         console.log(comment)
         console.log(user)
-        addUserComment(user, comment, vehiculoActual[0].id)
+        addUserComment(user, comment, vehiculoActual[0].id, props.rating)
         getComment().then(result => {
                 setComments(result)
         })
     }
-
     useEffect(()=>{getComment().then(result => {
         setComments(result)
     })}, [])
-
-    console.log(comments)
-    // (async () => {
-    //     const comentarios = await getComment(user)
-    //     console.log(comentarios)
-    // })()
-
-    // getComment(user).then(resultado => console.log(resultado))
-
+    comments.map(comment => {
+        if(comment.id === vehiculoActual[0].id) {
+            todosLosPuntajes.push(comment.puntaje)
+        }
+    })
+        
+    const puntajePromedio = todosLosPuntajes.length > 0 ? todosLosPuntajes.reduce((previous, current) => current += previous) / todosLosPuntajes.length : 0
     if (vehiculoActual[0]) {
         return(
     <div>
@@ -78,7 +77,7 @@ export function Articulo(props){
                         :
                             <span>Lo sentimos , no hay {vehiculoActual[0].tipo} disponible</span>
                     }
-                    <h2><Estrellas/></h2>   
+                    <h2><BannerEstrellas rating={Math.round(puntajePromedio)}/></h2>   
                 </div>
             </div>
             <div className="articleDescripcion">
@@ -124,15 +123,17 @@ export function Articulo(props){
                                 nickname={c.nickname} 
                                 picture={c.picture} 
                                 time={c.time}
+                                puntaje={c.puntaje}
                                 ></Comentario>
                             )
                         }
                     })}
-                </div>
                 <div className="hacerComentarioContainer">
                     <p>Agrega un comentario:</p>
-                    <textarea onChange={handleChange}></textarea>
-                    <a onClick={handleSubmit}>Enviar</a>
+                    <textarea className="comentarioInput" onChange={handleChange}></textarea>
+                    <ComentarioEstrellas user={user} id={vehiculoActual[0].id}></ComentarioEstrellas>
+                    <a className="comentarioEnviar"onClick={handleSubmit}>Enviar</a>
+                </div>
                 </div>
     </div>
         )
@@ -144,6 +145,7 @@ export function Articulo(props){
 function mapStateToProps(state) {
     return {
     dataSimple: state?.dataSimple ? state.dataSimple : [],
+    rating: state?.rating ? state.rating : [],
     }
 }
 
