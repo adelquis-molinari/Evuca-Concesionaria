@@ -1,10 +1,10 @@
 import styled from "styled-components";
 import * as nor from "../Normalisador/Normalizador";
-import {apiDetalladaAutos} from "../../Data/apiAutos";
+import {apiSimpleAutos} from "../../Data/apiAutos";
 
 
 export const ContainerOutstanding = styled.section`
-    background:linear-gradient(185deg, rgba(35, 149, 149, 0.399) 0%, rgba(85, 27, 35, 0.692) 100%), url(${apiDetalladaAutos[9].imgBanner}) center ;
+    background:linear-gradient(185deg, rgba(35, 149, 149, 0.399) 0%, rgba(85, 27, 35, 0.692) 100%), url(${apiSimpleAutos[9].imgBanner}) center ;
     background-repeat: no-repeat;
     background-attachment: fixed;
     color: #ffffff;

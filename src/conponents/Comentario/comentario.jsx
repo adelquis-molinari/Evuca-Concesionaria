@@ -2,19 +2,22 @@ import React from 'react';
 import "./comentario.css"
 import ComentarioEstrellas from "../ComentarioPuntaje/comentarioEstrellas.jsx"
 
+
+
 export default function Comentario(props){
+    const date = new Date(props.time);
     return(
         <div className="comentario">
             <div className="comentarioUser">
-                <img src="https://e7.pngegg.com/pngimages/15/364/png-clipart-computer-icons-person-user-group-icon-auto-part-rim-thumbnail.png" alt="imagen de usuario"/>
-                <p>Nombre del usuario</p>
+                <img src={props.picture} alt="imagen de usuario"/>
+                <p>{props.nickname}</p>
             </div>
             <div className="comentarioStars">
                 <ComentarioEstrellas></ComentarioEstrellas>
-                <p>Fecha</p>
+                <p>Fecha: {date.toLocaleString('es')}</p>
             </div>
             <div className="comentarioTexto">
-                <p>Muy buen vehiculo</p>
+                    <p>{props.comentario}</p>
             </div>
         </div>
     )
