@@ -51,3 +51,10 @@ export function setmonths(payload){
         payload
     }
 }
+
+export function setHours(payload){
+    return {
+        type: "SET_HOURS",
+        payload
+    }
+}

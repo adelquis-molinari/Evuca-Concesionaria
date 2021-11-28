@@ -114,6 +114,11 @@ const appData = (state = myData , action) => {
             ...state,
             months: action.payload
         }
+    case "SET_HOURS":
+        return {
+            ...state,
+            hours: action.payload
+        }
     default:
         return
     }
