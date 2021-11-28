@@ -4,6 +4,7 @@ import Calendar from 'react-calendar';
 import { useAuth0 } from '@auth0/auth0-react';
 import { Redirect } from 'react-router-dom';
 import InputSelect from '../InputSelect';
+import { useSelector } from 'react-redux';
 import './index.css';
 import 'react-calendar/dist/Calendar.css';
 
@@ -17,7 +18,7 @@ const FormBase = ({status}) => {
 		phone: /^\d{7,14}$/, // 7 a 14 numeros.
 		password: /^.{4,12}$/, // 4 a 12 digitos.
 	}
-
+    
     const { user } = useAuth0();
     const [time, setTime] = useState(0);
     const [render, setRender] = useState(true);
@@ -89,16 +90,14 @@ const FormBase = ({status}) => {
     if(value.getDay() === 0){
         setRender(false);
         Swal.fire({
-            icon: 'error',
-            title: 'Oops...',
-            text: '25 feriado',
+            icon: 'info',
+            title: 'Que bueno es Domingo',
+            text: 'Tomate un descanso',
             backdrop: `
             rgba(0,0,123,0.4)
             `
         });
-        console.log(render, 'in');
     }else{
-        console.log(render, 'out');
         setRender(true);
     }
     }, [value]);
@@ -115,7 +114,7 @@ const FormBase = ({status}) => {
     }, [value]);
     // 25 diciembre no se puede cambiar el status
     useEffect(() => {
-        if(value.getDate() === 25 && value.getMonth() === 11){
+        if(value.getDate() === 25 && value.getMonth() === 11 ){
             Swal.fire({
                 icon: 'error',
                 title: 'Oops...',
@@ -125,12 +124,24 @@ const FormBase = ({status}) => {
                 `
             });
             setRender(false);
-            console.log(render, 'in 25');
         }else{setRender(true);}
     },[value]);
-    // sumar un mes mas a la fecha actual
+    const months = useSelector(state => state?.months? state.months: 1);
     const currentDay = new Date()
-    const nextMonth = new Date(currentDay.setMonth(currentDay.getMonth() + 1));
+    let nextMonth = new Date(currentDay.setMonth(currentDay.getMonth() + 1));
+    if(months === "2"){
+        nextMonth = new Date(currentDay.setMonth(currentDay.getMonth() + 1));
+    }else if(months === "3"){
+        nextMonth = new Date(currentDay.setMonth(currentDay.getMonth() + 2));
+    }else if(months === "4"){
+        nextMonth = new Date(currentDay.setMonth(currentDay.getMonth() + 3));
+    }else if(months === "5"){
+        nextMonth = new Date(currentDay.setMonth(currentDay.getMonth() + 4));
+    }else if(months === "6"){
+        nextMonth = new Date(currentDay.setMonth(currentDay.getMonth() + 5));
+    }else if(months === "12"){
+        nextMonth = new Date(currentDay.setMonth(currentDay.getMonth() + 11));
+    }
 
     // enviar datos
     const handleSubmit = (e) => {
@@ -151,9 +162,6 @@ const FormBase = ({status}) => {
             phone: false,
             campos: false,
         });
-        
-        // enviar datos
-        console.log(users);
         // setear datos
         setUsers({
             id: user.sub,

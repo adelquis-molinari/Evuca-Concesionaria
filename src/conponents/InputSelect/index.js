@@ -16,12 +16,14 @@ const InputSelect = ({setTime}) => {
                 <select 
                     name="select-shift"
                     id="select-shift"
+                    className="select-shift"
                     onChange={(e) => handlerTime(e)}
                     >
                     {
                         turn.map((item, index) => {
                             return (
                                 <option
+                                className="option-shift"
                                 key={index} 
                                 value={item}>{item}</option>
                             )

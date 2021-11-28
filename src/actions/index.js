@@ -44,3 +44,10 @@ export function getRating(payload) {
         payload
     }
 }
+
+export function setmonths(payload){
+    return {
+        type: "SET_MOUNTHS",
+        payload
+    }
+}

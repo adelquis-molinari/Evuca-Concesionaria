@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import './config.css'
-import DiasActivos from './DiasActivos';
+import MesesActivos from './MesesActivos';
 
 const Config = () => {
     const [diasActivos, setDiasActivos] = useState(false);
@@ -15,11 +15,11 @@ const Config = () => {
                             onClick={() => {
                                 setDiasActivos(!diasActivos);
                             }}
-                        >Días Activos</button>
+                        >Meses Activos</button>
                     </div>
                 </div>
                 <div className="content-right">
-                    {diasActivos ? <DiasActivos /> : null}
+                    {diasActivos ? <MesesActivos /> : null}
                 </div>
             </div>
         </div>

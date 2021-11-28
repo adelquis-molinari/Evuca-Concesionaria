@@ -7,6 +7,7 @@ const myData = {
     dataSimple: dataSimple,
     dataGarage: [],
     rating: "",
+    months: 1,
 };
 
 localStorage.setItem('my-data', JSON.stringify(myData));
@@ -107,6 +108,11 @@ const appData = (state = myData , action) => {
         return {
             ...state,
             rating: action.payload
+        }
+    case "SET_MOUNTHS":
+        return {
+            ...state,
+            months: action.payload
         }
     default:
         return
