@@ -13,11 +13,29 @@ import ShoppingCart from './conponents/Shopping Cart/ShoppoingCard';
 import  Contacto from "./conponents/Contacto/Contact"
 import Loading from './conponents/Loading';
 import PrivateRoute from './conponents/Private-route'
+import DashBoard from "./dashBoard/src/components/Dashboard/index";
+import {addDataRedux, checkUserDb} from './Firebase/AddUserDb';
+// import { apiSimpleAutos } from "./Data/apiAutos";
+// import { apiSimpleMotos } from "./Data/apiMotos";
+// import { apiSimpleTractores } from "./Data/apiTractores";
+// import { addProduct } from './Firebase/AddProduct';
+
+// const dataSimple = apiSimpleAutos.concat(apiSimpleMotos, apiSimpleTractores);
+// const myData = {
+//     dataSimple: dataSimple,
+// };
 // import Pag404 from './conponents/Pag404';
 import ShiftDashboard from './conponents/ShiftDashboard'
 
 function App(props) {
-  const { isLoading} = useAuth0();
+  const { isLoading, user, isAuthenticated } = useAuth0();
+
+  useEffect(()=> {
+    if(isAuthenticated) {
+      checkUserDb(user)
+    }
+  }, [isAuthenticated, user])
+
 
   useEffect(() => {
     if (isLoading) { 
@@ -28,6 +46,7 @@ function App(props) {
     const payloadData = localStorage.getItem('my-data');
     if(payloadData) {
       props.loadData(payloadData)
+      // addProduct(myData)
     }
   },[props])
   return (
@@ -40,6 +59,7 @@ function App(props) {
         <Route  path="/shopping-cart" render={()=> <ShoppingCart />}/> 
         <PrivateRoute  path="/contact" component={Contacto}/>
         <PrivateRoute  path="/shift-dashboard" component={ShiftDashboard}/>
+        <Route  path="/admin" render={() => <DashBoard/>}/>
         {/* <Route component={Pag404}/> */}
       <Footer />
     </Fragment>

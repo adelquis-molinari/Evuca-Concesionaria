@@ -152,3 +152,43 @@ body{
     width: 100%;
     margin-top:15px;
 }
+
+.hacerComentarioContainer{
+    position: absolute;
+    left: 0;
+    margin: 8px 0px 0px 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.hacerComentarioContainer p{
+    font-size: 25px;
+    margin-bottom: 5px;
+}
+
+.comentarioInput{
+    overflow:hidden;
+    min-width: 100%;
+    min-height: 100px;
+    resize: none;
+    margin-bottom: 7px;
+}
+
+.comentarioEnviar{
+    cursor: pointer;
+    background-color: #287094;
+    width: 50%;
+    text-align: center;
+    border-radius: 8px;
+    border: 1px solid black;
+    color: white;
+    font-size: 25px;
+    margin-top: 7px;
+}
+
+.comentarioEnviar:hover{
+    background-color: #1e516b;
+    transition: 0.3s;
+
+}

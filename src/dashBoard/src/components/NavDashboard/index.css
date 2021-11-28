@@ -9,13 +9,12 @@ body{
     position: relative;
     min-height: 100vh;
     width: 100%;
-    overflow:hidden
 }
 .sidebar{
     position: fixed;
     top: 0;
     left: 0;
-    width: 4.875rem;
+    width: 15rem;
     height: 100%;
     background: #0f0785;
     padding:6px 14px;

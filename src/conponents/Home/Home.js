@@ -125,6 +125,7 @@ const next = () => {
                             img={"https://images.vexels.com/media/users/3/146881/isolated/preview/c9358db7338035de67f494f317a1ef61-monedas.png"}
                             text={"Menos de $2.000.000"}
                             link={"gama baja"}
+                            
                         />
                         <TypeCard
                             img={"https://img.freepik.com/vector-gratis/dolar-billetes-aislados-blanco_68708-401.jpg?size=626&ext=jpg"}

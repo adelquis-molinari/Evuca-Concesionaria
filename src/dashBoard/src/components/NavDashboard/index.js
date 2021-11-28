@@ -5,7 +5,7 @@ import './index.css';
 
 const NavDashboard = () => {
     return ( 
-        <div class="sidebar-dashboard">
+        <div class="sidebar dashboard">
         <div class="logo-content">
             <div class="logo">
                 <i class="fab fa-slack"></i>
@@ -70,7 +70,7 @@ const NavDashboard = () => {
             </div>
         </div>
     </div>
-     );
+    );
 }
- 
+
 export default NavDashboard;

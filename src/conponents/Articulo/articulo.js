@@ -1,19 +1,25 @@
 import React from "react";
 import "./articulo.css";
 import {connect, useDispatch} from 'react-redux';
-import {useState} from "react";
-import Estrellas from "../Puntaje/estrellas.jsx"
+import {useState, useEffect} from "react";
+import BannerEstrellas from "../BannerEstrellas/bannerEstrellas.jsx"
 import Comentario from "../Comentario/comentario.jsx"
 import {addGarage} from "../../actions"
-
+import { useAuth0 } from '@auth0/auth0-react';
+import {addUserComment, getComment} from "../../Firebase/AddUserDb"
+import ComentarioEstrellas from "../ComentarioPuntaje/comentarioPuntaje.jsx"
 
 export function Articulo(props){
     const dispatch = useDispatch();
-    const vehiculoActual = props.dataDetallada.filter(vehiculos => vehiculos.id === parseInt(props.match.params.id))
+    const vehiculoActual = props.dataSimple.filter(vehiculos => vehiculos.id === parseInt(props.match.params.id))
+    const todosLosPuntajes = []
+    
     // Carrusel
     const image = vehiculoActual[0]?.imgDescriptivas
     const [selectedIndex, setSelectedIndex] = useState(0);
     const [selectedImage, setSelectedImage] = useState(image? image[0] : {})
+    const [comment, setComent] = useState("");
+    const [comments, setComments] = useState([]);
     const previous = () => {
         const condition = selectedIndex > 0;
         const nextIndex = condition ? selectedIndex - 1 : image.length -1;
@@ -26,9 +32,35 @@ export function Articulo(props){
         setSelectedImage(image[nextIndex])
         setSelectedIndex(nextIndex);
     }
-    
+    // Precios
     const precioEnDolar = Math.round(vehiculoActual[0]?.precio/100.12).toLocaleString('de-DE')
     const precioArs = vehiculoActual[0]?.precio.toLocaleString('de-DE')
+
+    // Comentario
+    const { user, isAuthenticated} = useAuth0();
+    const handleChange = (e) => {
+        if(user) {
+            setComent(e.target.value)
+        }
+    }
+    const handleSubmit = (e) => {
+        console.log(comment)
+        console.log(user)
+        addUserComment(user, comment, vehiculoActual[0].id, props.rating)
+        getComment().then(result => {
+                setComments(result)
+        })
+    }
+    useEffect(()=>{getComment().then(result => {
+        setComments(result)
+    })}, [])
+    comments.map(comment => {
+        if(comment.id === vehiculoActual[0].id) {
+            todosLosPuntajes.push(comment.puntaje)
+        }
+    })
+        
+    const puntajePromedio = todosLosPuntajes.length > 0 ? todosLosPuntajes.reduce((previous, current) => current += previous) / todosLosPuntajes.length : 0
     if (vehiculoActual[0]) {
         return(
     <div>
@@ -45,7 +77,7 @@ export function Articulo(props){
                         :
                             <span>Lo sentimos , no hay {vehiculoActual[0].tipo} disponible</span>
                     }
-                    <h2><Estrellas/></h2>   
+                    <h2><BannerEstrellas rating={Math.round(puntajePromedio)}/></h2>   
                 </div>
             </div>
             <div className="articleDescripcion">
@@ -58,7 +90,7 @@ export function Articulo(props){
                     :
                     null
                 }
-                <p>{vehiculoActual[0].descripcion}</p>
+                <p>{vehiculoActual[0].descripcionDetallada}</p>
             </div>
                 <div className="descripcionContainer">
                     <div className="carruselArticle">
@@ -81,7 +113,27 @@ export function Articulo(props){
                 </div>
         </div>
                 <div className="comentariosContainer">
-                    <Comentario></Comentario>
+                    {comments.sort((a,b)=> {
+                        return b.time - a.time
+                    }).map(c => {
+                        if(c.id === vehiculoActual[0].id) {
+                            return (
+                                <Comentario 
+                                comentario={c.texto} 
+                                nickname={c.nickname} 
+                                picture={c.picture} 
+                                time={c.time}
+                                puntaje={c.puntaje}
+                                ></Comentario>
+                            )
+                        }
+                    })}
+                <div className="hacerComentarioContainer">
+                    <p>Agrega un comentario:</p>
+                    <textarea className="comentarioInput" onChange={handleChange}></textarea>
+                    <ComentarioEstrellas user={user} id={vehiculoActual[0].id}></ComentarioEstrellas>
+                    <a className="comentarioEnviar"onClick={handleSubmit}>Enviar</a>
+                </div>
                 </div>
     </div>
         )
@@ -92,7 +144,8 @@ export function Articulo(props){
 
 function mapStateToProps(state) {
     return {
-    dataDetallada: state?.dataDetallada ? state.dataDetallada : [],
+    dataSimple: state?.dataSimple ? state.dataSimple : [],
+    rating: state?.rating ? state.rating : [],
     }
 }
 
