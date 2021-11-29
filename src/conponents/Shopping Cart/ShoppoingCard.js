@@ -17,6 +17,7 @@ const ShoppingCart = () => {
             <Parking setConfirm={setConfirm} />
         }
         </div>
+
     );
 }
 

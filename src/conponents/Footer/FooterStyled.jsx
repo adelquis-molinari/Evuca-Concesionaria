@@ -7,13 +7,19 @@ export const FooterDiv = styled.footer`
     background-color: ${colorFondo};
     color: ${colorPrimary};
     width: 100%;
+    position: relative;
     display: flex;
     bottom: 0;
-    padding: 20px;
+    padding: 20px 0 ;
     text-align: center;
     font-size: 12px;
     flex-direction: row;
     justify-content: space-between;
+    @media (max-width: 768px) {
+        flex-direction: column;
+        align-items: center;
+        padding:12px 0;
+    }
 `;
 
 export const LinkEvukes = styled(Link)`

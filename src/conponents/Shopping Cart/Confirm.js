@@ -1,4 +1,5 @@
 import React from 'react'
+import FormBase from '../Form';
 
 const Confirm = () => {
     return ( 
@@ -15,6 +16,9 @@ const Confirm = () => {
                     </div>
             </div>
             <h1>Confirm</h1>
+            <div className="shopForm" >
+                <FormBase status="Venta"/>
+            </div>
         </>
      );
 }

@@ -9,33 +9,37 @@ import { connect } from 'react-redux';
 
 export function Shop(props) {
     const shopId = props.match.params.id;
+    console.log(shopId)
     let marcasDeAutos = ["Fiat", "Volkswagen", "Ford", "Peugeot","Renault"]
     let marcasDeMotos = ["Corven","Honda","Yamaha"]
     let marcasDeTractores = ["Deutz","John Deere","New Holland"]
-    if (shopId === "autos"){
+    if (shopId === "Autos"){
         return(
             <div className="shopContainer">
                 {apiSimpleAutos.map(a =><ShopCard
+                key={a.id}
                 props = {a}
                 />
                 )}
             </div>
         )
     }
-    if (shopId === "motos"){
+    if (shopId === "Motos"){
         return(
             <div className="shopContainer">
                 {apiSimpleMotos.map(m =><ShopCard
+                key={m.id}
                 props = {m}
                 />
                 )}
             </div>
         )
     }
-    if (shopId === "tractores"){
+    if (shopId === "Tractores"){
         return(
             <div className="shopContainer">
                 {apiSimpleTractores.map(t =><ShopCard
+                key={t.id}
                 props = {t}
                 />
                 )}
@@ -47,6 +51,7 @@ export function Shop(props) {
         return(
             <div className="shopContainer">
                 {autosFiltrados.map(a =><ShopCard
+                key={a.id}
                 props = {a}
                 />
                 )}
@@ -58,6 +63,7 @@ export function Shop(props) {
         return(
             <div className="shopContainer">
                 {motosFiltradas.map(m =><ShopCard
+                key={m.id}
                 props = {m}
                 />
                 )}
@@ -69,15 +75,52 @@ export function Shop(props) {
         return(
             <div className="shopContainer">
                 {tractoresFiltrados.map(t =><ShopCard
+                key={t.id}
                 props = {t}
                 />
                 )}
             </div>
         )
     }
-    else{
-        return window.location.href="/"
+    if(shopId === "gama baja"){
+        let vehiculosFiltrados = props.dataSimple.filter(vehiculo => vehiculo.precio <= 2000000)
+        return(
+            <div className="shopContainer">
+                {vehiculosFiltrados.map(v =><ShopCard
+                key={v.id}
+                props = {v}
+                />
+                )}
+            </div>
+        )
     }
+    if(shopId === "gama media"){
+        let vehiculosFiltrados = props.dataSimple.filter(vehiculo => vehiculo.precio <= 5000000)
+        return(
+            <div className="shopContainer">
+                {vehiculosFiltrados.map(v =><ShopCard
+                key={v.id}
+                props = {v}
+                />
+                )}
+            </div>
+        )
+    }
+    if(shopId === "gama alta"){
+        let vehiculosFiltrados = props.dataSimple.filter(vehiculo => vehiculo.precio > 5000000)
+        return(
+            <div className="shopContainer">
+                {vehiculosFiltrados.map(v =><ShopCard
+                key={v.id}
+                props = {v}
+                />
+                )}
+            </div>
+        )
+    }
+    // else{
+    //     return window.location.href="/"
+    // }
 }
 
 function mapStateToProps(state) {

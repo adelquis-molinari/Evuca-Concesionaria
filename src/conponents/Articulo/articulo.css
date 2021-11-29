@@ -78,11 +78,9 @@ body{
     justify-content: center;
 }
 .carruselImg{
-    width: 100%;
+    width: 800px;
     height: 500px;
-    max-width: 800px;
-    min-width: 800px;
-    object-fit:contain;
+    object-fit:cover;   
 }
 
 .btnIzqArticle{
@@ -91,13 +89,13 @@ body{
     top: 50%;
     margin-left: 10px;
     font-size:40px;
-    color: rgba(216, 216, 216, 0.884);
+    color: rgba(255, 255, 255, 0.568);
     background-color: transparent;
     border: 1px solid transparent;
 }
 .btnIzqArticle:hover{
     cursor: pointer;
-    color: rgb(216, 216, 216);
+    color: rgba(255, 255, 255, 0.692);
     font-size:45px;
     transition: 0.2s;
 }
@@ -108,13 +106,13 @@ body{
     top: 50%;
     margin-right: 10px;
     font-size:40px;
-    color: rgba(216, 216, 216, 0.884);
+    color: rgba(255, 255, 255, 0.568);
     background-color: transparent;
     border: 1px solid transparent;
 }
 .btnDereArticle:hover{
     cursor: pointer;
-    color: rgb(216, 216, 216);
+    color: rgba(255, 255, 255, 0.692);
     font-size: 45px;
     transition: 0.2s;
 }
@@ -153,4 +151,44 @@ body{
     border-top: 1px solid grey;
     width: 100%;
     margin-top:15px;
+}
+
+.hacerComentarioContainer{
+    position: absolute;
+    left: 0;
+    margin: 8px 0px 0px 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.hacerComentarioContainer p{
+    font-size: 25px;
+    margin-bottom: 5px;
+}
+
+.comentarioInput{
+    overflow:hidden;
+    min-width: 100%;
+    min-height: 100px;
+    resize: none;
+    margin-bottom: 7px;
+}
+
+.comentarioEnviar{
+    cursor: pointer;
+    background-color: #287094;
+    width: 50%;
+    text-align: center;
+    border-radius: 8px;
+    border: 1px solid black;
+    color: white;
+    font-size: 25px;
+    margin-top: 7px;
+}
+
+.comentarioEnviar:hover{
+    background-color: #1e516b;
+    transition: 0.3s;
+
 }

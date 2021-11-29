@@ -45,15 +45,15 @@ const next = () => {
                         <div className="seccionTipos">
                             <TypeCard
                                 img={"https://www.carmax.com/cars/images/type-icons/sedans.svg"}
-                                text={"autos"}
+                                text={"Autos"}
                             />
                             <TypeCard
                             img={motoIcon}
-                            text={"motos"}
+                            text={"Motos"}
                             />
                             <TypeCard
                             img={tractorIcon}
-                            text={"tractores"}
+                            text={"Tractores"}
                         />
                         </div>
                     </div>
@@ -112,10 +112,10 @@ const next = () => {
                             img={"http://www.yamaha-motor.com.sv/moduloCotizacionPiezas/img/Logo_-_Yamaha_Shield_-_001.png"}
                             text={"Yamaha"}
                             />
-                        <TypeCard
+                        {/* <TypeCard
                             img={"http://www.yamaha-motor.com.sv/moduloCotizacionPiezas/img/Logo_-_Yamaha_Shield_-_001.png"}
                             text={"Uno mas"}
-                            />
+                            /> */}
                         </div>
                     </div>
                     <div className="seccionBuscar">
@@ -124,17 +124,18 @@ const next = () => {
                         <TypeCard
                             img={"https://images.vexels.com/media/users/3/146881/isolated/preview/c9358db7338035de67f494f317a1ef61-monedas.png"}
                             text={"Menos de $2.000.000"}
-                            link={"Gama baja"}
+                            link={"gama baja"}
+                            
                         />
                         <TypeCard
                             img={"https://img.freepik.com/vector-gratis/dolar-billetes-aislados-blanco_68708-401.jpg?size=626&ext=jpg"}
                             text={"Menos de $5.000.000"}
-                            link={"500.000"}
+                            link={"gama media"}
                         />
                         <TypeCard
                             img={"https://media.istockphoto.com/vectors/vector-dollar-and-coins-sign-money-dollar-icon-currency-dollar-bill-vector-id1198508991?k=20&m=1198508991&s=170667a&w=0&h=bclBktNfoXgADlp9onjEZan8mVif0xjm9z_c60vOfHc="}
                             text={"Mas de $5.000.000"}
-                            link={"5.000.000"}
+                            link={"gama alta"}
                         />
                         </div>
                     </div>

@@ -1,0 +1,44 @@
+
+/* icon garageNav */
+.nav-cart{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    transition: all .3s;
+    margin-right: 1.875rem;
+    cursor: pointer;
+}
+.garage-nav{
+    color: #287094;
+    font-size: 1.125rem;
+}
+.nav-cart:hover .garage-nav{
+    color: #319dd3;
+}
+
+.nav-cart:hover{
+    color: #319dd3;
+    transform: scale(1.1);
+    transition: all 0.3s ease 0s;
+}
+.nav-cart-count{
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #287094;
+    color: #fff;
+    font-size: .75rem;
+    text-align: center;
+    line-height: 20px;
+    font-weight: bold;
+    box-shadow: 0 0 5px rgba(0,0,0,.2);
+    transition: all .3s;
+}
+.nav-cart:hover .nav-cart-count{
+    background: #319dd3;
+}

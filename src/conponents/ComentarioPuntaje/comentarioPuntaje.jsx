@@ -1,8 +1,9 @@
 import React, {useState} from "react";
-import "./estrellas.css";
+import "./comentarioPuntaje.css";
+import {connect} from "react-redux";
+import {getRating} from "../../actions/index"
 
-
-function Estrellas () {
+function ComentarioEstrellas (props) {
     const [rating, setRating] = useState(null)
     const [hover, setHover] = useState(null)
 
@@ -11,16 +12,19 @@ function Estrellas () {
             {[ ...Array(5)].map((star, i) => {
                 const ratingValue = i + 1;
                 return (
-                    <label>
+                    <label key={i}>
                         <input
                         className="inputRadio" 
                         type="radio" 
                         name="rating" 
                         value={ratingValue} 
-                        onClick={() => setRating(ratingValue)}
+                        onClick={() => {
+                            setRating(ratingValue);
+                            props.getRating(ratingValue)
+                        }}
                         />
                         <i 
-                        class="fas fa-star star"
+                        class="fas fa-star comentarioStar"
                         onMouseEnter={() => setHover(ratingValue)}
                         onMouseLeave={() => setHover(null)}
                         style={{color: ratingValue <= (hover || rating) ? "#ffc107" : "#8c8d91"}}
@@ -32,4 +36,10 @@ function Estrellas () {
     )
 }
 
-export default Estrellas
+function mapDispatchToProps(dispatch) {
+    return{
+        getRating: rating => dispatch(getRating(rating))
+    }
+}
+
+export default connect(null, mapDispatchToProps)(ComentarioEstrellas)

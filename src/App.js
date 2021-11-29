@@ -1,49 +1,66 @@
 import React, {Fragment, useEffect} from 'react'
+import {connect} from 'react-redux'
 import Nav from './conponents/NavBar/Navbar'
 import Home from "./conponents/Home/Home.js"
-import { Route } from "react-router-dom";
 import Footer from './conponents/Footer/Footer';
+import { Route } from "react-router-dom";
+import { useAuth0 } from '@auth0/auth0-react';
+import { loadData } from './actions';
 import Search from './conponents/Search/Search';
 import Articulo from "./conponents/Articulo/articulo.js"
 import Shop from './conponents/Shop/shop.js';
 import ShoppingCart from './conponents/Shopping Cart/ShoppoingCard';
-import { apiSimpleAutos, apiDetalladaAutos } from '../src/Data/apiAutos';
-import { apiSimpleMotos, apiDetalladaMotos } from "../src/Data/apiMotos";
-import { apiSimpleTractores, apiDetalladaTractores } from "../src/Data/apiTractores";
-import { loadData } from './actions';
-import {connect} from 'react-redux'
+import  Contacto from "./conponents/Contacto/Contact"
+import Loading from './conponents/Loading';
+import PrivateRoute from './conponents/Private-route'
+import DashBoard from "./dashBoard/src/components/Dashboard/index";
+import {addDataRedux, checkUserDb} from './Firebase/AddUserDb';
+// import { apiSimpleAutos } from "./Data/apiAutos";
+// import { apiSimpleMotos } from "./Data/apiMotos";
+// import { apiSimpleTractores } from "./Data/apiTractores";
+// import { addProduct } from './Firebase/AddProduct';
+
+// const dataSimple = apiSimpleAutos.concat(apiSimpleMotos, apiSimpleTractores);
+// const myData = {
+//     dataSimple: dataSimple,
+// };
+// import Pag404 from './conponents/Pag404';
+import ShiftDashboard from './conponents/ShiftDashboard'
+
+function App(props) {
+  const { isLoading, user, isAuthenticated } = useAuth0();
+
+  useEffect(()=> {
+    if(isAuthenticated) {
+      checkUserDb(user)
+    }
+  }, [isAuthenticated, user])
 
 
-
-export function App(props) {
+  useEffect(() => {
+    if (isLoading) { 
+      return <Loading />
+    }
+  }, [isLoading]);
   useEffect(()=> {
     const payloadData = localStorage.getItem('my-data');
     if(payloadData) {
       props.loadData(payloadData)
+      // addProduct(myData)
     }
-  },[])
-
-  useEffect(()=> {
-      const dataSimple = apiSimpleAutos.concat(apiSimpleMotos, apiSimpleTractores);
-      const dataDetallada = apiDetalladaAutos.concat(apiDetalladaMotos, apiDetalladaTractores);
-      const myData = {
-        dataSimple: dataSimple,
-        dataDetallada: dataDetallada,
-        dataGarage: [],
-        stock:true,
-      }
-      // console.log(myData,'datasimple')
-      localStorage.setItem('my-data', JSON.stringify(myData))
-  },[])
-
+  },[props])
   return (
     <Fragment>
-      <Nav />
+        <Nav />
         <Route exact path="/" render={() => <Home />}/> 
         <Route  path="/busqueda" render={() => <Search />}/> 
         <Route  path="/shop/:id" component={Shop}/> 
         <Route  path="/article/:id" component={Articulo}/> 
         <Route  path="/shopping-cart" render={()=> <ShoppingCart />}/> 
+        <PrivateRoute  path="/contact" component={Contacto}/>
+        <PrivateRoute  path="/shift-dashboard" component={ShiftDashboard}/>
+        <Route  path="/admin" render={() => <DashBoard/>}/>
+        {/* <Route component={Pag404}/> */}
       <Footer />
     </Fragment>
   );

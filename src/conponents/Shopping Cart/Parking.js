@@ -1,21 +1,21 @@
 import React, {useState, useEffect} from 'react'
-import { connect } from 'react-redux'
-import {apiSimpleAutos} from '../../Data/apiAutos';
+import {useSelector, useDispatch} from 'react-redux';
+import {addAmount, removeAmount, removeGarage} from '../../actions'
+import { useAuth0 } from '@auth0/auth0-react';
 
 const Parking = ({setConfirm}) => {
-    //recorrer apiSimpleAutos
-    const [autos, setAutos] = useState(apiSimpleAutos); 
+    const garage = useSelector(state => state.dataGarage);
+    const dispatch = useDispatch();
+    const { isAuthenticated, loginWithRedirect } = useAuth0();
     const [total, setTotal] = useState(0);
-    //funcion elimina del estado los autos
-    const eliminarAuto = (id) => {
-        const nuevoEstado = autos.filter(auto => auto.id !== id);
-        setAutos(nuevoEstado);
-    }
+
     //funcion para sumar los autos
     useEffect(() => {
-        const total = autos.reduce((acumulador, auto) => acumulador + auto.precio, 0);
-        setTotal(total);
-    }, [autos]);
+        //funcion para sumar cantidad de autos
+        const total = garage.reduce((acumulador, auto) => acumulador + (auto.precio*auto.cantCart) , 0);
+        const precioArs = total.toLocaleString('de-DE')
+        setTotal(precioArs);
+    }, [garage]);
     return ( 
         <>
             <div className="shopHeader">
@@ -29,26 +29,49 @@ const Parking = ({setConfirm}) => {
                         <h5 className="no-active" >Confirmación</h5>
                     </div>
             </div>
-            {
-                autos.map(auto => {
-                    return (
-                        <div className="shop-body" key={auto.id}>
-                            <div className="card-item-header">
-                                <img src={auto.img} alt={auto.name}/>
-                                <p className="card-marca">{auto.marca}</p>
-                                <p className="card-title">{auto.modelo}</p>
-                                <button
-                                className="btn-eliminar"
-                                onClick={() => eliminarAuto(auto.id)}
-                                >Sacar del garage</button>
+            <div className="shopping-container">
+                {
+                    garage.map(auto => {
+                        const cantCar = auto.precio * auto.cantCart;
+                        const precioArs = cantCar.toLocaleString('de-DE')
+                        return (
+                            <div className="shop-body" key={auto.id}>
+                                <div className="card-item-header">
+                                    <div className="count-car">
+                                        <i 
+                                        onClick={() => {
+                                            if(auto.stock === 1 ){
+                                                return;
+                                            }else{
+                                                dispatch(addAmount(auto));
+                                            }
+                                        }}
+                                        class="fas fa-sort-up"></i>
+                                            <span>{auto.cantCart}</span>
+                                        <i 
+                                        onClick={() => {
+                                            if(auto.cantCart > 1){
+                                                dispatch(removeAmount(auto));
+                                            }
+                                        }}
+                                        class="fas fa-sort-down"></i>
+                                    </div>
+                                    <img src={auto.img} alt={auto.name}/>
+                                    <p className="card-marca">{auto.marca}</p>
+                                    <p className="card-title">{auto.modelo}</p>
+                                    <button
+                                    className="btn-eliminar"
+                                    onClick={() => dispatch(removeGarage(auto))}
+                                    >Sacar del garage</button>
+                                </div>
+                                <div className="card-item-header">
+                                    <p>$ {precioArs}</p>
+                                </div>
                             </div>
-                            <div className="card-item-header">
-                                <p>$ {auto.precio}</p>
-                            </div>
-                        </div>
-                    )
-                })
-            }
+                        )
+                    })
+                }
+            </div>
             <div className="shop-total">
                 <p className="title-total">Total</p>
                 <div>
@@ -57,10 +80,18 @@ const Parking = ({setConfirm}) => {
             </div>
             <div className="shop-confirm">
                 <h2>Estas a solo un paso más</h2>
-                <button
-                className="btn-confirm"
-                onClick={() => setConfirm(true)}
-                >Confirmar</button>
+                {
+                    isAuthenticated ?
+                    <button
+                    className="btn-confirm"
+                    onClick={() => setConfirm(true)}
+                    >Confirmar</button>
+                    :
+                    <button
+                    className="btn-confirm"
+                    onClick={() => loginWithRedirect() }
+                    >Logeate para confirmar</button>
+                }
             </div>
         </>
         );

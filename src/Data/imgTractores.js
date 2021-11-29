@@ -1,24 +1,24 @@
 //imagenes de los tractores de la marca Deutz
 export const imgDeutz = {
-    banner: require('../img/tractores/deutz/ttv/ttvb.jpg').default,
-    img1: require('../img/tractores/deutz/ttv/ttv1.jpg').default,
-    img2: require('../img/tractores/deutz/ttv/ttv2.jpg').default,
-    img3: require('../img/tractores/deutz/ttv/ttv3.jpg').default,
-    img4: require('../img/tractores/deutz/ttv/ttv4.jpg').default,
+    banner: 'https://res.cloudinary.com/evucar/image/upload/v1637305094/tractores/deutz/ttv/ttvb_myxo7u.jpg',
+    img1: 'https://res.cloudinary.com/evucar/image/upload/v1637305094/tractores/deutz/ttv/ttv1_ue2brg.jpg',
+    img2: 'https://res.cloudinary.com/evucar/image/upload/v1637305095/tractores/deutz/ttv/ttv2_b2qi4n.jpg',
+    img3: 'https://res.cloudinary.com/evucar/image/upload/v1637305093/tractores/deutz/ttv/ttv3_gyhafv.jpg',
+    img4: 'https://res.cloudinary.com/evucar/image/upload/v1637305094/tractores/deutz/ttv/ttv4_calcxj.jpg',
 }
 //imagenes de los tractores de la marca John Deere
 export const imgJohnDeere6100e = {
-    banner: require('../img/tractores/johnDeere/6100e/jb.jpg').default,
-    img1: require('../img/tractores/johnDeere/6100e/j1.jpg').default,
-    img2: require('../img/tractores/johnDeere/6100e/j2.jpg').default,
-    img3: require('../img/tractores/johnDeere/6100e/j3.jpg').default,
-    img4: require('../img/tractores/johnDeere/6100e/j4.jpg').default,
+    banner: 'https://res.cloudinary.com/evucar/image/upload/v1637305094/tractores/johnDeere/6100e/jb_puch3h.webp',
+    img1: 'https://res.cloudinary.com/evucar/image/upload/v1637305095/tractores/johnDeere/6100e/j1_t7vv2q.webp',
+    img2: 'https://res.cloudinary.com/evucar/image/upload/v1637305093/tractores/johnDeere/6100e/j2_nrflo0.webp',
+    img3: 'https://res.cloudinary.com/evucar/image/upload/v1637305092/tractores/johnDeere/6100e/j3_ihh6pi.webp',
+    img4: 'https://res.cloudinary.com/evucar/image/upload/v1637305093/tractores/johnDeere/6100e/j4_bzudrb.jpg',
 }
 //imagenes de los tractores de la marca New Holland
 export const imgNewHollandT6130 = {
-    banner: require('../img/tractores/newHolland/t6130/tb.jpg').default,
-    img1: require('../img/tractores/newHolland/t6130/t1.jpg').default,
-    img2: require('../img/tractores/newHolland/t6130/t2.jpg').default,
-    img3: require('../img/tractores/newHolland/t6130/t3.jpg').default,
-    img4: require('../img/tractores/newHolland/t6130/t4.jpg').default,
+    banner: 'https://res.cloudinary.com/evucar/image/upload/v1637305093/tractores/newHolland/t6130/tb_o7tyai.jpg',
+    img1: 'https://res.cloudinary.com/evucar/image/upload/v1637305093/tractores/newHolland/t6130/t1_wklhsm.jpg',
+    img2: 'https://res.cloudinary.com/evucar/image/upload/v1637305092/tractores/newHolland/t6130/t2_swrmvl.jpg',
+    img3: 'https://res.cloudinary.com/evucar/image/upload/v1637305094/tractores/newHolland/t6130/t3_iopdmk.jpg',
+    img4: 'https://res.cloudinary.com/evucar/image/upload/v1637305094/tractores/newHolland/t6130/t4_y0x08p.jpg',
 }
