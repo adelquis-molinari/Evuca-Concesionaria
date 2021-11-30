@@ -10,7 +10,7 @@ export default function BannerEstrellas(props) {
                 return (
                     <label key={i}>
                         <i 
-                        class="fas fa-star star"
+                        className="fas fa-star star"
                         style={{color: ratingValue <= (props.rating) ? "#ffc107" : "#8c8d91"}}
                         ></i>
                     </label>
