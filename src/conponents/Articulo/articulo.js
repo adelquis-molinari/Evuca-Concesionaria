@@ -89,7 +89,6 @@ export function Articulo(props){
     
 
     useEffect(()=>{getComment().then(result => {
-        console.log('loop check')
         setComments(result)
     })}, [render])
     comments.map(comment => {

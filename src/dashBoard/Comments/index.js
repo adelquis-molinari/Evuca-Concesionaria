@@ -9,7 +9,6 @@ export function Comments(props){
     const comentario = props? props.users.map(user =>{
         comentarios.push(user.comentarios)
     }) : []
-    console.log(comentarios)
 
 
     const handleCommentDelete = (e) => {
@@ -17,7 +16,6 @@ export function Comments(props){
         let newComments = comentarios.map(u => {
             return u.filter(c => c.texto.replace(/ /g,'-') !== commentClassList[3] && c.time !== commentClassList[4])
         })
-        console.log(commentClassList[3])
         let newComments2 = newComments.filter(u => u[0]?.user === commentClassList[5])
         deleteComment(newComments2[0], commentClassList[5])
         props.getUsersAndSet()

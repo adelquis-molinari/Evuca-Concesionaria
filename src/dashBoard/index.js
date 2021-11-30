@@ -13,13 +13,11 @@ const Dashboard = (props) => {
     const { user, logout} = useAuth0();
     
     const getUsersAndSet= ()=> {
-        console.log('use effect getusers')
         getUsers().then(resultado => {
             setUsersArray(resultado)
         })
     }
         useEffect(()=>{
-            console.log('use effect getusers')
             getUsersAndSet()
         }, [])
 

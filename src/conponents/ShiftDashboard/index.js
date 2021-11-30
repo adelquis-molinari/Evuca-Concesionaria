@@ -8,7 +8,6 @@ const ShiftDashboard = () => {
     const {user} = useAuth0();
     const [showConfig, setShowConfig] = useState(false);
     const [showMainPanel, setShowMainPanel] = useState(true);
-    console.log('showConfig');
     const toggleConfig = () => {
         setShowConfig(true);
         setShowMainPanel(false);

@@ -16,7 +16,6 @@ localStorage.setItem('my-data', JSON.stringify(myData));
 const appData = (state = myData , action) => {
     switch(action.type) {
     case "CHECK_BLOCKED":
-        console.log('reducer block check')
         return {
             ...state,
             blocked: true
@@ -50,7 +49,6 @@ const appData = (state = myData , action) => {
         // localStorage.setItem('my-data', JSON.stringify(newData));
         return newData
     case "ADD_AMOUNT":
-        console.log(action.payload);
         const newGarage2 = [...state.dataGarage]
         const newCount = newGarage2.map(item => {
             if(item.id === action.payload.id) {

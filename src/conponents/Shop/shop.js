@@ -9,7 +9,6 @@ import { connect } from 'react-redux';
 
 export function Shop(props) {
     const shopId = props.match.params.id;
-    console.log(shopId)
     let marcasDeAutos = ["Fiat", "Volkswagen", "Ford", "Peugeot","Renault"]
     let marcasDeMotos = ["Corven","Honda","Yamaha"]
     let marcasDeTractores = ["Deutz","John Deere","New Holland"]

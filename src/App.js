@@ -42,7 +42,6 @@ function App(props) {
         let currentUser = result.filter(u => u.sub === user.sub)
         if(currentUser[0]?.blocked === true) {
           props.checkBlocked()
-          console.log('asdadsasdasdasd', checkBlocked())
         }
       })
     }
