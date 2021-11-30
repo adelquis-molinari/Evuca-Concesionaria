@@ -39,6 +39,7 @@ export function Articulo(props){
 
     // Comentario
     const { user, isAuthenticated} = useAuth0();
+    const [render, setRender] = useState(0)
     const handleChange = (e) => {
         if(user) {
             setComent(e.target.value)
@@ -59,6 +60,7 @@ export function Articulo(props){
                     setComments(result)
                     props.getRating(0);
                     setComent("");
+                    setRender(value => value + 1)
                     let comentario = document.querySelector(".comentarioInput")
                     comentario.value = ""
             })
@@ -87,8 +89,9 @@ export function Articulo(props){
     
 
     useEffect(()=>{getComment().then(result => {
+        console.log('loop check')
         setComments(result)
-    })}, [])
+    })}, [render])
     comments.map(comment => {
         if(comment.id === vehiculoActual[0].id) {
             todosLosPuntajes.push(comment.puntaje)

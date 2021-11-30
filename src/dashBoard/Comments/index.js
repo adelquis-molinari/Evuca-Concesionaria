@@ -6,17 +6,18 @@ import "./index.css"
 
 export function Comments(props){
     let comentarios = []
-    console.log(comentarios)
     const comentario = props? props.users.map(user =>{
         comentarios.push(user.comentarios)
     }) : []
+    console.log(comentarios)
 
 
     const handleCommentDelete = (e) => {
         const commentClassList = e.target.classList
         let newComments = comentarios.map(u => {
-            return u.filter(c => c.texto !== commentClassList[3] && c.time !== commentClassList[4])
+            return u.filter(c => c.texto.replace(/ /g,'-') !== commentClassList[3] && c.time !== commentClassList[4])
         })
+        console.log(commentClassList[3])
         let newComments2 = newComments.filter(u => u[0]?.user === commentClassList[5])
         deleteComment(newComments2[0], commentClassList[5])
         props.getUsersAndSet()
@@ -24,10 +25,11 @@ export function Comments(props){
 
 
     return(
+    <div className="dashboard-div">
         <div className="adminComentariosContainer">
             {comentarios? comentarios.map(usuario =>{
                 return(
-                    usuario.map(c =>{
+                    usuario.sort((a,b) => b.time - a.time).map(c =>{
                         const date = new Date(c.time);
                         return(
                                 <div className="adminComentario">
@@ -36,7 +38,7 @@ export function Comments(props){
                                             <img src={c.picture} alt="Imagen de usuario"/>
                                             <p>{c.nickname}</p>
                                         </div>
-                                        <i onClick={handleCommentDelete}class={`far fa-trash-alt delete-comment ${c.texto} ${c.time} ${c.user}`}></i>
+                                        <i onClick={handleCommentDelete}class={`far fa-trash-alt delete-comment ${c.texto.replace(/ /g,'-')} ${c.time} ${c.user}`}></i>
                                     </div>
                                 <div className="adminComentarioStars">
                                 <ComentarioEstrellas rating={c.puntaje}></ComentarioEstrellas>
@@ -51,6 +53,7 @@ export function Comments(props){
                 )
             }): console.log("No anda")}
         </div>
+    </div>
     )
 }
 

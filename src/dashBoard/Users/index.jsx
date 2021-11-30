@@ -29,7 +29,7 @@ export function Users(props) {
         props.getUsersAndSet()
     }
     return(
-        <div>
+        <div className="dashboard-users-div">
             <p className="userTotal">Total de usuarios: {users? users.length : 0}</p>
         <div className="userContainer">{users ? users.sort((a,b)=> {
                         return b.nickname - a.nickname

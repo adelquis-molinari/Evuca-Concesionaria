@@ -11,7 +11,6 @@ function ComentarioEstrellas (props) {
         <div>
             {[ ...Array(5)].map((star, i) => {
                 const ratingValue = i + 1;
-                console.log(props.rating[0])
                 return (
                     <label key={i}>
                         <input
