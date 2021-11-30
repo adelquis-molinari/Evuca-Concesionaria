@@ -5,6 +5,10 @@
     font-size: 30px;
 }
 
+.dashboard-users-div {
+    min-height: 550px;
+}
+
 .userContainer{
     display: flex;
     justify-content: center;

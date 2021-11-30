@@ -7,9 +7,12 @@
     width: 450px;
 }
 
+.dashboard-div  {
+    min-height: 600px;
+}
+
 .adminComentariosContainer{
     display: flex;
-    /* min-height: 300px; */
     margin: 5px;
     flex-wrap: wrap;
     justify-content: center;
