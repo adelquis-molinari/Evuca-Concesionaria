@@ -8,7 +8,9 @@ export function Comments(props){
     let comentarios = []
     console.log(comentarios)
     const comentario = props? props.users.map(user =>{
-        comentarios.push(user.comentarios)
+        if(user.comentarios[0]){
+            comentarios.push(user.comentarios) 
+        } 
     }) : []
 
 
