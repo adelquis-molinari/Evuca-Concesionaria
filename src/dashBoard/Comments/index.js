@@ -17,7 +17,7 @@ export function Comments(props){
         let newComments = comentarios.map(u => {
             return u.filter(c => c.texto !== commentClassList[3] && c.time !== commentClassList[4])
         })
-        let newComments2 = newComments.filter(u => u[0].user === commentClassList[5])
+        let newComments2 = newComments.filter(u => u[0]?.user === commentClassList[5])
         deleteComment(newComments2[0], commentClassList[5])
         props.getUsersAndSet()
     }

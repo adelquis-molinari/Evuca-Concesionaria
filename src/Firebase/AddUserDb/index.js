@@ -94,7 +94,7 @@ export const deleteUser = async (user) => {
 export const deleteComment = async (newComments, user) => {
     const docRef = doc(db, 'usuarios', user);
     await updateDoc(docRef, {
-        comentarios: newComments
+        comentarios: newComments ? newComments : []
     })
 }
 
