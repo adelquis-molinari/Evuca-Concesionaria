@@ -10,13 +10,14 @@ import 'react-calendar/dist/Calendar.css';
 
 const FormBase = ({status}) => {
     const expressions = {
-		user: /^[a-zA-Z0-9_-]{4,16}$/, // Letras, numeros, guion y guion_bajo
-		name: /^[a-zA-ZÀ-ÿ\s]{1,40}$/, // Letras y espacios, pueden llevar acentos.
+		user: /^[a-zA-Z0-9_-]{4,16}$/,
+		name: /^[a-zA-ZÀ-ÿ\s]{1,40}$/,
         lastname: /^[a-zA-Z0-9_-]{4,16}$/,
-		mail: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
+		email: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
         city: /^[a-zA-Z0-9_-]{4,16}$/,
-		phone: /^\d{7,14}$/, // 7 a 14 numeros.
-		password: /^.{4,12}$/, // 4 a 12 digitos.
+		phone: /^\d{7,14}$/,
+		password: /^.{4,12}$/,
+        textarea: /[$%&|<>#]/,
 	}
     
     const { user } = useAuth0();
@@ -29,6 +30,7 @@ const FormBase = ({status}) => {
         city: false,
         phone: false,
         campos: false,
+        textarea: false,
     });
     const [users, setUsers] = useState({
         id: user.sub,
@@ -41,9 +43,12 @@ const FormBase = ({status}) => {
         picture: user.picture,
         status: status,
         fecha: '',
+        textarea: '',
+
     });
     const [redirect, setRedirect] = useState(false);
-    const {name, lastname,email, city, phone} = users;
+    const {name, lastname,email, city, phone, textarea } = users;
+
     //validar los campos
     const handleChange = (e) => {
         setUsers({
@@ -146,7 +151,7 @@ const FormBase = ({status}) => {
     // enviar datos
     const handleSubmit = (e) => {
         e.preventDefault();
-        if(name.trim() === '' || lastname.trim() === '' || email.trim() === '' || city.trim() === '' || phone.trim() === ''){
+        if(name.trim() === '' || lastname.trim() === '' || email.trim() === '' || city.trim() === '' || phone.trim() === ''|| textarea.trim() === ''){
             setError({
                 ...error,
                 campos: true,
@@ -161,6 +166,7 @@ const FormBase = ({status}) => {
             city: false,
             phone: false,
             campos: false,
+            textarea: false,
         });
         // setear datos
         setUsers({
@@ -170,6 +176,7 @@ const FormBase = ({status}) => {
             email: '',
             city: '',
             phone: '',
+            textarea: '',
             nickName: user.nickname,
             picture: user.picture,
             status: status,
@@ -256,12 +263,25 @@ if(render){
                         value={phone}
                     />
                 </div>
+                <div className="form-group">
+                    <label>Descripción</label>
+                    <textarea
+                        onChange={handleChange}
+                        onBlur={handleBlur}
+                        type="textarea"
+                        name="textarea"
+                        className="form-textarea"
+                        placeholder="Ej. mi consulta es..."
+                        value={phone}
+                    />
+                </div>
                 {error.name && ErrorMessage('name', 'Nombre')}
                 {error.lastname && ErrorMessage('lastname', 'Apellido')}
                 {error.email && ErrorMessage('email', 'Email')}
                 {error.city && ErrorMessage('city', 'Ciudad')}
                 {error.phone && ErrorMessage('phone', 'Telefono')}
                 {error.campos && ErrorMessage('campos', ' ')}
+                {error.textarea && ErrorMessage('textarea', 'Descripción')}
             <button type="submit" className="btn-submit">Submit</button>
             </fieldset>
             {redirect && <Redirect to='/' />}

@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react'
 import {useSelector, useDispatch} from 'react-redux';
 import {addAmount, removeAmount, removeGarage} from '../../actions'
 import { useAuth0 } from '@auth0/auth0-react';
+import Swal from 'sweetalert2';
 
 const Parking = ({setConfirm}) => {
     const garage = useSelector(state => state.dataGarage);
@@ -16,6 +17,24 @@ const Parking = ({setConfirm}) => {
         const precioArs = total.toLocaleString('de-DE')
         setTotal(precioArs);
     }, [garage]);
+
+    //funcion para confirmar la compra
+    const handlerConfirm = () => {
+        if(isAuthenticated){
+            if(garage.length > 0){
+                setConfirm(true);
+            }else{
+                Swal.fire({
+                    icon: 'error',
+                    title: 'No hay autos en el garage',
+                    showConfirmButton: false,
+                    timer: 1500
+                })
+            }
+        }else{
+            loginWithRedirect();
+        }
+    }
     return ( 
         <>
             <div className="shopHeader">
@@ -80,18 +99,10 @@ const Parking = ({setConfirm}) => {
             </div>
             <div className="shop-confirm">
                 <h2>Estas a solo un paso más</h2>
-                {
-                    isAuthenticated ?
                     <button
                     className="btn-confirm"
-                    onClick={() => setConfirm(true)}
+                    onClick={handlerConfirm}
                     >Confirmar</button>
-                    :
-                    <button
-                    className="btn-confirm"
-                    onClick={() => loginWithRedirect() }
-                    >Logeate para confirmar</button>
-                }
             </div>
         </>
         );
