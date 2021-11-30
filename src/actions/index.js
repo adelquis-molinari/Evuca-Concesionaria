@@ -58,3 +58,9 @@ export function setHours(payload){
         payload
     }
 }
+
+export function checkBlocked() {
+    return {
+        type: "CHECK_BLOCKED",
+    }
+}

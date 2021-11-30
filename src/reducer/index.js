@@ -8,15 +8,23 @@ const myData = {
     dataGarage: [],
     rating: "",
     months: 1,
+    blocked: false,
 };
 
 localStorage.setItem('my-data', JSON.stringify(myData));
 
 const appData = (state = myData , action) => {
     switch(action.type) {
+    case "CHECK_BLOCKED":
+        console.log('reducer block check')
+        return {
+            ...state,
+            blocked: true
+        }
     case "LOAD_DATA":
         const jsonData = JSON.parse(action.payload)
         return {
+            ...state,
             dataSimple: jsonData.dataSimple,
             dataGarage: jsonData.dataGarage,
             stock: jsonData.stock

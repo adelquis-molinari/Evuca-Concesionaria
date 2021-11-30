@@ -4,13 +4,25 @@ import {Users} from "./Users/index.jsx"
 import {Comments} from "./Comments/index.js"
 import {getUsers} from "../Firebase/AddUserDb/index"
 import { useAuth0 } from '@auth0/auth0-react';
+import { connect } from 'react-redux';
 
-const Dashboard = () => {
+const Dashboard = (props) => {
     const [showUsers, setShowUser] = useState(true);
     const [showComments, setShowComments] = useState(false);
     const [usersArray, setUsersArray] = useState([]);
-    const [reloadUsers, setReloadUsers] = useState(false)
     const { user, logout} = useAuth0();
+    
+    const getUsersAndSet= ()=> {
+        console.log('use effect getusers')
+        getUsers().then(resultado => {
+            setUsersArray(resultado)
+        })
+    }
+        useEffect(()=>{
+            console.log('use effect getusers')
+            getUsersAndSet()
+        }, [])
+
 
     const toggleUsers = () => {
         setShowUser(true);
@@ -21,9 +33,12 @@ const Dashboard = () => {
         setShowUser(false);
     }
 
-    useEffect(()=>{getUsers().then(resultado => {
-        setUsersArray(resultado)
-    })}, [])
+    useEffect(()=> {
+        if(props.blocked && window.location.href != 'http://localhost:3000/blocked') {
+            window.location.replace('http://localhost:3000/blocked')
+        }
+    })
+
 
     return ( 
         <div className="dashboardContainer">
@@ -34,11 +49,18 @@ const Dashboard = () => {
                     onClick={toggleComments}>Comentarios</button>
             </div>
             <div className="content-dashboard-shift">
-                {showUsers && <Users users={usersArray} user={user} logout={logout}/>}
-                {showComments && <Comments users={usersArray}/>}
+                {showUsers && <Users users={usersArray} user={user} logout={logout} getUsersAndSet={getUsersAndSet} />}
+                {showComments && <Comments users={usersArray} user={user} getUsersAndSet={getUsersAndSet}  />}
             </div>
         </div>
     );
 }
 
-export default Dashboard;
+
+function mapStateToProps(state) {
+    return {
+    blocked: state?.blocked ? state.blocked : false,
+    }
+}
+
+export default connect(mapStateToProps , null)(Dashboard);

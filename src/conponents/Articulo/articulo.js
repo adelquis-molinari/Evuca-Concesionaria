@@ -78,6 +78,14 @@ export function Articulo(props){
             });
         }
     }
+
+    useEffect(()=> {
+        if(props.blocked && window.location.href != 'http://localhost:3000/blocked') {
+            window.location.replace('http://localhost:3000/blocked')
+        }
+    })
+    
+
     useEffect(()=>{getComment().then(result => {
         setComments(result)
     })}, [])
@@ -175,6 +183,7 @@ function mapStateToProps(state) {
     return {
     dataSimple: state?.dataSimple ? state.dataSimple : [],
     rating: state?.rating ? state.rating : [],
+    blocked: state?.blocked ? state.blocked : false,
     }
 }
 

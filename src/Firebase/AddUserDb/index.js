@@ -1,6 +1,5 @@
 import { db } from "../firebaseConfig";
 import { setDoc, doc, getDoc, updateDoc, arrayUnion, getDocs, collection, deleteDoc } from "firebase/firestore"
-import { loadData } from "../../actions";
 
 
 export const addUserDb = async (user)=> {
@@ -9,8 +8,9 @@ export const addUserDb = async (user)=> {
             nickname: user.nickname,
             picture: user.picture,
             sub: user.sub,
-            email: user.email,
-            comentarios: []
+            email: user.email ? user.email : 'No hay email disponible',
+            comentarios: [],
+            blocked: false
         });
         console.log("Document written with ID: ", docRef);
     } catch(e) {
@@ -53,6 +53,7 @@ export const addUserComment = async (user, comment, params, puntaje)=> {
                 picture: user.picture,
                 time: Date.now(),
                 puntaje: puntaje,
+                user: user.sub
             })
         });
     } catch(e) {
@@ -90,4 +91,23 @@ export const deleteUser = async (user) => {
     await deleteDoc(doc(db, "usuarios", user));
 }
 
+export const deleteComment = async (newComments, user) => {
+    const docRef = doc(db, 'usuarios', user);
+    await updateDoc(docRef, {
+        comentarios: newComments
+    })
+}
 
+export const blockUserFb = async (user) => {
+    const docRef = doc(db, 'usuarios', user);
+    await updateDoc(docRef, {
+        blocked: true
+    })
+}
+
+export const unblockUserFb = async (user) => {
+    const docRef = doc(db, 'usuarios', user);
+    await updateDoc(docRef, {
+        blocked: false
+    })
+}

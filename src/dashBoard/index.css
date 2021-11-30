@@ -35,6 +35,13 @@
     margin-left: 15px;
 }
 
+.blocked-text {
+    color: red;
+    position: absolute;
+    top: 57%;
+    right: 2%;
+}
+
 .deleteUser{
     position: absolute;
     top: 0;
@@ -43,26 +50,26 @@
     margin-top: 4px;
     cursor: pointer;
     color: rgba(255, 42, 42, 0.562);
+    transition: all 0.2s ease-in-out;
 }
 .deleteUser:hover{
     color: rgb(235, 2, 2);
     font-size: 17px;
-    transition: 0.1s;
 }
 
-.blockUser{
+.blockUser, .fa-lock-open{
     position: absolute;
     top: 0;
     right: 0;
     margin-top: 25px;
     margin-right: 4.5px;
     color: #287094;
+    transition:all 0.2s ease-in-out;
 }
-.blockUser:hover{
+.blockUser:hover , .fa-lock-open:hover{
     cursor: pointer;
     color: #1e516b;
     font-size: 17px;
-    transition: 0.1s;
 }
 
 .userTotal{

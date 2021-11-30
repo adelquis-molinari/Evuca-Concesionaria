@@ -1,12 +1,11 @@
 import React from 'react'   
-import {deleteUser} from '../../Firebase/AddUserDb/index'
+import {deleteUser, blockUserFb, unblockUserFb} from '../../Firebase/AddUserDb/index'
 import Swal from 'sweetalert2';
 
 export function Users(props) {
     const users = props? props.users : []
     const handleDelete = (e) => {
         if(e.target.id === props.user.sub){
-            console.log(props)
             Swal.fire({
                 icon: 'error',
                 title: 'Tu cuenta fue eliminada',
@@ -15,6 +14,19 @@ export function Users(props) {
             props.logout({returnTo: window.location.origin})
         }
         deleteUser(e.target.id)
+        props.getUsersAndSet()
+    }
+
+    const handleBlock = (e) => {
+        let userClassList = e.target.classList
+        blockUserFb(userClassList[3])
+        props.getUsersAndSet()
+    }
+
+    const handleUnblock = (e) => {
+        let userClassList = e.target.classList
+        unblockUserFb(userClassList[2])
+        props.getUsersAndSet()
     }
     return(
         <div>
@@ -27,10 +39,11 @@ export function Users(props) {
             <img className="userImg" src={users.picture} alt="Foto de perfil"></img>
             <div className="userText">
             <p>Nombre de usuario: {users.nickname}</p>
-            <p>Email: {users.email}</p>
+            <p>Email: {users.email ? users.email : 'No hay email disponible'}</p>
             <p>Comentarios realizados: {users.comentarios.length}</p>
-            <i onClick={handleDelete} id={users.sub} class="far fa-trash-alt deleteUser"></i>
-            <i class="fas fa-ban blockUser"></i>
+            {users.blocked && <p className="blocked-text">Usuario bloqueado</p>}
+            <i onClick={handleDelete} id={users.sub} className="far fa-trash-alt deleteUser"></i>
+            {users.blocked ? <i onClick={handleUnblock} className={`fas fa-lock-open ${users.sub}`}></i> : <i onClick={handleBlock} className={`fas fa-ban blockUser ${users.sub}`}></i>}
             </div>
             </div>
             )
