@@ -106,8 +106,6 @@ export function Articulo(props){
                             <h3>Precio sugerido en dolares:</h3>
                             <p>{`$${precioEnDolar} USD`}</p>
                             <div className="articleButtons">
-                                {/* <a>Reservar</a>
-                                <a>Consultar</a> */}
                             </div>
                         </div>
                 </div>
@@ -132,7 +130,7 @@ export function Articulo(props){
                     <p>Agrega un comentario:</p>
                     <textarea className="comentarioInput" onChange={handleChange}></textarea>
                     <ComentarioEstrellas user={user} id={vehiculoActual[0].id}></ComentarioEstrellas>
-                    <a className="comentarioEnviar"onClick={handleSubmit}>Enviar</a>
+                    <bottom className="comentarioEnviar" onClick={handleSubmit}>Enviar</bottom>
                 </div>
                 </div>
     </div>
