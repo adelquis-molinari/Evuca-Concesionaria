@@ -1,20 +1,21 @@
-import React, {Fragment, useEffect} from 'react'
+import React, {Fragment, useEffect, useState} from 'react'
 import {connect} from 'react-redux'
 import Nav from './conponents/NavBar/Navbar'
 import Home from "./conponents/Home/Home.js"
 import Footer from './conponents/Footer/Footer';
 import { Route } from "react-router-dom";
 import { useAuth0 } from '@auth0/auth0-react';
-import { loadData } from './actions';
+import { loadData, checkBlocked } from './actions';
 import Search from './conponents/Search/Search';
 import Articulo from "./conponents/Articulo/articulo.js"
 import Shop from './conponents/Shop/shop.js';
 import ShoppingCart from './conponents/Shopping Cart/ShoppoingCard';
-import  Contacto from "./conponents/Contacto/Contact"
+import Contacto from "./conponents/Contacto/Contact"
 import Loading from './conponents/Loading';
 import PrivateRoute from './conponents/Private-route'
-import DashBoard from "./dashBoard/src/components/Dashboard/index";
-import {addDataRedux, checkUserDb} from './Firebase/AddUserDb';
+import Blocked from './conponents/Blocked';
+import DashBoard from "./dashBoard/index";
+import {getUsers, checkUserDb} from './Firebase/AddUserDb';
 // import { apiSimpleAutos } from "./Data/apiAutos";
 // import { apiSimpleMotos } from "./Data/apiMotos";
 // import { apiSimpleTractores } from "./Data/apiTractores";
@@ -34,7 +35,20 @@ function App(props) {
     if(isAuthenticated) {
       checkUserDb(user)
     }
-  }, [isAuthenticated, user])
+  }, [isAuthenticated, isLoading])
+  
+  useEffect(()=> {
+    console.log('loop')
+    if(isAuthenticated && !isLoading){
+      getUsers().then(result => {
+        let currentUser = result.filter(u => u.sub === user.sub)
+        if(currentUser[0].blocked === true) {
+          props.checkBlocked()
+          console.log('asdadsasdasdasd', checkBlocked())
+        }
+      })
+    }
+  }, [isAuthenticated ,isLoading])
 
 
   useEffect(() => {
@@ -49,8 +63,18 @@ function App(props) {
       // addProduct(myData)
     }
   },[props])
+
+  useEffect(()=> {
+    if(props.blocked && window.location.href != 'http://localhost:3000/blocked') {
+        window.location.replace('http://localhost:3000/blocked')
+    }
+  })
+
+  console.log(props)
+
   return (
     <Fragment>
+        <Route exact path="/blocked" component={Blocked} />
         <Nav />
         <Route exact path="/" render={() => <Home />}/> 
         <Route  path="/busqueda" render={() => <Search />}/> 
@@ -66,10 +90,18 @@ function App(props) {
   );
 }
 
-function mapDispatchToProps(dispatch) {
+function mapStateToProps(state) {
   return {
-    loadData: data => dispatch(loadData(data)),
+  blocked: state?.blocked ? state.blocked : false,
   }
 }
 
-export default connect(null , mapDispatchToProps)(App);
+
+function mapDispatchToProps(dispatch) {
+  return {
+    loadData: data => dispatch(loadData(data)),
+    checkBlocked: () => dispatch(checkBlocked())
+  }
+}
+
+export default connect(mapStateToProps , mapDispatchToProps)(App);

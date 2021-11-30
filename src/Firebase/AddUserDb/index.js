@@ -1,6 +1,5 @@
 import { db } from "../firebaseConfig";
-import { setDoc, doc, getDoc, updateDoc, arrayUnion, getDocs, collection } from "firebase/firestore"
-import { loadData } from "../../actions";
+import { setDoc, doc, getDoc, updateDoc, arrayUnion, getDocs, collection, deleteDoc } from "firebase/firestore"
 
 
 export const addUserDb = async (user)=> {
@@ -9,7 +8,9 @@ export const addUserDb = async (user)=> {
             nickname: user.nickname,
             picture: user.picture,
             sub: user.sub,
-            comentarios: []
+            email: user.email ? user.email : 'No hay email disponible',
+            comentarios: [],
+            blocked: false
         });
         console.log("Document written with ID: ", docRef);
     } catch(e) {
@@ -52,6 +53,7 @@ export const addUserComment = async (user, comment, params, puntaje)=> {
                 picture: user.picture,
                 time: Date.now(),
                 puntaje: puntaje,
+                user: user.sub
             })
         });
     } catch(e) {
@@ -70,8 +72,42 @@ export const getComment = async () => {
             })
         }
     })
-    console.log(myComments)
     return myComments
 }
 
+export const getUsers = async () => {
+    const docRef = await getDocs(collection(db, "usuarios"))
+    let myUsers = [];
+    docRef.forEach(doc => {
+        if(doc.data()) {
+            let usersArray = doc.data();
+            myUsers.push(usersArray)
+        }
+    })
+    return myUsers
+}
 
+export const deleteUser = async (user) => {
+    await deleteDoc(doc(db, "usuarios", user));
+}
+
+export const deleteComment = async (newComments, user) => {
+    const docRef = doc(db, 'usuarios', user);
+    await updateDoc(docRef, {
+        comentarios: newComments ? newComments : []
+    })
+}
+
+export const blockUserFb = async (user) => {
+    const docRef = doc(db, 'usuarios', user);
+    await updateDoc(docRef, {
+        blocked: true
+    })
+}
+
+export const unblockUserFb = async (user) => {
+    const docRef = doc(db, 'usuarios', user);
+    await updateDoc(docRef, {
+        blocked: false
+    })
+}

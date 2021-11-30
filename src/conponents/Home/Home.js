@@ -1,13 +1,14 @@
 import React from "react";
 import "./Home.css"
-import {useState} from "react";
+import {useState, useEffect} from "react";
 import TypeCard from "../TypeCard/typeCard.jsx"
 import motoIcon from "../../img/iconos/iconMoto.png"
 import tractorIcon from "../../img/iconos/iconTractor.png"
 import Outstanding from "../Outstanding/Outstanding"
+import { connect } from "react-redux";
 
 
-export function Home() {
+export function Home(props) {
 
 //  Js del carrusel
 const image = ["https://es.theepochtimes.com/assets/uploads/2019/04/26c01f3789d0436e8702340cb0a43076.jpg","https://es.chevrolet.com/content/dam/chevrolet/na/us/english/index/about/new-roads-issue-12/teasers/01-images/farmtofreeway-teaser-16x9.jpg?imwidth=960","https://s1.1zoom.me/b6365/276/Fields_Sunrises_and_sunsets_Tractor_521258_2560x1440.jpg"]
@@ -26,6 +27,12 @@ const next = () => {
     setSelectedImage(image[nextIndex])
     setSelectedIndex(nextIndex);
 }
+
+useEffect(()=> {
+    if(props.blocked && window.location.href != 'http://localhost:3000/blocked') {
+        window.location.replace('http://localhost:3000/blocked')
+    }
+})
 
     return(
         <div>
@@ -146,4 +153,10 @@ const next = () => {
     )
 }
 
-export default Home
+function mapStateToProps(state) {
+    return {
+    blocked: state?.blocked ? state.blocked : false,
+    }
+}
+
+export default connect(mapStateToProps , null)(Home);

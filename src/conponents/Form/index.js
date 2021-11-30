@@ -111,7 +111,7 @@ const FormBase = ({status}) => {
             ...users,
             fecha: date
         })
-    }, [value]);
+    }, []);
     // 25 diciembre no se puede cambiar el status
     useEffect(() => {
         if(value.getDate() === 25 && value.getMonth() === 11 ){
@@ -125,7 +125,7 @@ const FormBase = ({status}) => {
             });
             setRender(false);
         }else{setRender(true);}
-    },[value]);
+    },[]);
     const months = useSelector(state => state?.months? state.months: 1);
     const currentDay = new Date()
     let nextMonth = new Date(currentDay.setMonth(currentDay.getMonth() + 1));

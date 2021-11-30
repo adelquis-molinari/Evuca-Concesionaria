@@ -1,0 +1,80 @@
+
+.dashboardTypes{
+    width: 100%;
+    border-bottom: 1px solid black;
+    font-size: 30px;
+}
+
+.userContainer{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.userCards{
+    display: flex;
+    flex-wrap: wrap;
+    border: 1px solid black;
+    margin: 20px;
+    width: 40%;
+    height: 130px;
+    position: relative;
+}
+
+.userImg{
+    width: 130px;
+    height: 130px;
+}
+
+.userText p{
+    font-size: 16px;
+    display: flex;
+    flex-direction: column;
+    min-height: 5px;
+    margin-left: 15px;
+}
+
+.blocked-text {
+    color: red;
+    position: absolute;
+    top: 57%;
+    right: 2%;
+}
+
+.deleteUser{
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-right: 6px;
+    margin-top: 4px;
+    cursor: pointer;
+    color: rgba(255, 42, 42, 0.562);
+    transition: all 0.2s ease-in-out;
+}
+.deleteUser:hover{
+    color: rgb(235, 2, 2);
+    font-size: 17px;
+}
+
+.blockUser, .fa-lock-open{
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-top: 25px;
+    margin-right: 4.5px;
+    color: #287094;
+    transition:all 0.2s ease-in-out;
+}
+.blockUser:hover , .fa-lock-open:hover{
+    cursor: pointer;
+    color: #1e516b;
+    font-size: 17px;
+}
+
+.userTotal{
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    color:#287094;
+}

@@ -28,10 +28,6 @@ const InputSearch = (props) => {
                 onFocus={()=>setOpen(true)}
             />
             {searchTerm.length > 0 && (<div className="search-blank" onClick={()=> setSearchTerm('')}><i class="fas fa-times"></i></div>)}
-                <button 
-                    className="btn-Search" 
-                    type="button" 
-                    id="button-addon2"><i className="fas fa-search"></i></button>
         </div>
         {searchTerm.length >= 2 && isOpen && (
             <div className="search-items" >

@@ -13,7 +13,7 @@
 .btnIzq{
     position: absolute;
     left:0;
-    top: 255px;
+    top: 170px;
     margin-left: 10px;
     font-size:40px;
     color: rgba(255, 255, 255, 0.788);
@@ -28,7 +28,7 @@
 .btnDere{
     position: absolute;
     right:0;
-    top: 255px;
+    top: 170px;
     margin-right: 10px;
     font-size:40px;
     color: rgba(255, 255, 255, 0.788);
@@ -42,7 +42,7 @@
 
 .containerHome h1{
     position: absolute;
-    top: 225px;
+    top: 135px;
     color: #ffffff;
     font-size: 75px;
     max-width: 100%;
@@ -52,7 +52,7 @@
 
 .containerHome p{
     position: relative;
-    top: -170px;
+    top: -185px;
     margin: 0;
     margin-left: 20px;
     color: #ffffff;
@@ -80,9 +80,8 @@
 
 .seccionTipos{
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     color: black;
     flex-flow: row wrap;
-    
 }
 

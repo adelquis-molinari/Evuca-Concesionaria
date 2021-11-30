@@ -11,6 +11,7 @@ function ComentarioEstrellas (props) {
         <div>
             {[ ...Array(5)].map((star, i) => {
                 const ratingValue = i + 1;
+                console.log(props.rating[0])
                 return (
                     <label key={i}>
                         <input
@@ -27,13 +28,18 @@ function ComentarioEstrellas (props) {
                         class="fas fa-star comentarioStar"
                         onMouseEnter={() => setHover(ratingValue)}
                         onMouseLeave={() => setHover(null)}
-                        style={{color: ratingValue <= (hover || rating) ? "#ffc107" : "#8c8d91"}}
+                        style={{color: props.rating === 0 ? "#8c8d91" : ratingValue <= (hover || rating) ? "#ffc107" : "#8c8d91"}}
                         ></i>
                     </label>
                 )
             })}
         </div>
     )
+}
+function mapStateToProps(state) {
+    return {
+    rating: state?.rating ? state.rating : 0,
+    }
 }
 
 function mapDispatchToProps(dispatch) {
@@ -42,4 +48,4 @@ function mapDispatchToProps(dispatch) {
     }
 }
 
-export default connect(null, mapDispatchToProps)(ComentarioEstrellas)
+export default connect(mapStateToProps, mapDispatchToProps)(ComentarioEstrellas)

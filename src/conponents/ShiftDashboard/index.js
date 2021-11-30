@@ -36,7 +36,7 @@ const ShiftDashboard = () => {
                 {showMainPanel && <MainPanel />}
             </div>
         </div>
-     );
+    );
 }
- 
+
 export default ShiftDashboard;

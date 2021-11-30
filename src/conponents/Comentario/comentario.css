@@ -1,6 +1,8 @@
 .comentarioUser{
     display: flex;
     align-items: center;
+    font-weight: bolder;
+    font-size: 18px;
 }
 
 .comentariosContainer{
@@ -8,6 +10,7 @@
     flex-direction: column;
     align-items: center;
     background-color:rgba(128, 128, 128, 0.123);
+    min-height: 300px;
 }
 .comentario{
     display: flex;
@@ -16,10 +19,11 @@
     padding: 5px;
     border: 1px solid black;
     border-radius: 8px;
-    width: 50%;
-    height: 130px;
+    min-width: 450px;
+    max-width: 450px;
+    min-height: 130px;
     background-color: white;
-
+    min-height: 150px;
 }
 
 .comentarioStars{
@@ -39,10 +43,13 @@
 }
 
 .comentarioTexto{
+    display: flex;
     overflow: hidden;
-    font-size: 20px;
 }
 
 .comentarioTexto p{
+    font-size: 20px;
     margin-left: 5px;
+    max-width: 440px;
+    word-wrap: break-word;
 }
