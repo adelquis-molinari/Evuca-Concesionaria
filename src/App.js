@@ -5,7 +5,7 @@ import Home from "./conponents/Home/Home.js"
 import Footer from './conponents/Footer/Footer';
 import { Route } from "react-router-dom";
 import { useAuth0 } from '@auth0/auth0-react';
-import { loadData } from './actions';
+import { loadData, checkBlocked } from './actions';
 import Search from './conponents/Search/Search';
 import Articulo from "./conponents/Articulo/articulo.js"
 import Shop from './conponents/Shop/shop.js';
@@ -14,7 +14,7 @@ import  Contacto from "./conponents/Contacto/Contact"
 import Loading from './conponents/Loading';
 import PrivateRoute from './conponents/Private-route'
 import DashBoard from "./dashBoard";
-import {addDataRedux, checkUserDb} from './Firebase/AddUserDb';
+import {getUsers, checkUserDb} from './Firebase/AddUserDb';
 // import { apiSimpleAutos } from "./Data/apiAutos";
 // import { apiSimpleMotos } from "./Data/apiMotos";
 // import { apiSimpleTractores } from "./Data/apiTractores";
@@ -26,6 +26,7 @@ import {addDataRedux, checkUserDb} from './Firebase/AddUserDb';
 // };
 // import Pag404 from './conponents/Pag404';
 import ShiftDashboard from './conponents/ShiftDashboard'
+import Blocked from './conponents/Blocked';
 
 function App(props) {
   const { isLoading, user, isAuthenticated } = useAuth0();
@@ -47,6 +48,12 @@ function App(props) {
     }
   }, [isAuthenticated ,isLoading])
 
+  useEffect(()=> {
+    if(props.blocked && window.location.href != 'http://localhost:3000/blocked') {
+        window.location.replace('http://localhost:3000/blocked')
+    }
+})
+
 
   useEffect(() => {
     if (isLoading) { 
@@ -63,6 +70,7 @@ function App(props) {
   return (
     <Fragment>
         <Nav />
+        <Route exact path="/blocked" component={Blocked} />
         <Route exact path="/" render={() => <Home />}/> 
         <Route  path="/busqueda" render={() => <Search />}/> 
         <Route  path="/shop/:id" component={Shop}/> 
@@ -77,10 +85,17 @@ function App(props) {
   );
 }
 
-function mapDispatchToProps(dispatch) {
+function mapStateToProps(state) {
   return {
-    loadData: data => dispatch(loadData(data)),
+  blocked: state?.blocked ? state.blocked : false,
   }
 }
 
-export default connect(null , mapDispatchToProps)(App);
+function mapDispatchToProps(dispatch) {
+  return {
+    loadData: data => dispatch(loadData(data)),
+    checkBlocked: ()=> dispatch(checkBlocked())
+  }
+}
+
+export default connect(mapStateToProps , mapDispatchToProps)(App);
