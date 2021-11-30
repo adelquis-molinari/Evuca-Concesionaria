@@ -10,10 +10,10 @@ import Search from './conponents/Search/Search';
 import Articulo from "./conponents/Articulo/articulo.js"
 import Shop from './conponents/Shop/shop.js';
 import ShoppingCart from './conponents/Shopping Cart/ShoppoingCard';
-import  Contacto from "./conponents/Contacto/Contact"
+import Contacto from "./conponents/Contacto/Contact"
 import Loading from './conponents/Loading';
 import PrivateRoute from './conponents/Private-route'
-import DashBoard from "./dashBoard/src/components/Dashboard/index";
+import DashBoard from "./dashBoard/index";
 import {addDataRedux, checkUserDb} from './Firebase/AddUserDb';
 // import { apiSimpleAutos } from "./Data/apiAutos";
 // import { apiSimpleMotos } from "./Data/apiMotos";

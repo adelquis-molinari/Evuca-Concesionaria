@@ -4,6 +4,7 @@ import ComentarioEstrellas from "../ComentarioEstrellas/index"
 
 
 export default function Comentario(props){  
+    console.log(props)
     const date = new Date(props.time);
     return(
         <div className="comentario">

@@ -9,7 +9,7 @@ export default function ComentarioEstrellas(props) {
                 return (
                     <label key={i}>
                         <i 
-                        class="fas fa-star comentarioStar"
+                        class="fas fa-star comentariosStar"
                         style={{color: ratingValue <= (props.rating) ? "#ffc107" : "#8c8d91"}}
                         ></i>
                     </label>

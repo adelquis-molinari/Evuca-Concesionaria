@@ -1,21 +1,21 @@
-.comentarioUser{
+.adminComentarioUser{
     display: flex;
     align-items: center;
     font-weight: bolder;
     font-size: 18px;
 }
 
-.comentariosContainer{
+.adminComentariosContainer{
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color:rgba(128, 128, 128, 0.123);
     min-height: 300px;
+    margin: 5px;
+    flex-wrap: wrap;
+    justify-content: center;
 }
-.comentario{
+
+.adminComentario{
     display: flex;
     flex-direction: column;
-    margin: 15px 10px 5px 300px;
     padding: 5px;
     border: 1px solid black;
     border-radius: 8px;
@@ -24,17 +24,18 @@
     min-height: 130px;
     background-color: white;
     min-height: 150px;
+    margin: 5px;
 }
 
-.comentarioStars{
+.adminComentarioStars{
     display: flex;
 }
 
-.comentarioStars p{
+.adminComentarioStars p{
     margin: 0px ;
 }
 
-.comentarioUser img{
+.adminComentarioUser img{
     width: 40px;
     height: 40px;
     object-fit:cover;
@@ -42,12 +43,12 @@
     margin: 5px 15px 5px 5px;
 }
 
-.comentarioTexto{
+.adminComentarioTexto{
     display: flex;
     overflow: hidden;
     font-size: 20px;
 }
 
-.comentarioTexto p{
+.adminComentarioTexto p{
     margin-left: 5px;
 }
