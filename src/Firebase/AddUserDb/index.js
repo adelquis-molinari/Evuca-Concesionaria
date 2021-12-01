@@ -111,3 +111,17 @@ export const unblockUserFb = async (user) => {
         blocked: false
     })
 }
+
+export const adminUserFb = async (user) => {
+    const docRef = doc(db, 'usuarios', user);
+    await updateDoc(docRef, {
+        admin: true
+    })
+}
+
+export const noAdminUserFb = async (user) => {
+    const docRef = doc(db, 'usuarios', user);
+    await updateDoc(docRef, {
+        admin: false
+    })
+}

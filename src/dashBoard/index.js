@@ -5,6 +5,7 @@ import {Comments} from "./Comments/index.js"
 import {getUsers} from "../Firebase/AddUserDb/index"
 import { useAuth0 } from '@auth0/auth0-react';
 import { connect } from 'react-redux';
+import {Link} from 'react-router-dom';
 
 const Dashboard = (props) => {
     const [showUsers, setShowUser] = useState(true);
@@ -13,13 +14,11 @@ const Dashboard = (props) => {
     const { user, logout} = useAuth0();
     
     const getUsersAndSet= ()=> {
-        console.log('use effect getusers')
         getUsers().then(resultado => {
             setUsersArray(resultado)
         })
     }
         useEffect(()=>{
-            console.log('use effect getusers')
             getUsersAndSet()
         }, [])
 
@@ -42,16 +41,30 @@ const Dashboard = (props) => {
 
     return ( 
         <div className="dashboardContainer">
-            <div className="btn-content-db">
+            {user ? usersArray.map(u =>
+                u.sub === user.sub ? u.admin ?
+                //Esto se renderiza si sos admin
+                <div>
+                    <div className="dashboardBtnContainer">
+                <button
+                    onClick={toggleUsers} className="dashboardBtn"> Usuarios</button>
+                    
                 <button 
-                    onClick={toggleUsers}> Usuarios</button>
-                <button 
-                    onClick={toggleComments}>Comentarios</button>
+                    onClick={toggleComments} className="dashboardBtn">Comentarios</button>
+                <Link to="/shift-dashboard" className="dashboardBtn dashboardLink">Turnos</Link>
             </div>
             <div className="content-dashboard-shift">
                 {showUsers && <Users users={usersArray} user={user} logout={logout} getUsersAndSet={getUsersAndSet} />}
                 {showComments && <Comments users={usersArray} user={user} getUsersAndSet={getUsersAndSet}  />}
             </div>
+                </div> :
+                //Esto se renderiza si no sos admin
+                <div className="noAdminContainer">
+                    <div className="noAdminImgContainer">
+                    <img  className="noAdminImg" src={`https://cdn.dribbble.com/users/761395/screenshots/6287961/error_401.jpg?compress=1&resize=800x600`} ></img>
+                    </div>
+                </div> : 
+                console.log("No es ese user"))  : console.log("no cargaron los user") }
         </div>
     );
 }

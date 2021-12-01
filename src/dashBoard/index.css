@@ -82,3 +82,72 @@
     font-weight: bold;
     color:#287094;
 }
+
+.dashboardBtn{
+    width: 20%;
+    min-height: 30px;
+    background: #ffffff;
+    font-size: 1rem;
+    color: #8d8d8d;
+    border: none;
+    border-radius: 10px;
+    outline: none;
+    cursor: pointer;
+    transition: 0.3s;
+    box-shadow: -3px 0px 12px -2px rgba(138,212,235,0.75);
+    -webkit-box-shadow: -3px 0px 12px -2px rgba(138,212,235,0.75);
+    -moz-box-shadow: -3px 0px 12px -2px rgba(138,212,235,0.75);
+}
+.dashboardBtn:hover{
+    background-color: #1d8386;
+    color: #fff;
+    transform: scale(1.05);
+}
+
+.dashboardBtnContainer{
+    display: flex;
+    justify-content: space-around;
+}
+
+.dashboardLink{
+    text-decoration: none;
+    text-align: center;
+}
+
+.adminUser{
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-top: 45px;
+    margin-right: 1px;
+    color:#287094
+}
+
+.adminUser:hover{
+    cursor: pointer;
+    color: #1e516b;
+    font-size: 17px;
+}
+
+.noAdminUser{
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-top: 45px;
+    margin-right: 5.5px;
+    color:#287094
+}
+
+.noAdminUser:hover{
+    cursor: pointer;
+    color: #1e516b;
+    font-size: 17px;
+}
+
+/* .noAdminContainer{
+} */
+
+.noAdminImgContainer{
+    display: flex;
+    justify-content: center;
+}
