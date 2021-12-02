@@ -9,11 +9,11 @@ const Footer = () => {
         <FooterDiv>
             <div>
                 <LinkFooter to="/">Inicio</LinkFooter>
-                <LinkFooter to="/about">Nosotros</LinkFooter>
+                <LinkFooter to="/agencias">Agencias</LinkFooter>
                 <LinkFooter to="/contact">Contacto</LinkFooter>
             </div>
             <div>
-                <p>Todos los derechos reservados por <LinkEvukes to="/evukes"> Evukers </LinkEvukes> &copy; Copyright {fecha}</p>
+                <p>Todos los derechos reservados por Evukers &copy; Copyright {fecha}</p>
             </div>
             <div>
                 

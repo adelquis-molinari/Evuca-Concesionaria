@@ -12,9 +12,8 @@ export const addUserDb = async (user)=> {
             comentarios: [],
             blocked: false
         });
-        console.log("Document written with ID: ", docRef);
     } catch(e) {
-        console.error("Error adding document: ", e);
+        alert("Error adding document: ", e);
     }
 }
 
@@ -23,7 +22,6 @@ export const checkUserDb = async (user) => {
     const docRef = doc(db, "usuarios", user.sub);
     const docSnap = await getDoc(docRef);
     if(docSnap.exists()) {
-        console.log("Document data:", docSnap.data());
     } else {
         addUserDb(user)
     }
@@ -34,11 +32,10 @@ export const addDataRedux = async () => {
     const docSnap = await getDoc(docRef);
     if (docSnap.exists()) {
         const data = docSnap.data();
-        console.log("Document data:", docSnap.data(), data);
         return data
     } else {
         // doc.data() will be undefined in this case
-        console.log("No such document!");
+        alert("No such document!");
     }
 }
 

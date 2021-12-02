@@ -11,6 +11,7 @@ import Articulo from "./conponents/Articulo/articulo.js"
 import Shop from './conponents/Shop/shop.js';
 import ShoppingCart from './conponents/Shopping Cart/ShoppoingCard';
 import Contacto from "./conponents/Contacto/Contact"
+import {About} from "./conponents/About/About"
 import Loading from './conponents/Loading';
 import PrivateRoute from './conponents/Private-route'
 import DashBoard from "./dashBoard";
@@ -75,6 +76,7 @@ function App(props) {
         <Route  path="/busqueda" render={() => <Search />}/> 
         <Route  path="/shop/:id" component={Shop}/> 
         <Route  path="/article/:id" component={Articulo}/> 
+        <Route  path="/agencias" component={About}/> 
         <PrivateRoute  path="/shopping-cart" component={ShoppingCart}/> 
         <PrivateRoute  path="/contact" component={Contacto}/>
         <PrivateRoute  path="/shift-dashboard" component={ShiftDashboard}/>
