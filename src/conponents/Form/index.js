@@ -186,6 +186,7 @@ const FormBase = ({status}) => {
         setRedirect(true);
     }
     // render
+    
 if(render){
     return ( 
         <form className='form-content' onSubmit={handleSubmit} >
