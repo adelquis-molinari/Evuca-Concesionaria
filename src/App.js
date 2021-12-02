@@ -75,11 +75,10 @@ function App(props) {
         <Route  path="/busqueda" render={() => <Search />}/> 
         <Route  path="/shop/:id" component={Shop}/> 
         <Route  path="/article/:id" component={Articulo}/> 
-        <PrivateRoute  path="/shopping-cart" component={<ShoppingCart />}/> 
+        <PrivateRoute  path="/shopping-cart" component={ShoppingCart}/> 
         <PrivateRoute  path="/contact" component={Contacto}/>
         <PrivateRoute  path="/shift-dashboard" component={ShiftDashboard}/>
-        <PrivateRoute  path="/admin" component={<DashBoard/>}/>
-        {/* <Route component={Pag404}/> */}
+        <PrivateRoute  path="/admin" component={DashBoard}/>
       <Footer />
     </Fragment>
   );
