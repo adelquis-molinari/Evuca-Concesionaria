@@ -15,7 +15,7 @@ const FormBase = ({status}) => {
         lastname: /^[a-zA-Z0-9_-]{4,16}$/,
 		email: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
         city: /^[a-zA-Z0-9_-]{4,16}$/,
-		phone: /^\d{7,14}$/,
+		phone: /^((\(?\d{3}\)?\d{4})|(\(?\d{4}\)?\d{3})|(\(?\d{5}\)?\d{2}))\d{4}$/gm,
 		password: /^.{4,12}$/,
         textarea: /[$%&|<>#]/,
 	}
