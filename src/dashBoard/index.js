@@ -42,8 +42,8 @@ const Dashboard = (props) => {
     }
 
     useEffect(()=> {
-        if(props.blocked && window.location.href !== 'https://evuca-concesionaria-1ws3pxp2k-joaquinmpereyra.vercel.app/blocked') {
-            window.location.replace('https://evuca-concesionaria-1ws3pxp2k-joaquinmpereyra.vercel.app/blocked')
+        if(props.blocked && window.location.href !== 'https://evuca-concesionaria.vercel.app/blocked') {
+            window.location.replace('https://evuca-concesionaria.vercel.app/blocked')
         }
     })
 
