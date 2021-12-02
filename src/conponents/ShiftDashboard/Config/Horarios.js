@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import Swal from 'sweetalert2';
 import{useDispatch} from 'react-redux';
 import {setHours} from '../../../actions';
 
@@ -10,6 +11,13 @@ const Horarios = () => {
     }
     const sumitMounths = () => {
         dispatch(setHours(hour));
+        Swal.fire({
+            position: 'top-end',
+            icon: 'success',
+            title: 'cambios guardados',
+            showConfirmButton: false,
+            timer: 1500
+          })
     }
     return ( 
         <div className="conteiner-shift">

@@ -243,7 +243,6 @@ if(render){
                     <label>Ciudad</label>
                     <input
                         onChange={handleChange}
-                        onBlur={handleBlur} 
                         type="text" 
                         className="form-control"
                         name="city"
@@ -267,12 +266,11 @@ if(render){
                     <label>Descripción</label>
                     <textarea
                         onChange={handleChange}
-                        onBlur={handleBlur}
                         type="textarea"
                         name="textarea"
                         className="form-textarea"
                         placeholder="Ej. mi consulta es..."
-                        value={phone}
+                        value={textarea}
                     />
                 </div>
                 {error.name && ErrorMessage('name', 'Nombre')}
