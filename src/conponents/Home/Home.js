@@ -29,8 +29,8 @@ const next = () => {
 }
 
 useEffect(()=> {
-    if(props.blocked && window.location.href != 'http://localhost:3000/blocked') {
-        window.location.replace('http://localhost:3000/blocked')
+    if(props.blocked && window.location.href != 'https://evuca-concesionaria.vercel.app/blocked') {
+        window.location.replace('https://evuca-concesionaria.vercel.app/blocked')
     }
 })
 
