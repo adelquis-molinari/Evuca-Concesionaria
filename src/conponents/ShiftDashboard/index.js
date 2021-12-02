@@ -6,7 +6,7 @@ import './ShiftDashboard.css';
 
 const ShiftDashboard = () => {
     const {user} = useAuth0();
-    const [showConfig, setShowConfig] = useState(false);
+    const [showConfig, setShowConfig] = useState(true);
     const [showMainPanel, setShowMainPanel] = useState(true);
     const toggleConfig = () => {
         setShowConfig(true);
@@ -19,20 +19,9 @@ const ShiftDashboard = () => {
 
     return ( 
         <div className="content-db-main" >
-            <div className="content-db-main-header">
-                <span>Hola {user.name}  👋🏻 </span>
-            </div>
-            <div className="btn-content-db">
-                <button 
-                    className="btn-shift"
-                    onClick={toggleMainPanel}> Panel Principal</button>
-                <button 
-                    className="btn-shift"
-                    onClick={toggleConfig}>Config</button>
-            </div>
             <div className="content-dashboard-shift">
                 {showConfig && <Config />}
-                {showMainPanel && <MainPanel />}
+                {/* {showMainPanel && <MainPanel />} */}
             </div>
         </div>
     );

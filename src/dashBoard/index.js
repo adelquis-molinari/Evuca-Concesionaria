@@ -73,7 +73,7 @@ const Dashboard = (props) => {
                     <img  className="noAdminImg" src={`https://cdn.dribbble.com/users/761395/screenshots/6287961/error_401.jpg?compress=1&resize=800x600`} />
                     </div>
                 </div> : 
-                console.log("No es ese user"))  : console.log("no cargaron los user") }
+                null)  : null }
         </div>
     );
 }

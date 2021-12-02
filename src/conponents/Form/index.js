@@ -85,7 +85,8 @@ const FormBase = ({status}) => {
                 backdrop: `
                     rgba(0,0,123,0.4)
                 `
-            });
+            })
+            error[name] = false;
         }
     }
     // calendario
@@ -256,7 +257,6 @@ if(render){
                     <input
                         onChange={handleChange}
                         onBlur={handleBlur}
-                        type="number"
                         className="form-control"
                         name="phone"
                         placeholder="Ej. 4444-4444"
@@ -278,9 +278,7 @@ if(render){
                 {error.lastname && ErrorMessage('lastname', 'Apellido')}
                 {error.email && ErrorMessage('email', 'Email')}
                 {error.city && ErrorMessage('city', 'Ciudad')}
-                {error.phone && ErrorMessage('phone', 'Telefono')}
                 {error.campos && ErrorMessage('campos', ' ')}
-                {error.textarea && ErrorMessage('textarea', 'Descripción')}
             <button type="submit" className="btn-submit">Submit</button>
             </fieldset>
             {redirect && <Redirect to='/' />}

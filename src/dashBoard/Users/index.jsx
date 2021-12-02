@@ -60,7 +60,7 @@ export function Users(props) {
             </div>
             </div>
             )
-        }) : console.log("no anda")}</div>
+        }) : null}</div>
         </div>
     )
 }

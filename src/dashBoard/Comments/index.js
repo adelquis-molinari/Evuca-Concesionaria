@@ -28,7 +28,6 @@ let totalComentarios = 0
     return(
     <div className="dashboard-div">
         <p className="userTotal">Total de comentarios: {comentarios? comentarios.map(usuario =>{
-            console.log(usuario.length)
             totalComentarios += usuario.length
         }): 0} {totalComentarios}</p>
         <div className="adminComentariosContainer">
@@ -56,7 +55,7 @@ let totalComentarios = 0
                                 </div>
                         )})
                 )
-            }): console.log("No anda")}
+            }): null}
         </div>
     </div>
     )

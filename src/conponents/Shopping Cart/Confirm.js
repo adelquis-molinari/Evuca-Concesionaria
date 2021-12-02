@@ -4,7 +4,6 @@ import {useSelector} from 'react-redux';
 
 const Confirm = () => {
     const garage = useSelector(state => state.dataGarage);
-    console.log(garage, "confirm");
     return ( 
         <>
             <div className="shopHeader">

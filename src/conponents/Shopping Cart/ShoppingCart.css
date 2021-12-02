@@ -1,4 +1,5 @@
 .shop-container{
+    min-height: 1100px;
     height: 100vh;
     display: flex;
     flex-direction: column;
@@ -162,7 +163,8 @@
     justify-content: center;
     align-items: center;
     width: 80%;
-    height: 600px;
+    height: auto;
+    min-height: 600px;
 }
 
 /* component count cart */
