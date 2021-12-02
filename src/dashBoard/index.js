@@ -28,10 +28,12 @@ const Dashboard = (props) => {
     const toggleUsers = () => {
         setShowUser(true);
         setShowComments(false);
+        setShowShift(false);
     }
     const toggleComments = () => {
         setShowComments(true);
         setShowUser(false);
+        setShowShift(false)
     }
     const toggleShift = () => {
         setShowShift(true);
